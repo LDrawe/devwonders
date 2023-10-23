@@ -1,0 +1,29 @@
+h1, h3 {
+    text-align: center;
+}
+
+h1 {
+    font-size: 64px;
+    color: #FFF;
+    margin-top: 80px;
+}
+
+h3 {
+    margin-top: 40px;
+    font-size: 32px;
+    color: #BABABA;
+    margin-bottom: 90px;
+}
+
+.center {
+    text-align: center;
+}
+
+a {
+    padding: 20px 45px;
+    background-image: linear-gradient(to right, #9D0B0B 0%, #460000  100%);
+    border-radius: 10px;
+    color: #FFF;
+    text-decoration: none;
+    font-size: 20px;
+}
