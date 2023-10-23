@@ -1,11 +1,7 @@
-h1, h3 {
-    text-align: center;
-}
-
 h1 {
     font-size: 64px;
-    color: #FFF;
     margin-top: 80px;
+    text-align: center;
 }
 
 h3 {
@@ -13,9 +9,10 @@ h3 {
     font-size: 32px;
     color: #BABABA;
     margin-bottom: 90px;
+    text-align: center;
 }
 
-.center {
+main {
     text-align: center;
 }
 
@@ -23,7 +20,10 @@ a {
     padding: 20px 45px;
     background-image: linear-gradient(to right, #9D0B0B 0%, #460000  100%);
     border-radius: 10px;
-    color: #FFF;
-    text-decoration: none;
     font-size: 20px;
+    transition: .5s;
+}
+
+a:hover{
+    box-shadow: 0 0 15px rgba(167, 16, 16, 0.685); /* Add a glowing effect with box shadow */
 }

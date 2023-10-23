@@ -2,17 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-}
-
-h1, h3, p, button, a {
     font-family: 'Roboto';
+    color: #FFF;
 }
 
 body {
     background-color: #110F0F;
 }
 
-.container {
-    height: 100vh;
-    width: 100vw;
+a {
+    text-decoration: none;
 }
