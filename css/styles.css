@@ -65,6 +65,24 @@ main {
     color: #FFF;
 }
 
+main #return {
+    background-color: #EDC32E;
+    height: 50px;
+    width: 50px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 30px;
+    text-align: center;
+    transition: .3s;
+    position: absolute;
+    bottom: 50px;
+    right: 50px;
+}
+
+main #return:hover {
+    filter: brightness(60%);
+}
+
 main div {
     background-color: #292727;
     display: flex;
@@ -93,9 +111,10 @@ main div a:last-child {
 main section {
     height: calc(100vh - 30px - 30px - 70px);
     padding: 0 50px 50px;
-    overflow: scroll;
+    overflow: auto;
     width: calc(100vw - 200px);
     line-height: 1.5;
+    scroll-behavior: smooth;
 }
 
 section h2:not(:first-of-type) {
