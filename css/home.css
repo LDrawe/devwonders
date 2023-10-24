@@ -1,23 +1,28 @@
 h1 {
-    font-size: 64px;
-    margin-top: 80px;
+    font-size: clamp(32px, 10vw, 64px);
     text-align: center;
 }
 
 h3 {
     margin-top: 40px;
-    font-size: 32px;
+    font-size: clamp(16px, 5vw, 26px);
     color: #BABABA;
     margin-bottom: 90px;
     text-align: center;
 }
 
 main {
-    text-align: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 a {
-    padding: 20px 45px;
+    text-align: center;
+    width: 200px;
+    padding: 20px 0;
     background-image: linear-gradient(to right, #9D0B0B 0%, #460000  100%);
     border-radius: 10px;
     font-size: 20px;
