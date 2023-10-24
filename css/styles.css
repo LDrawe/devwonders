@@ -12,7 +12,39 @@ header a {
     color: #DCDCDC;
 }
 
-header nav {
+.btn-mobile {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    border-top: 2px solid white;
+    width: 20px;
+}
+
+.btn-mobile::before,
+.btn-mobile::after {
+    content: '';
+    display: block;
+    border-top: 2px solid currentColor;
+    margin-top: 5px;
+    transition: 0.3s;
+    position: relative;
+}
+
+nav.modal .btn-mobile {
+    border-top: none;
+}
+
+header nav.modal .btn-mobile::before {
+    transform: rotate(135deg);
+}
+
+header nav.modal .btn-mobile::after {
+    transform: rotate(-135deg);
+    top: -7px;
+}
+
+header nav ul {
     display: flex;
     gap: 50px;
 }
@@ -42,35 +74,37 @@ header nav {
 main {
     display: flex;
     padding-top: 30px;
-    color: #FFF;
 }
 
 main nav {
     background-color: #292727;
-    width: 200px;
+    width: 250px;
     padding: 20px;
     height: calc(100vh - 30px - 30px - 70px);
     overflow-y: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
     border-radius: 0 10px 0 0;
 }
 
-main nav a {
+main nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+main nav ul li a {
     font-size: 20px;
     transition: .3s;
 }
 
-main nav a:hover {
+main nav ul li a:hover {
     color: #BABABA;
 }
 
 main article {
-    height: calc(100vh - 30px - 30px - 70px);
-    padding: 0 50px 50px;
+    height: calc(100dvh - 30px - 30px - 70px);
+    padding: 0 clamp(30px, 5vw, 50px) 30px;
     overflow: auto;
-    width: calc(100vw - 200px);
+    width: 100%;
     line-height: 1.5;
     scroll-behavior: smooth;
 }
@@ -135,4 +169,38 @@ article p {
 
 #return:hover {
     filter: brightness(60%);
+}
+
+@media screen and (max-width: 768px) {
+
+    header nav ul,
+    main nav,
+    #return {
+        display: none;
+    }
+    
+    header nav ul {
+        transition: right 0.5s;
+    }
+
+    header nav.modal ul {
+        background-color: rgba(0, 0, 0, 0.95);
+        border-radius: 10px 0 0 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        top: 30px;
+        right: 0;
+        width: 200px;
+        height: 50%;
+        gap: 60px;
+    }
+
+    .btn-mobile {
+        display: block;
+        position: fixed;
+        z-index: 1;
+    }
 }

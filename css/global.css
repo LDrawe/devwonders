@@ -10,6 +10,10 @@ body {
     background-color: #110F0F;
 }
 
+ul {
+    list-style: none;
+}
+
 a {
     text-decoration: none;
 }

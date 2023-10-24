@@ -1,22 +1,21 @@
+main {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
 h1 {
     font-size: clamp(32px, 10vw, 64px);
     text-align: center;
 }
 
 h3 {
-    margin-top: 40px;
     font-size: clamp(16px, 5vw, 26px);
     color: #BABABA;
-    margin-bottom: 90px;
     text-align: center;
-}
-
-main {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 }
 
 a {

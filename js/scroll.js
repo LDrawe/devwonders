@@ -2,7 +2,7 @@ const container = document.querySelector("article")
 
 container.onscroll = () => {
     const returnButton = document.getElementById("return")
-    const shouldShow = container.scrollTop > 300
+    const shouldShow = container.scrollHeight - container.scrollTop - container.clientHeight < 200
     returnButton.classList.toggle("visible", shouldShow)
     returnButton.classList.toggle("hidden", !shouldShow)
 }
