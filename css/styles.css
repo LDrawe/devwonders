@@ -84,6 +84,30 @@ article p {
     color: #969696;
 }
 
+@keyframes appearAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes disappearAnimation {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+
 #return {
     background-color: #EDC32E;
     height: 50px;
@@ -96,6 +120,17 @@ article p {
     position: absolute;
     bottom: 50px;
     right: 50px;
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: disappearAnimation 0.8s forwards;
+}
+
+.visible {
+    opacity: 1;
+    animation: appearAnimation 0.8s forwards;
 }
 
 #return:hover {
