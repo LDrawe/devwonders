@@ -19,7 +19,7 @@ nav a {
 }
 
 #css:hover {
-    color: #264DE4;
+    color: #4897ff;
 }
 
 #js:hover {
@@ -31,7 +31,7 @@ nav a {
 }
 
 #css::after {
-    background-color: #264DE4;
+    background-color: #4897ff;
 }
 
 #js::after {
@@ -98,7 +98,7 @@ main section {
     line-height: 1.5;
 }
 
-section h2:not(:first-child) {
+section h2:not(:first-of-type) {
     margin-top: 60px;
 }
 
