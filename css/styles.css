@@ -1,4 +1,4 @@
-nav {
+header {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -6,7 +6,7 @@ nav {
     margin-top: 30px;
 }
 
-nav a {
+header a {
     font-size: 24px;
     margin-left: 50px;
     transition: .3s;
@@ -83,32 +83,30 @@ main #return:hover {
     filter: brightness(60%);
 }
 
-main div {
+main nav {
     background-color: #292727;
-    display: flex;
-    flex-direction: column;
     width: 200px;
     padding: 20px;
-    align-items: center;
     height: calc(100vh - 30px - 30px - 70px);
     overflow-y: auto;
 }
 
-main div a {
+main nav a {
     font-size: 20px;
     margin-bottom: 40px;
     transition: .3s;
+    display: block;
 }
 
-main div a:hover {
+main nav a:hover {
     color: #BABABA;
 }
 
-main div a:last-child {
+main nav a:last-child {
     margin-bottom: 0;
 }
 
-main section {
+main article {
     height: calc(100vh - 30px - 30px - 70px);
     padding: 0 50px 50px;
     overflow: auto;
@@ -117,11 +115,11 @@ main section {
     scroll-behavior: smooth;
 }
 
-section h2:not(:first-of-type) {
+article h2:not(:first-of-type) {
     margin-top: 60px;
 }
 
-section p{
+article p{
     margin-top: 40px;
     color: #969696;
 }
