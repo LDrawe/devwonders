@@ -118,31 +118,19 @@ article p {
     color: #969696;
 }
 
-@keyframes appearAnimation {
-    from {
+@keyframes fadeAnimation {
+    0% {
         opacity: 0;
         transform: translateY(20px);
     }
 
-    to {
+    100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
 
-@keyframes disappearAnimation {
-    from {
-        opacity: 1;
-        transform: translateY(0);
-    }
-
-    to {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-}
-
-#return {
+.rtn-btn {
     background-color: #EDC32E;
     height: 50px;
     width: 50px;
@@ -150,24 +138,19 @@ article p {
     border: 0;
     border-radius: 30px;
     text-align: center;
-    transition: .3s;
+    transition: 0.3s;
     position: absolute;
     bottom: 50px;
     right: 50px;
-}
-
-.hidden {
     opacity: 0;
-    transform: translateY(20px);
-    animation: disappearAnimation 0.8s forwards;
 }
 
 .visible {
     opacity: 1;
-    animation: appearAnimation 0.8s forwards;
+    transform: translateY(-10px);
 }
 
-#return:hover {
+.rtn-btn:hover {
     filter: brightness(60%);
 }
 
@@ -175,7 +158,7 @@ article p {
 
     header nav ul,
     main nav,
-    #return {
+    .rtn-btn {
         display: none;
     }
     
