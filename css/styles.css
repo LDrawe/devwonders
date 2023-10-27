@@ -17,7 +17,7 @@ header a {
     border: none;
     background: none;
     cursor: pointer;
-    border-top: 2px solid white;
+    border-top: 3px solid white;
     width: 20px;
 }
 
@@ -25,7 +25,7 @@ header a {
 .btn-mobile::after {
     content: '';
     display: block;
-    border-top: 2px solid currentColor;
+    border-top: 3px solid;
     margin-top: 5px;
     transition: 0.3s;
     position: relative;
@@ -41,7 +41,7 @@ header nav.modal .btn-mobile::before {
 
 header nav.modal .btn-mobile::after {
     transform: rotate(-135deg);
-    top: -7px;
+    top: -8px;
 }
 
 header nav ul {
@@ -118,18 +118,6 @@ article p {
     color: #969696;
 }
 
-@keyframes fadeAnimation {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 .rtn-btn {
     background-color: #EDC32E;
     height: 50px;
@@ -138,16 +126,16 @@ article p {
     border: 0;
     border-radius: 30px;
     text-align: center;
-    transition: 0.3s;
     position: absolute;
     bottom: 50px;
     right: 50px;
+    transition: all 0.5s;
     opacity: 0;
 }
 
 .visible {
-    opacity: 1;
     transform: translateY(-10px);
+    opacity: 1;
 }
 
 .rtn-btn:hover {
@@ -161,7 +149,7 @@ article p {
     .rtn-btn {
         display: none;
     }
-    
+
     header nav ul {
         transition: right 0.5s;
     }
@@ -174,11 +162,10 @@ article p {
         align-items: center;
         justify-content: center;
         position: fixed;
-        top: 30px;
+        top: 0;
         right: 0;
         width: 200px;
-        height: 50%;
-        gap: 60px;
+        height: 400px;
     }
 
     .btn-mobile {

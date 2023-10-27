@@ -12,7 +12,7 @@ h1 {
     text-align: center;
 }
 
-h3 {
+h2 {
     font-size: clamp(16px, 5vw, 26px);
     color: #BABABA;
     text-align: center;

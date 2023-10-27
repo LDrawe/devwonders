@@ -1,8 +1,6 @@
-<?xml version="1.0" encoding="utf-8"?><!-- Uploaded to: SVG Repo, www.svgrepo.com, Generator: SVG Repo Mixer Tools -->
-<svg height="800px" width="800px" xmlns="http://www.w3.org/2000/svg"
-aria-label="CSS3" role="img"
-viewBox="0 0 512 512"><path fill="#264de4"
-d="M72 460L30 0h451l-41 460-184 52"/><path fill="#2965f1"
-d="M256 37V472l149-41 35-394"/><path fill="#ebebeb"
-d="m114 94h142v56H119m5 58h132v57H129m3 28h56l4 45 64 17v59L139 382"/><path fill="#ffffff"
-d="m256 208v57h69l-7 73-62 17v59l115-32 26-288H256v56h80l-5.5 58Z"/></svg>
+<svg width="133" height="150" viewBox="0 0 133 150" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M12.3047 134.766L0 0H132.129L120.117 134.766L66.2109 150" fill="#264DE4"/>
+<path d="M66.2109 10.8398V138.281L109.863 126.27L120.117 10.8398" fill="#2965F1"/>
+<path d="M24.6094 27.5391H66.2109V43.9453H26.0742M27.5391 60.9375H66.2109V77.6367H29.0039M29.8828 85.8398H46.2891L47.4609 99.0234L66.2109 104.004V121.289L31.9336 111.914" fill="#EBEBEB"/>
+<path d="M66.2109 60.9375V77.6367H86.4258L84.375 99.0234L66.2109 104.004V121.289L99.9023 111.914L107.52 27.5391H66.2109V43.9453H89.6484L88.0371 60.9375H66.2109Z" fill="white"/>
+</svg>
