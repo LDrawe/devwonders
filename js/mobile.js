@@ -1,4 +1,6 @@
-const btnMobile = document.querySelector("nav")
+const btnMobile = document.querySelector('button')
+const nav = document.querySelector('nav')
+
 btnMobile.onclick = () => {
-    btnMobile.classList.toggle("modal")
+    nav.classList.toggle('open')
 }

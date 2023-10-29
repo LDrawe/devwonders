@@ -4,30 +4,32 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
     gap: 50px;
 }
 
 h1 {
-    font-size: clamp(32px, 10vw, 64px);
-    text-align: center;
+    font: clamp(40px, 10vw, 64px) 'Anton';
+    color: var(--primary-color);
 }
 
 h2 {
-    font-size: clamp(16px, 5vw, 26px);
+    font: clamp(16px, 5vw, 26px) var(--heading);
     color: #BABABA;
-    text-align: center;
+    padding: 0 30px;
 }
 
 a {
     text-align: center;
     width: 200px;
     padding: 20px 0;
-    background-image: linear-gradient(to right, #9D0B0B 0%, #460000  100%);
+    background-image: linear-gradient(to right, #9D0B0B 0%, #460000 100%);
     border-radius: 10px;
-    font-size: 20px;
-    transition: .5s;
+    font: 500 20px var(--heading);
+    transition: .4s;
 }
 
-a:hover{
-    box-shadow: 0 0 15px rgba(167, 16, 16, 0.685); /* Add a glowing effect with box shadow */
+a:hover {
+    filter: brightness(150%);
+    box-shadow: 0 0 15px rgba(167, 16, 16, 0.685);
 }

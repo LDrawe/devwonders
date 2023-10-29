@@ -1,5 +1,5 @@
 const elements = document.getElementsByTagName('h2')
-const nav = document.getElementsByTagName('ul')[1]
+const sidebar = document.getElementsByTagName('ul')[1]
 
 for (let i = 0; i < elements.length; i++) {
     elements[i].id = i;
@@ -8,5 +8,5 @@ for (let i = 0; i < elements.length; i++) {
     anchor.href = `#${elements[i].id}`;
     anchor.innerText = elements[i].innerText;
     item.appendChild(anchor);
-    nav.appendChild(item);
+    sidebar.appendChild(item);
 }

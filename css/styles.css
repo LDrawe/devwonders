@@ -6,10 +6,10 @@ header {
 }
 
 header a {
-    font-size: 24px;
     transition: .3s;
     position: relative;
-    color: #DCDCDC;
+    color: var(--primary-color);
+    font: 700 24px var(--heading);
 }
 
 .btn-mobile {
@@ -31,15 +31,15 @@ header a {
     position: relative;
 }
 
-nav.modal .btn-mobile {
+header nav.open+.btn-mobile {
     border-top: none;
 }
 
-header nav.modal .btn-mobile::before {
+header nav.open+.btn-mobile::before {
     transform: rotate(135deg);
 }
 
-header nav.modal .btn-mobile::after {
+header nav.open+.btn-mobile::after {
     transform: rotate(-135deg);
     top: -8px;
 }
@@ -77,8 +77,8 @@ main {
 }
 
 main nav {
-    background-color: #292727;
-    width: 250px;
+    background-color: #151515;
+    width: 230px;
     padding: 20px;
     height: calc(100vh - 30px - 30px - 70px);
     overflow-y: auto;
@@ -91,13 +91,13 @@ main nav ul {
     gap: 40px;
 }
 
-main nav ul li a {
-    font-size: 20px;
+main nav a {
     transition: .3s;
+    font: 500 22px var(--heading);
 }
 
 main nav ul li a:hover {
-    color: #BABABA;
+    color: var(--primary-color);
 }
 
 main article {
@@ -109,12 +109,17 @@ main article {
     scroll-behavior: smooth;
 }
 
+article h2 {
+    color: var(--primary-color);
+    font: 500 26px var(--heading);
+}
+
 article h2:not(:first-of-type) {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 article p {
-    margin-top: 40px;
+    margin-top: 35px;
     color: #969696;
 }
 
@@ -139,38 +144,49 @@ article p {
 }
 
 .rtn-btn:hover {
-    filter: brightness(60%);
+    filter: brightness(35%);
 }
 
 @media screen and (max-width: 768px) {
-
-    header nav ul,
     main nav,
     .rtn-btn {
         display: none;
     }
 
-    header nav ul {
-        transition: right 0.5s;
+    header {
+        padding: 15px 30px 0;
     }
 
-    header nav.modal ul {
-        background-color: rgba(0, 0, 0, 0.95);
+    header nav {
+        background-color: rgba(0, 0, 0, 0.9);
         border-radius: 10px 0 0 10px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 0;
+        height: 350px;
+        transition: all .3s ease-in;
+    }
+
+    header nav.open {
+        width: 200px; /*Because width is 200px*/
+    }
+
+    header nav ul {
+        display: none;
+    }
+
+    header nav.open ul {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: 200px;
-        height: 400px;
+        height: 100%;
     }
 
     .btn-mobile {
         display: block;
-        position: fixed;
-        z-index: 1;
+        /* position: relative; */
+        /* z-index: 1; */
     }
 }

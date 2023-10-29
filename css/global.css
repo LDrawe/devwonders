@@ -1,13 +1,18 @@
+:root {
+    --primary-color: #96AC9E;
+    --heading: 'Oswald';
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Roboto';
+    font-family: 'Inter';
     color: #FFF;
 }
 
 body {
-    background-color: #110F0F;
+    background-color: #0E0E0E;
 }
 
 ul {
