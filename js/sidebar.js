@@ -1,12 +1,12 @@
-const elements = document.getElementsByTagName('h2')
-const sidebar = document.getElementsByTagName('ul')[1]
+const elements = document.querySelectorAll('h2');
+const sidebar = document.querySelector('main nav ul'); // querySelector accepts css selectors
 
-for (let i = 0; i < elements.length; i++) {
-    elements[i].id = i;
+for (const element of elements) {
+    element.id = element.textContent.replace(/ /g, '').toLowerCase();
     let item = document.createElement('li');
-    let anchor = document.createElement('a');
-    anchor.href = `#${elements[i].id}`;
-    anchor.innerText = elements[i].innerText;
-    item.appendChild(anchor);
+    let link = document.createElement('a');
+    link.href = element.id;
+    link.textContent = element.textContent;
+    item.appendChild(link);
     sidebar.appendChild(item);
 }
