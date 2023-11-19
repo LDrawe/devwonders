@@ -1,7 +1,13 @@
+const btnMobile = document.querySelector('#btn-mobile')
+const nav = document.querySelector('nav')
 const container = document.querySelector('article')
+const returnButton = document.querySelector('#rtn-btn')
 
-container.onscroll = () => {
-    const returnButton = document.querySelector('.rtn-btn')
+btnMobile.onclick = () => {
+    nav.classList.toggle('open')
+}
+
+container.onscrollend = () => {
     const shouldShow = container.scrollHeight - container.scrollTop - container.clientHeight < 200
     returnButton.classList.toggle('visible', shouldShow)
 }

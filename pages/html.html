@@ -4,29 +4,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#0E0E0E">
+    <meta name="theme-color" content="#121212">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap" rel="stylesheet"> 
-    <script src="../js/scroll.js" defer></script>
-    <script src="../js/mobile.js" defer></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <script src="../js/nav.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
+    <script src="../js/input.js" defer></script>
     <title>DevWonders</title>
 </head>
 
 <body>
     <header>
-        <img src="../img/html.svg" alt="HTML5" height="70">
+        <img src="../img/svg/html.svg" alt="HTML5" height="55">
         <nav>
             <ul>
-                <li><a class="link" style="--color: #E44D26" href="html.html">HTML</a></li>
-                <li><a class="link" style="--color: #4897ff" href="css.html">CSS</a></li>
-                <li><a class="link" style="--color: #F7DF1E" href="js.html">JavaScript</a></li>
+                <li><a style="--color: #E44D26" href="html.html">HTML</a></li>
+                <li><a style="--color: #4897ff" href="css.html">CSS</a></li>
+                <li><a style="--color: #F7DF1E" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
-        <button class="btn-mobile">
+        <button id="btn-mobile">
         </button>
     </header>
     <main>
@@ -35,81 +37,124 @@
             </ul>
         </nav>
         <article>
-            <button class="rtn-btn" onclick="resetScroll()">
-                <img src="../img/up.svg" alt="Return to top" height="30">
+            <button id="rtn-btn" onclick="resetScroll()">
+                <img src="../img/svg/up.svg" alt="Return to top" height="30">
             </button>
-            <h2>
-                Progress Bar
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
-                <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
 
-            </p>
-            <h2>
-                Tooltip
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
-                <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
+            <section>
+                <h2>
+                    Insert/Delete Tag
+                </h2>
+                <p>
+                    The &lt;ins&gt; tag represents a range of text that has been added to a document.
+                    You can use the &lt;del&gt; element to similarly represent a range of text that has
+                    been deleted from the document. No CSS required!
+                </p>
+                <img src="../img/content/html/carbon.png" alt="An HTML code of delete and insert tags" height="150">
+                <p>Result:</p>
+                <span>
+                    “I am
+                    <del>inevitable</del>
+                    <ins>Iron Man!"</ins>
+                </span>
+            </section>
 
-            </p>
-            <h2>
-                Input Types
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
+            <section>
+                <h2>
+                    Meter Tag
+                </h2>
+                <p>
+                    The meter tag allows you to display a scalar value within a given range without any CSS or
+                    JavaScript
+                </p>
+                <img src="../img/content/html/meter.png" alt="An HTML code of the meter tag" height="250">
+                <p>Result:</p>
                 <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
+                <label for="fuel">Fuel level: 50%</label>
+                <div class="flex">
+                    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50"></meter>
+                    <input type="range" oninput="updateMeterValue()" min="0" max="100" value="50">
+                </div>
+            </section>
 
-            </p>
-            <h2>
-                Radio Button
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
-                <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
+            <section>
+                <h2>
+                    Required
+                </h2>
+                <p>
+                    A Boolean attribute that makes a input field mandatory, meaning users must fill it out before they
+                    can
+                    submit the form. No JavaScript required!
+                </p>
+                <img src="../img/content/html/required.png" alt="An HTML code of the required attribute" height="200">
+            </section>
 
-            </p>
-            <h2>
-                Shorthand
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
-                <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
+            <section>
+                <h2>
+                    Suggestions
+                </h2>
+                <p>
+                    Use the &lt;datalist&gt; tag to suggest values for an input when the user is typing.
+                    To make the options appear, we give it a unique id,
+                    and then add the list attribute to the &lt;input&gt; element with the same id as value. It also
+                    works on mobile
+                </p>
+                <img src="../img/content/html/suggestions.png" alt="An HTML code of the datalist tag" height="200">
+                <div>
+                    <span>Result:</span>
+                    <input placeholder="Type your country..." list="countries">
+                    <datalist id="countries">
+                        <option value="Uk">
+                        <option value="Germany">
+                        <option value="Italy">
+                        <option value="Brazil">
+                        <option value="Mexico">
+                        <option value="USA">
+                    </datalist>
+                </div>
+            </section>
 
-            </p>
-            <h2>
-                Download
-            </h2>
-            <p>
-                Cupiditate est qui recusandae aut et enim nihil debitis. Libero sequi dolore provident temporibus
-                voluptates labore qui. Ut et reprehenderit officia. Vel omnis qui quidem et.
-                <br>
-                Commodi et sint iure ullam quaerat. Suscipit ut necessitatibus facilis molestias a minima voluptate.
-                Tenetur beatae voluptatem quis officiis. Sint doloremque aut accusamus id nobis minima enim. Sed id
-                numquam omnis quibusdam veritatis rerum veritatis.
+            <section>
+                <h2>
+                    Optgroup
+                </h2>
+                <p>
+                    The &lt;optgroup&gt; HTML element creates a grouping of options within a &lt;select&gt; element.
+                </p>
+                <img src="../img/content/html/optgroup.png" alt="An HTML code of the optgroup tag" height="200">
+                <div>
+                    <span>Result:</span>
+                    <select>
+                        <optgroup label="Europe">
+                            <option value="Uk">United Kingdom</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
+                        </optgroup>
+                        <optgroup label="Americas">
+                            <option value="Brazil">Brazil</option>
+                            <option value="Mexico">Mexico</option>
+                            <option value="USA">United States</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </section>
 
-            </p>
+            <section>
+                <h2>
+                    Tooltip
+                </h2>
+                <p>
+                    The title attribute provides additional information about an element. This information is typically
+                    displayed as a tooltip text when the mouse hovers over the element.
+                </p>
+                <img src="../img/content/html/title.png"
+                    alt="An HTML code of containing the button element with the title attribute" height="50">
+                <div>
+                    <span>Result:</span>
+                    <button title="It's Hammertime">Hover me</button>
+                </div>
+            </section>
+
         </article>
     </main>
 </body>

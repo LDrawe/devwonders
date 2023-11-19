@@ -7,12 +7,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter';
+    font-family: 'Inter', Arial, sans-serif;
     color: #FFF;
 }
 
 body {
-    background-color: #0E0E0E;
+    background-color: #121212; /* Recommended MaterialUI dark theme color*/
 }
 
 ul {
