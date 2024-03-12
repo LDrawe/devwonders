@@ -54,9 +54,10 @@ main nav {
     background-color: #151515;
     width: 230px;
     padding: 20px;
-    height: calc(100vh - 30px - 30px - 70px);
+    height: fit-content;
+    max-height: calc(100vh - 30px - 30px - 70px);
     overflow-y: auto;
-    border-radius: 0 10px 0 0;
+    border-radius: 0 10px 10px 0;
 }
 
 #btn-mobile {
@@ -153,8 +154,8 @@ input[type="range"] {
     border: 0;
     border-radius: 30px;
     position: absolute;
-    bottom: 50px;
-    right: 50px;
+    bottom: 20px;
+    right: 30px;
     transition: all 0.5s;
     opacity: 0;
     visibility: hidden;
