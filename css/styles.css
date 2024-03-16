@@ -91,19 +91,19 @@ main article {
 article h2 {
     color: var(--primary-color);
     font: 500 26px var(--heading);
-    margin-bottom: 20px;
 }
 
 article section:not(:first-of-type) {
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 article p {
-    color: #a5a5a5
+    color: #a5a5a5;
+    margin-top: 20px;
 }
 
 article section img {
-    margin: 20px 0;
+    margin-right: 20px;
     border-radius: 10px;
     max-width: calc(100vw - 2 * var(--padding-horizontal)); /*We take 20px because of the page padding, then we do it again for both sides to have the same amount of padding*/
 }
@@ -117,10 +117,9 @@ article section button {
 }
 
 .flex {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-top: 10px;
+    margin: 0;
+    flex-direction: column;
+    flex: 1;
 }
 
 section input,
@@ -132,8 +131,15 @@ section select {
     outline: none;
 }
 
+section div {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
 section span {
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    display: block;
 }
 
 optgroup {

@@ -50,13 +50,14 @@
                     You can use the &lt;del&gt; element to similarly represent a range of text that has
                     been deleted from the document. No CSS required!
                 </p>
-                <img src="../img/content/html/carbon.png" alt="An HTML code of delete and insert tags" height="150">
-                <p>Result:</p>
-                <span>
-                    “I am
-                    <del>inevitable</del>
-                    <ins>Iron Man!"</ins>
-                </span>
+                <div>
+                    <img src="../img/content/html/carbon.png" alt="An HTML code of delete and insert tags" height="150">
+                    <span>
+                        “I am
+                        <del>inevitable</del>
+                        <ins>Iron Man!"</ins>
+                    </span>
+                </div>
             </section>
 
             <section>
@@ -67,14 +68,15 @@
                     The meter tag allows you to display a scalar value within a given range without any CSS or
                     JavaScript
                 </p>
-                <img src="../img/content/html/meter.png" alt="An HTML code of the meter tag" height="250">
-                <p>Result:</p>
-                <br>
-                <label for="fuel">Fuel level: 50%</label>
-                <div class="flex">
-                    <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50"></meter>
-                    <input type="range" oninput="updateMeterValue()" min="0" max="100" value="50">
+                <div>
+                    <img src="../img/content/html/meter.png" alt="An HTML code of the meter tag" height="250">
+                    <div class="flex">
+                        <label for="fuel">Fuel level: 50%</label>
+                        <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50"></meter>
+                        <input type="range" oninput="updateMeterValue()" min="0" max="100" value="50">
+                    </div>
                 </div>
+
             </section>
 
             <section>
@@ -99,9 +101,8 @@
                     and then add the list attribute to the &lt;input&gt; element with the same id as value. It also
                     works on mobile
                 </p>
-                <img src="../img/content/html/suggestions.png" alt="An HTML code of the datalist tag" height="200">
                 <div>
-                    <span>Result:</span>
+                    <img src="../img/content/html/suggestions.png" alt="An HTML code of the datalist tag" height="200">
                     <input placeholder="Type your country..." list="countries">
                     <datalist id="countries">
                         <option value="Uk">
@@ -121,9 +122,8 @@
                 <p>
                     The &lt;optgroup&gt; HTML element creates a grouping of options within a &lt;select&gt; element.
                 </p>
-                <img src="../img/content/html/optgroup.png" alt="An HTML code of the optgroup tag" height="200">
                 <div>
-                    <span>Result:</span>
+                    <img src="../img/content/html/optgroup.png" alt="An HTML code of the optgroup tag" height="200">
                     <select>
                         <optgroup label="Europe">
                             <option value="Uk">United Kingdom</option>
@@ -147,14 +147,26 @@
                     The title attribute provides additional information about an element. This information is typically
                     displayed as a tooltip text when the mouse hovers over the element.
                 </p>
-                <img src="../img/content/html/title.png"
-                    alt="An HTML code of containing the button element with the title attribute" height="50">
                 <div>
-                    <span>Result:</span>
+                    <img src="../img/content/html/title.png"
+                        alt="An HTML code of containing the button element with the title attribute" height="50">
                     <button title="It's Hammertime">Hover me</button>
                 </div>
             </section>
 
+            <section>
+                <h2>
+                    BaseURL
+                </h2>
+                <p>
+                    If you have various links that point to the same website, and they all start with the same base
+                    address, you can define this tag in the head section to simplify and make your links more readable
+                </p>
+                <div>
+                    <img src="../img/content/html/base.png"
+                        alt="An HTML code of containing the base tag">
+                </div>
+            </section>
         </article>
     </main>
 </body>
