@@ -9,8 +9,8 @@ main {
 }
 
 h1 {
-    font: clamp(40px, 10vw, 64px) 'Anton';
-    color: var(--primary-color);
+    font: clamp(40px, 10vw, 64px) 'OpenSans';
+    color: #FFB800;
 }
 
 h2 {
@@ -19,7 +19,61 @@ h2 {
     padding: 0 30px;
 }
 
-a {
+#cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.card {
+    background-color: #181818;
+    display: grid;
+    place-items: center;
+    height: 150px;
+    width: 150px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: scale 600ms, box-shadow 1500ms;
+    animation: appear 1s ease forwards;
+    animation-delay: calc(500ms + 100ms * var(--index));
+    opacity: 0;
+    position: relative;
+    box-shadow: rgba(43, 43, 43, 0.15) 0px 5px 15px 0px;
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 2;
+    background: radial-gradient(
+        300px circle at var(--mouse-x) var(--mouse-y),
+        rgba(255, 255, 255, 0.15),
+        transparent 40%
+    );
+    border-radius: inherit;
+    opacity: 0;
+    transition: opacity 500ms;
+}
+
+.card:hover {
+    border: 2px solid var(--border-color);
+    scale: 1.1;
+    box-shadow: var(--border-color) 0px 5px 15px 0px;
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card > img {
+    height: 70px;
+}
+
+/* a {
     text-align: center;
     width: 200px;
     padding: 20px 0;
@@ -32,4 +86,15 @@ a {
 a:hover {
     filter: brightness(150%);
     box-shadow: 0 0 15px rgba(167, 16, 16, 0.685);
+} */
+
+@keyframes appear {
+    from {
+        transform: translateY(100px);
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }

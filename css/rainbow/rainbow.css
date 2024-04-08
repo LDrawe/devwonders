@@ -1,0 +1,140 @@
+@keyframes fade-in {
+    0% {
+        opacity: 0
+    }
+
+    100% {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    10% {
+        transform: scale(1, 1)
+    }
+
+    35% {
+        transform: scale(1, 1.7)
+    }
+
+    40% {
+        transform: scale(1, 1.7)
+    }
+
+    50% {
+        opacity: 1
+    }
+
+    60% {
+        transform: scale(1, 1)
+    }
+
+    100% {
+        transform: scale(1, 1);
+        opacity: 0
+    }
+}
+
+pre {
+    background-color: #121212;
+    padding: 15px 40px;
+    width: fit-content;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+code span {
+    transition: color 0.6s ease-in
+}
+
+code .red {
+    color: #f50419
+}
+
+code .orange {
+    color: #f57900
+}
+
+code .yellow {
+    color: #f5e600
+}
+
+code .green {
+    color: #00f50c
+}
+
+code .blue {
+    color: #0081f5
+}
+
+code .indigo {
+    color: #5000f5
+}
+
+code .violet {
+    color: #9000f5
+}
+
+code .animate {
+    color: #fff !important
+}
+
+pre {
+    background: #0e0e0e
+}
+
+pre .comment {
+    color: #747474
+}
+
+pre .keyword,
+pre .selector,
+pre .operator {
+    color: #bc5cff
+}
+
+pre .storage,
+pre .support {
+    color: #fb2639
+}
+
+pre .string {
+    color: #fff55c
+}
+
+pre .constant {
+    color: #ffad5c
+}
+
+pre .entity {
+    color: #43a6ff
+}
+
+pre .inherited-class,
+pre .storage {
+    font-style: italic
+}
+
+[data-language="custom"] .comment,
+.lang-custom .comment,
+.language-custom .comment {
+    color: #314CAD
+}
+
+[data-language="custom"] .integer,
+.lang-custom .integer,
+.language-custom .integer {
+    color: #f5e600
+}
+
+[data-language="custom"] .keyword,
+.lang-custom .keyword,
+.language-custom .keyword {
+    color: #f57900
+}
+
+[data-language="html"] .attribute,
+.lang-html .attribute,
+.language-html .attribute {
+    color: #fc4959
+}

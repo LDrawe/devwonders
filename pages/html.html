@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#121212">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=OpenSans&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/nav.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
     <script src="../js/input.js" defer></script>
@@ -20,12 +21,12 @@
 
 <body>
     <header>
-        <img src="../img/svg/html.svg" alt="HTML5" height="55">
+        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5">
         <nav>
             <ul>
-                <li><a style="--color: #E44D26" href="html.html">HTML</a></li>
-                <li><a style="--color: #4897ff" href="css.html">CSS</a></li>
-                <li><a style="--color: #F7DF1E" href="js.html">JavaScript</a></li>
+                <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
+                <li><a style="--color: var(--css)" href="css.html">CSS</a></li>
+                <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
         <button id="btn-mobile">
@@ -37,10 +38,12 @@
             </ul>
         </nav>
         <article>
-            <button id="rtn-btn" onclick="resetScroll()">
-                <img src="../img/svg/up.svg" alt="Return to top" height="30">
+            <button id="rtn-btn">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
             </button>
-
+            <button id="sidebar-Control">
+                <span></span>
+            </button>
             <section>
                 <h2>
                     Insert/Delete Tag
@@ -51,7 +54,7 @@
                     been deleted from the document. No CSS required!
                 </p>
                 <div>
-                    <img src="../img/content/html/carbon.png" alt="An HTML code of delete and insert tags" height="150">
+                    <img src="../assets/img/html/carbon.png" alt="An HTML code of delete and insert tags" height="150">
                     <span>
                         “I am
                         <del>inevitable</del>
@@ -69,11 +72,11 @@
                     JavaScript
                 </p>
                 <div>
-                    <img src="../img/content/html/meter.png" alt="An HTML code of the meter tag" height="250">
+                    <img src="../assets/img/html/meter.png" alt="An HTML code of the meter tag" height="250">
                     <div class="flex">
                         <label for="fuel">Fuel level: 50%</label>
                         <meter id="fuel" min="0" max="100" low="33" high="66" optimum="80" value="50"></meter>
-                        <input type="range" oninput="updateMeterValue()" min="0" max="100" value="50">
+                        <input type="range" min="0" max="100" value="50">
                     </div>
                 </div>
 
@@ -88,7 +91,14 @@
                     can
                     submit the form. No JavaScript required!
                 </p>
-                <img src="../img/content/html/required.png" alt="An HTML code of the required attribute" height="200">
+                <div>
+                    <img src="../assets/img/html/required.png" alt="An HTML code of the required attribute"
+                        height="200">
+                    <form action="">
+                        <input placeholder="Type your country..." required>
+                        <button type="submit">Submit</button>
+                    </form>
+                </div>
             </section>
 
             <section>
@@ -102,7 +112,7 @@
                     works on mobile
                 </p>
                 <div>
-                    <img src="../img/content/html/suggestions.png" alt="An HTML code of the datalist tag" height="200">
+                    <img src="../assets/img/html/suggestions.png" alt="An HTML code of the datalist tag" height="200">
                     <input placeholder="Type your country..." list="countries">
                     <datalist id="countries">
                         <option value="Uk">
@@ -120,10 +130,10 @@
                     Optgroup
                 </h2>
                 <p>
-                    The &lt;optgroup&gt; HTML element creates a grouping of options within a &lt;select&gt; element.
+                    The &lt;optgroup&gt; tag creates a grouping of options within a &lt;select&gt; element.
                 </p>
                 <div>
-                    <img src="../img/content/html/optgroup.png" alt="An HTML code of the optgroup tag" height="200">
+                    <img src="../assets/img/html/optgroup.png" alt="An HTML code of the optgroup tag" height="200">
                     <select>
                         <optgroup label="Europe">
                             <option value="Uk">United Kingdom</option>
@@ -148,7 +158,7 @@
                     displayed as a tooltip text when the mouse hovers over the element.
                 </p>
                 <div>
-                    <img src="../img/content/html/title.png"
+                    <img src="../assets/img/html/title.png"
                         alt="An HTML code of containing the button element with the title attribute" height="50">
                     <button title="It's Hammertime">Hover me</button>
                 </div>
@@ -163,8 +173,20 @@
                     address, you can define this tag in the head section to simplify and make your links more readable
                 </p>
                 <div>
-                    <img src="../img/content/html/base.png"
-                        alt="An HTML code of containing the base tag">
+                    <img src="../assets/img/html/base.png" alt="An HTML code of containing the base tag">
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Modal
+                </h2>
+                <p>
+                    If you have various links that point to the same website, and they all start with the same base
+                    address, you can define this tag in the head section to simplify and make your links more readable
+                </p>
+                <div>
+                    <img src="../assets/img/html/base.png" alt="An HTML code of containing the base tag">
                 </div>
             </section>
         </article>

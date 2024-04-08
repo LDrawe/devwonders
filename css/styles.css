@@ -1,13 +1,12 @@
-:root {
-    --padding-vertical: 20px;
-    --padding-horizontal: 30px;
-}
-
 header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding-vertical) 30px 0;
+    padding: 20px 30px 0 clamp(20px, 5vw, 50px);
+}
+
+header img {
+    height: 60px;
 }
 
 header nav ul {
@@ -15,9 +14,8 @@ header nav ul {
     gap: 50px;
 }
 
-
 header a {
-    transition: .3s;
+    transition: 300ms;
     position: relative;
     color: var(--primary-color);
     font: bold 24px var(--heading);
@@ -29,15 +27,15 @@ header a:hover {
 
 header a::after {
     content: '';
-    background-color: var(--color);
     position: absolute;
-    width: 100%;
-    transform: scaleX(0);
-    height: 1px;
     bottom: 0;
     left: 0;
+    background-color: var(--color);
+    width: 100%;
+    height: 1px;
+    transform: scaleX(0);
     transform-origin: bottom;
-    transition: transform 0.3s;
+    transition: transform 300ms;
 }
 
 header a:hover::after {
@@ -50,28 +48,67 @@ main {
     padding-top: 30px;
 }
 
-main nav {
-    background-color: #151515;
-    width: 230px;
-    padding: 20px;
-    height: fit-content;
-    max-height: calc(100vh - 30px - 30px - 70px);
-    overflow-y: auto;
-    border-radius: 0 10px 10px 0;
-}
-
 #btn-mobile {
     display: none;
 }
 
+main nav {
+    background-color: #181818;
+    width: calc(230px * ((var(--sidebar-open) + 1) / 2));
+    height: fit-content;
+    max-height: calc(100vh - 30px - 30px - 70px);
+    border-radius: 0 15px 15px 0;
+    transition: 500ms;
+    overflow: hidden;
+    white-space: nowrap;
+    /* Without it, when we close the tab the text would appear */
+}
+
+#sidebar-Control {
+    position: absolute;
+    top: 50%;
+    background: none;
+    transition: 500ms;
+    padding-inline: 10px;
+    margin-left: -40px
+}
+
+#sidebar-Control span::before,
+#sidebar-Control span::after {
+    content: '';
+    display: block;
+    border: 2px solid gray;
+    height: 15px;
+    transition: 500ms;
+}
+
+#sidebar-Control span::after {
+    position: relative;
+    top: -5px;
+}
+
+#sidebar-Control:hover span::before {
+    rotate: calc(30deg * var(--sidebar-open));
+}
+
+#sidebar-Control:hover span::after {
+    rotate: calc(30deg * var(--sidebar-open) * -1);
+}
+
 main nav ul {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    padding: 20px;
     gap: 40px;
+    max-height: calc(100vh - 30px - 30px - 70px);
+    overflow: hidden;
+}
+
+main nav:hover ul {
+    overflow: scroll;
 }
 
 main nav a {
-    transition: .3s;
+    transition: 300ms;
     font: 500 22px var(--heading);
 }
 
@@ -80,7 +117,8 @@ main nav a:hover {
 }
 
 main article {
-    height: calc(100dvh - 30px - 30px - 70px);
+    height: calc(100dvh - 30px - 60px - 20px);
+    /* The values are for the main padding-top, header img size and sidebar padding, respectively */
     padding: 0 clamp(20px, 5vw, 50px) 30px;
     overflow: auto;
     width: 100%;
@@ -90,7 +128,7 @@ main article {
 
 article h2 {
     color: var(--primary-color);
-    font: 500 26px var(--heading);
+    font: 500 32px var(--heading);
 }
 
 article section:not(:first-of-type) {
@@ -98,48 +136,41 @@ article section:not(:first-of-type) {
 }
 
 article p {
-    color: #a5a5a5;
+    color: #c0c0c0;
     margin-top: 20px;
+    font-size: 20px;
 }
 
 article section img {
     margin-right: 20px;
     border-radius: 10px;
-    max-width: calc(100vw - 2 * var(--padding-horizontal)); /*We take 20px because of the page padding, then we do it again for both sides to have the same amount of padding*/
+    max-width: calc(100vw - 2 * 30px);
+    /*We take 20px because of the page padding, then we do it again for both sides to have the same amount of padding*/
 }
 
 article section button {
-    all: unset;
-    cursor: pointer;
-    background-color: green;
-    padding: 5px 10px;
+    background-color: #008367;
+    padding: 10px;
     border-radius: 5px;
 }
 
-.flex {
-    margin: 0;
-    flex-direction: column;
-    flex: 1;
-}
-
-section input,
-section select {
-    background-color: #2e2e2eb4;
-    border: none;
+section :where(input, select) {
+    background-color: #424242;
     border-radius: 5px;
-    padding: 5px 10px;
+    padding: 10px 15px;
     outline: none;
 }
 
-section div {
+section p + div {
     display: flex;
     align-items: center;
     margin-top: 20px;
 }
 
-section span {
-    /* margin-right: 20px; */
-    display: block;
+.language-control {
+    background-color: #181818;
+    border-radius: 10px 10px 0 0;
+    padding: 5px 10px;
 }
 
 optgroup {
@@ -148,7 +179,6 @@ optgroup {
 
 input[type="range"] {
     width: 100px;
-    margin: 0;
     padding: 0;
 }
 
@@ -156,13 +186,12 @@ input[type="range"] {
     background-color: #EDC32E;
     height: 50px;
     width: 50px;
-    cursor: pointer;
     border: 0;
     border-radius: 30px;
     position: absolute;
     bottom: 20px;
     right: 30px;
-    transition: all 0.5s;
+    transition: all 500ms;
     opacity: 0;
     visibility: hidden;
 }
@@ -180,25 +209,25 @@ input[type="range"] {
 @media screen and (max-width: 768px) {
 
     main nav,
-    #rtn-btn {
+    #rtn-btn,
+    #sidebar-Control {
         display: none;
     }
 
     #btn-mobile {
         all: unset;
         display: block;
-        cursor: pointer;
         border-top: 3px solid white;
         width: 20px;
     }
-    
+
     #btn-mobile::before,
     #btn-mobile::after {
         content: '';
         display: block;
         border-top: 3px solid;
         margin-top: 5px;
-        transition: all 0.3s;
+        transition: all 300ms;
         position: relative;
     }
 
@@ -210,32 +239,29 @@ input[type="range"] {
         right: 0;
         width: 0;
         height: 350px;
-        transition: all .3s;
+        transition: all 300ms;
+        overflow: hidden;
+        /* Without it, when we close the tab the text would appear */
     }
 
     header nav.open {
-        width: 200px; /*Because width is 200px*/
+        width: 200px;
     }
 
     header nav.open + #btn-mobile {
         border-top: none;
     }
-    
+
     header nav.open + #btn-mobile::before {
         transform: rotate(135deg);
     }
-    
+
     header nav.open + #btn-mobile::after {
         transform: rotate(45deg);
         top: -8px;
     }
 
     header nav ul {
-        display: none;
-    }
-
-    header nav.open ul {
-        display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;

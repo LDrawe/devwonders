@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#121212">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=OpenSans&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <script src="../js/nav.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
     <title>DevWonders</title>
@@ -19,12 +20,12 @@
 
 <body>
     <header>
-        <img src="../img/svg/js.svg" alt="JavaScript" height="55">
+        <img src="../public/icons/js.svg" alt="JavaScript">
         <nav>
             <ul>
-                <li><a style="--color: #E44D26" href="html.html">HTML</a></li>
-                <li><a style="--color: #4897ff" href="css.html">CSS</a></li>
-                <li><a style="--color: #F7DF1E" href="js.html">JavaScript</a></li>
+                <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
+                <li><a style="--color: var(--css)" href="css.html">CSS</a></li>
+                <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
         <button id="btn-mobile">
@@ -36,8 +37,11 @@
             </ul>
         </nav>
         <article>
-            <button id="rtn-btn" onclick="resetScroll()">
-                <img src="../img/svg/up.svg" alt="Return to top" height="30">
+            <button id="rtn-btn">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+            <button id="sidebar-Control">
+                <span></span>
             </button>
             <section>
                 <h2>
@@ -51,7 +55,7 @@
                     a way to make these more readable, you can put underlines
 
                 </p>
-                <img src="../img/content/js/numbers.png" alt="Javascript code containing console.log(1_000_000_000)">
+                <img src="../assets/img/js/numbers.png" alt="Javascript code containing console.log(1_000_000_000)">
             </section>
             <h2>
                 Delete
@@ -61,9 +65,12 @@
                 keyword. And that's fine, but you can solve this in a more elegant and safer way by using destructuring.
             </p>
             <p>
-                Maior legibilidade: O destructuring torna o código mais claro e fácil de entender, pois explicita quais propriedades estão sendo removidas.
+                Maior legibilidade: O destructuring torna o código mais claro e fácil de entender, pois explicita quais
+                propriedades estão sendo removidas.
 
-Evita erros: A keyword delete pode ser perigosa se usada incorretamente, pois pode remover propriedades de objetos inesperadamente. O destructuring é mais seguro, pois apenas remove as propriedades especificadas.
+                Evita erros: A keyword delete pode ser perigosa se usada incorretamente, pois pode remover propriedades
+                de objetos inesperadamente. O destructuring é mais seguro, pois apenas remove as propriedades
+                especificadas.
             </p>
             <h2>
                 Input Types

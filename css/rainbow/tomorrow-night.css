@@ -1,0 +1,47 @@
+pre {
+    background-color: #181818;
+    padding: 15px 30px;
+    width: fit-content;
+    border-radius: 0 0 10px 10px;
+    margin-top: 5px;
+}
+
+pre .comment {
+    color: #969896
+}
+
+pre .variable.global,
+pre .variable.class,
+pre .variable.instance {
+    color: #c66
+}
+
+pre .constant.numeric,
+pre .constant.language,
+pre .constant.hex-color,
+pre .keyword.unit {
+    color: #a7363a
+}
+
+pre .constant,
+pre .entity,
+pre .entity.class,
+pre .support {
+    color: #55b5db
+}
+
+pre .constant.symbol,
+pre .string {
+    color: #b5bd68
+}
+
+pre .entity.function,
+pre .support.css-property,
+pre .selector {
+    color: #a074c4
+}
+
+pre .keyword,
+pre .storage {
+    color: #b294bb
+}

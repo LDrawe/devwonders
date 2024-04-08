@@ -1,6 +1,24 @@
 :root {
     --primary-color: #96AC9E;
     --heading: 'Oswald';
+    --html: #E44D26;
+    --css: #264de4;
+    --js: #F7DF1E;
+}
+
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../public/fonts/OpenSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../public/fonts/Oswald.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../public/fonts/Inter.ttf') format('truetype');
 }
 
 * {
@@ -8,11 +26,20 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', Arial, sans-serif;
+    font-weight: 500;
     color: #FFF;
 }
 
 body {
-    background-color: #121212; /* Recommended MaterialUI dark theme color*/
+    background: #121212;
+}
+
+input, button, select {
+    border: 0;
+}
+
+button {
+    cursor: pointer;
 }
 
 ul {

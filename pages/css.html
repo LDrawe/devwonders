@@ -5,26 +5,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#121212">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=OpenSans&family=Inter:wght@400&family=Oswald:wght@400;500;700&display=swap"
         rel="stylesheet">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/rainbow/tomorrow-night.css">
     <script src="../js/nav.js" defer></script>
+    <script src="../js/rainbow.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
+    <script src="../js/formatter.js" defer></script>
     <title>DevWonders</title>
 </head>
 
 <body>
     <header>
-        <img src="../img/svg/css.svg" alt="CSS3" height="55">
+        <img src="../public/icons/css.svg" alt="CSS3">
         <nav>
             <ul>
-                <li><a style="--color: #E44D26" href="html.html">HTML</a></li>
-                <li><a style="--color: #4897ff" href="css.html">CSS</a></li>
-                <li><a style="--color: #F7DF1E" href="js.html">JavaScript</a></li>
+                <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
+                <li><a style="--color: var(--css)" href="css.html">CSS</a></li>
+                <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
         <button id="btn-mobile">
@@ -36,8 +40,11 @@
             </ul>
         </nav>
         <article>
-            <button id="rtn-btn" onclick="resetScroll()">
-                <img src="../img/svg/up.svg" alt="Return to top" height="30">
+            <button id="rtn-btn">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+            <button id="sidebar-Control">
+                <span></span>
             </button>
             <section>
                 <h2>
@@ -51,7 +58,7 @@
                     can achieve the same effect with a single clamp() function
                 </p>
                 <div>
-                    <img src="../img/content/css/clamp.png"
+                    <img src="../assets/img/css/clamp.png"
                         alt="An HTML code of containing the button element with the title attribute">
                     <span>PSA: Be sure to use a dynamic value for the preferred value</span>
                 </div>
@@ -65,9 +72,9 @@
                     "all" shorthand
                 </p>
                 <div>
-                    <img src="../img/content/css/all1.png"
+                    <img src="../assets/img/css/all1.png"
                         alt="An HTML code of containing the button element with the title attribute">
-                    <img src="../img/content/css/all2.png"
+                    <img src="../assets/img/css/all2.png"
                         alt="An HTML code of containing the button element with the title attribute">
                 </div>
             </Section>
@@ -99,20 +106,46 @@
                     Margin-inline
                 </h2>
                 <p>
-                    Speaking of inlines, you probably already familiar with margin by now, But what if you only want to apply the margin on the sides?
+                    Speaking of inlines, you probably already familiar with margin by now, But what if you only want to
+                    apply the margin on the sides?
                     You don't have to specify them anymore, just use the margin-inline property
 
                 </p>
             </section>
-           <section>
-            <h2>
-                Transform
-            </h2>
-            <p>
-                You can also strip the scale, rotate and translate out of the transform property and use them individually
-
-            </p>
-           </section>
+            <section>
+                <h2>
+                    Transform
+                </h2>
+                <p>
+                    You can also strip the scale, rotate and translate out of the transform property and use them
+                    individually
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Inline variables
+                </h2>
+                <p>
+                    This section is kind a mix between HTML and CSS. But let's suppose you have 3 links and they're all
+                    different colors. You'd probably do this:
+                </p>
+                <div class="language-control">
+                    Css- Copiar
+                </div>
+                <pre>
+                    <code id="code-block" data-language="css">
+                        header {
+                            display: flex;
+                            align-items: center;
+                            padding: 20px 30px 0;
+                        }
+                        
+                        header img {
+                            height: 60px;
+                        }
+                    </code>
+                </pre>
+            </section>
         </article>
     </main>
 </body>

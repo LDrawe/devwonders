@@ -12,6 +12,6 @@ container.onscrollend = () => {
     returnButton.classList.toggle('visible', shouldShow)
 }
 
-function resetScroll() {
+returnButton.onclick = () => {
     container.scrollTop = 0 // Set the scroll position to the top
 }
