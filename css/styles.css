@@ -2,7 +2,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 20px 30px 0 clamp(20px, 5vw, 50px);
+    padding: 10px 20px 0 clamp(20px, 5vw, 50px);
 }
 
 header img {
@@ -45,23 +45,44 @@ header a:hover::after {
 
 main {
     display: flex;
-    padding-top: 30px;
-}
+    padding-top: 20px;
+    min-height: calc(100vh - 10px - 30px - 30px); /* We do this because of the gradient, since the height of the main would not equal the total viewport available, and we would get conflicting colors */
+} /* -10px because of header pad-top, and two 30px of main pad-top and article pad-bottom */
 
 #btn-mobile {
     display: none;
 }
 
 main nav {
-    background-color: #181818;
+    background-color: #281C17;
     width: calc(230px * ((var(--sidebar-open) + 1) / 2));
     height: fit-content;
     max-height: calc(100vh - 30px - 30px - 70px);
     border-radius: 0 15px 15px 0;
     transition: 500ms;
     overflow: hidden;
-    white-space: nowrap;
-    /* Without it, when we close the tab the text would appear */
+    white-space: nowrap; /* Without it, when we close the tab the text would appear */
+}
+
+main nav ul {
+    display: grid;
+    padding: 20px;
+    gap: 30px;
+    max-height: calc(100vh - 30px - 30px - 70px);
+    overflow: hidden;
+}
+
+main nav:hover ul {
+    overflow-y: scroll;
+}
+
+main nav a {
+    transition: 300ms;
+    font: 500 22px var(--heading);
+}
+
+main nav a:hover {
+    color: var(--primary-color);
 }
 
 #sidebar-Control {
@@ -95,31 +116,10 @@ main nav {
     rotate: calc(30deg * var(--sidebar-open) * -1);
 }
 
-main nav ul {
-    display: grid;
-    padding: 20px;
-    gap: 40px;
-    max-height: calc(100vh - 30px - 30px - 70px);
-    overflow: hidden;
-}
-
-main nav:hover ul {
-    overflow: scroll;
-}
-
-main nav a {
-    transition: 300ms;
-    font: 500 22px var(--heading);
-}
-
-main nav a:hover {
-    color: var(--primary-color);
-}
-
 main article {
     height: calc(100dvh - 30px - 60px - 20px);
     /* The values are for the main padding-top, header img size and sidebar padding, respectively */
-    padding: 0 clamp(20px, 5vw, 50px) 30px;
+    padding: 0 clamp(20px, 5vw, 50px) 0;
     overflow: auto;
     width: 100%;
     line-height: 1.5;
@@ -139,22 +139,16 @@ article p {
     color: #c0c0c0;
     margin-top: 20px;
     font-size: 20px;
-}
-
-article section img {
-    margin-right: 20px;
-    border-radius: 10px;
-    max-width: calc(100vw - 2 * 30px);
-    /*We take 20px because of the page padding, then we do it again for both sides to have the same amount of padding*/
+    text-wrap: balance;
 }
 
 article section button {
-    background-color: #008367;
+    background-color: #a87869;
     padding: 10px;
     border-radius: 5px;
 }
 
-section :where(input, select) {
+section :where(input:not([type="range"]), select) {
     background-color: #424242;
     border-radius: 5px;
     padding: 10px 15px;
@@ -165,25 +159,62 @@ section p + div {
     display: flex;
     align-items: center;
     margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
 }
 
 .language-control {
     background-color: #181818;
     border-radius: 10px 10px 0 0;
-    padding: 5px 10px;
+    padding: 10px;
+    margin-bottom: 1px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.language-control span {
+    border-radius: 50px;
+    width: 12px;
+    height: 12px;
+    background-color: #f95f52;
+    position: relative;
+}
+
+.language-control span::before, .language-control span::after {
+    border-radius: 50px;
+    width: 12px;
+    height: 12px;
+    content: "";
+    position: absolute;
+}
+
+.language-control span::before {
+    background-color: #e9c115;
+    left: 20px;
+}
+
+.language-control span::after {
+    background-color: #4fc331;
+    left: 40px;
 }
 
 optgroup {
     font-style: normal;
 }
 
-input[type="range"] {
+meter, input[type="range"] {
     width: 100px;
     padding: 0;
 }
 
 #rtn-btn {
-    background-color: #EDC32E;
+    background-color: #FFC26F;
     height: 50px;
     width: 50px;
     border: 0;
@@ -229,6 +260,8 @@ input[type="range"] {
         margin-top: 5px;
         transition: all 300ms;
         position: relative;
+        width: 20px;
+
     }
 
     header nav {
@@ -266,5 +299,9 @@ input[type="range"] {
         align-items: center;
         justify-content: center;
         height: 100%;
+    }
+    
+    section p + div {
+        justify-content: center;
     }
 }

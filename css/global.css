@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #96AC9E;
+    --primary-color: #eed2c4;
     --heading: 'Oswald';
     --html: #E44D26;
     --css: #264de4;
@@ -25,13 +25,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: #FFF;
     font-family: 'Inter', Arial, sans-serif;
     font-weight: 500;
-    color: #FFF;
 }
 
 body {
-    background: #121212;
+    background: linear-gradient(45deg, #2F2325 20%, #613A32);
 }
 
 input, button, select {

@@ -1,9 +1,14 @@
 pre {
     background-color: #181818;
-    padding: 15px 30px;
-    width: fit-content;
+    padding: 10px 20px;
     border-radius: 0 0 10px 10px;
-    margin-top: 5px;
+    max-width: 90vw;
+    overflow-x: scroll;
+    scrollbar-color: transparent;
+}
+
+pre code, pre code span {
+    font-family: 'Verdana', sans-serif;
 }
 
 pre .comment {
@@ -32,6 +37,10 @@ pre .support {
 
 pre .constant.symbol,
 pre .string {
+    color: #b8753e
+}
+
+.support.attribute {
     color: #b5bd68
 }
 
