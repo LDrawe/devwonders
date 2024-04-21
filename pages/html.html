@@ -19,7 +19,7 @@
 
 <body>
     <header>
-        <img src="https://cdn-icons-png.flaticon.com/512/732/732212.png" alt="HTML5">
+        <img src="../public/icons/html.svg" alt="HTML5">
         <nav>
             <ul>
                 <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
@@ -79,8 +79,7 @@
                     Meter Tag
                 </h2>
                 <p>
-                    The meter tag allows you to display a scalar value within a given range without any CSS or
-                    JavaScript
+                    The meter tag allows you to display a scalar value within a given range, meaning you don't have to go styling a div and hack your way around with javascript
                 </p>
                 <div>
                     <div>
@@ -88,11 +87,11 @@
                             <span></span>
                         </div>
                         <pre>
-                        <code class="code-block" data-language="html">
-                            <label for="fuel">Fuel level: 0%</label>
-                            <meter id="fuel" max="100" low="33" high="66"></meter>
-                        </code>
-                    </pre>
+                            <code class="code-block" data-language="html">
+                                <label for="fuel">Fuel level: 0%</label>
+                                <meter id="fuel" max="100" low="33" high="66"></meter>
+                            </code>
+                        </pre>
                     </div>
                     <div class="flex-column">
                         <label for="fuel">Fuel level: 0%</label>
@@ -109,8 +108,7 @@
                 </h2>
                 <p>
                     A Boolean attribute that makes a input field mandatory, meaning users must fill it out before they
-                    can
-                    submit the form. No JavaScript required!
+                    can submit the form. No JavaScript required!
                 </p>
                 <div>
                     <div>
@@ -119,7 +117,7 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="html">
-                                <form>
+                                <form onsubmit="alert('It works!')">
                                     <input
                                         placeholder="User"
                                         required="true"
@@ -131,7 +129,7 @@
                             </code>
                         </pre>
                     </div>
-                    <form action="">
+                    <form onsubmit="event.preventDefault(); alert('It works!')">
                         <input placeholder="Type your country..." required>
                         <button type="submit">Submit</button>
                     </form>
@@ -276,10 +274,33 @@
                     Modal
                 </h2>
                 <p>
+                    To build a dialog from scratch it was pratically the norm to use some divs as backdrops/modals and
+                    some css/javascript hacks to get the job done. It always felt way harder than it needed to be.
+                </p>
+                <p>
                     This is a newer HTML element specifically designed for creating modal dialogs. It offers a more
-                    semantic way to build modals and has built-in accessibility features.
+                    modern and semantic approach and has built-in accessibility features and javascript methods to show or hide itself. It also eliminate the need for divs as backdrops as it has it's own css pseudo-element
                 </p>
                 <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="html">
+                                <dialog id="modal">
+                                    <p>Hey, a native dialog with just a few lines!</p>
+                                    <button onclick="modal.close()">Close</button>
+                                </dialog>
+                                <button onclick="modal.showModal()">Open Dialog</button>
+                            </code>
+                        </pre>
+                    </div>
+                    <dialog id="dialog">
+                        <p>Hey, a native dialog with just a few lines!</p>
+                        <button onclick="dialog.close()">Close</button>
+                    </dialog>
+                    <button onclick="dialog.showModal()">Open Dialog</button>
                 </div>
             </section>
         </article>

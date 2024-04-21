@@ -54,7 +54,7 @@ main {
 }
 
 main nav {
-    background-color: #281C17;
+    background-color: #1f1916;
     width: calc(230px * ((var(--sidebar-open) + 1) / 2));
     height: fit-content;
     max-height: calc(100vh - 30px - 30px - 70px);
@@ -135,7 +135,7 @@ article section:not(:first-of-type) {
     margin-top: 20px;
 }
 
-article p {
+section > p {
     color: #c0c0c0;
     margin-top: 20px;
     font-size: 20px;
@@ -146,6 +146,11 @@ article section button {
     background-color: #a87869;
     padding: 10px;
     border-radius: 5px;
+    transition: 300ms;
+}
+
+article section button:hover {
+    background-color: #7c5a4f;
 }
 
 section :where(input:not([type="range"]), select) {
@@ -169,7 +174,7 @@ section p + div {
 }
 
 .language-control {
-    background-color: #181818;
+    background-color: #1f1916;
     border-radius: 10px 10px 0 0;
     padding: 10px;
     margin-bottom: 1px;
@@ -235,6 +240,19 @@ meter, input[type="range"] {
 
 #rtn-btn:hover {
     filter: brightness(35%);
+}
+
+dialog {
+    background-color: #1f1916;
+    padding: 1em;
+    border: 1px solid #3d2212;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+}
+
+dialog::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
 }
 
 @media screen and (max-width: 768px) {
