@@ -3,13 +3,12 @@ pre {
     padding: 10px 20px;
     border-radius: 0 0 10px 10px;
     max-width: 90vw;
-    overflow-x: scroll;
-    scrollbar-color: transparent;
+    overflow-x: auto;
 }
 
-pre code, pre code span {
+/* pre code, pre code span {
     font-family: 'Verdana', sans-serif;
-}
+} */
 
 pre .comment {
     color: #969896
