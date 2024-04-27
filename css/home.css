@@ -1,33 +1,40 @@
-main {
-    min-height: 100dvh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+body {
+    padding: 20px 10px;
+    min-height: 100svh;
     text-align: center;
 }
 
+div {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
 h1 {
-    font: clamp(40px, 10vw, 80px) 'OpenSans';
-    color: #FFC26F;
+    font: clamp(40px, 15vw, 70px) 'OpenSans';
+    color: #ffba5c;
+}
+
+h1 + img {
+    width: clamp(30px, 12vw, 60px);
+    /* width: 55px; */
+}
+
+.socials {
+    height: 35px;
+    margin: 0 10px 20px;
 }
 
 h2 {
-    font: clamp(24px, 5vw, 32px) var(--heading);
-    color: #ffffff;
-    padding: 0 30px;
-}
-
-h3 {
-    color: #bebebe;
-    font-size: 24px;
+    font: clamp(28px, 5vw, 32px) var(--heading);
+    max-width: 35ch;
+    margin: 20px auto;
 }
 
 #cards {
-    display: flex;
     flex-wrap: wrap;
-    justify-content: center;
     gap: 30px;
+    margin-top: 50px;
 }
 
 .card {
@@ -35,7 +42,7 @@ h3 {
     display: grid;
     place-items: center;
     width: clamp(120px, 20vw, 140px);
-    aspect-ratio: 1/1;
+    aspect-ratio: 1;
     border-radius: 10px;
     transition: scale 600ms;
     animation: appear 1s ease calc(500ms + 100ms * var(--index)) forwards;
@@ -52,11 +59,9 @@ h3 {
     height: 100%;
     width: 100%;
     z-index: 2;
-    background: radial-gradient(
-        300px circle at var(--mouse-x) var(--mouse-y),
-        rgba(255, 255, 255, 0.15),
-        transparent 40%
-    );
+    background: radial-gradient(300px circle at var(--mouse-x) var(--mouse-y),
+            rgba(255, 255, 255, 0.15),
+            transparent 40%);
     border-radius: inherit;
     opacity: 0;
     transition: opacity 500ms;
@@ -83,5 +88,14 @@ h3 {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .socials {
+        position: absolute;
+        top: 20px;
+        margin: 0;
+        right: var(--right);
     }
 }
