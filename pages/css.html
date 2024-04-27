@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#4a362c">
+    <meta name="theme-color" content="#54342f">
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
@@ -26,7 +26,7 @@
                 <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
-        <button id="btn-mobile">
+        <button id="btn-mobile" title="Menu">
         </button>
     </header>
     <main>
@@ -38,7 +38,7 @@
             <button id="rtn-btn">
                 <img src="../public/icons/up.svg" alt="Return to top" height="30">
             </button>
-            <button id="sidebar-Control">
+            <button id="sidebar-Control" title="Toggle Sidebar">
                 <span></span>
             </button>
             <section>
@@ -53,13 +53,18 @@
                     can achieve the same effect with a single clamp() function
                 </p>
                 <div>
-                    <pre>
-                        <code class="code-block" data-language="css">
-                            .element {
-                                width:  clamp(200px, 50%, 800px);
-                            }
-                        </code>
-                    </pre>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    width:  clamp(200px, 50%, 800px);
+                                }
+                            </code>
+                        </pre>
+                    </div>
                     <span>PSA: Be sure to use a dynamic value for the preferred value</span>
                 </div>
             </section>
@@ -72,10 +77,25 @@
                     "all" shorthand
                 </p>
                 <div>
-                    <img src="../assets/img/css/all1.png"
-                        alt="An HTML code of containing the button element with the title attribute">
-                    <img src="../assets/img/css/all2.png"
-                        alt="An HTML code of containing the button element with the title attribute">
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    margin: 0;
+                                    padding: 0; /* No need to do this anymore */
+                                    border: none;
+                                    background-color: none;
+                                }
+
+                                .element {
+                                    all: unset;
+                                }
+                            </code>
+                        </pre>
+                    </div>
                 </div>
             </Section>
             <section>
@@ -83,34 +103,73 @@
                     Gap
                 </h2>
                 <p>
-                    Achieving clean and consistent spacing between elements is a constant pursuit.This often involve
-                    meticulously setting margins on individual elements.
-                    Even justify-content will not always reproduce what you want.For this you can use the gap property.
-                    The gap property acts as a shorthand for row-gap and column-gap. It defines the size of the gap
-                    between
-                    the rows and between the columns in flexbox or grid layout
+                    Achieving clean and consistent spacing between elements often involved
+                    meticulously setting margins on the elements individually.
+                    For this you can use the gap property.
+                    It's a shorthand for row-gap and column-gap. It defines the size of the gap
+                    between the rows and between the columns in flexbox or grid layout.
                     No need to manually set margin for each element anymore!
                 </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    gap: 50px;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Place-items
+                </h2>
+                <p>
+                   Speaking of grid, place-items is also a shorthand, for align-items and justify-items, meaning you can now center your divs with less lines of code
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    place-items: center;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>
                     Inset
                 </h2>
                 <p>
-                    Ever needed to manually set the top, bottom, right and left property of an element? This css
-                    property is a shorthand for that
+                    Ever needed to manually set the top, right, bottom and left property of an element? This css
+                    property is a shorthand for that, respectively
                 </p>
-            </section>
-            <section>
-                <h2>
-                    Margin-inline
-                </h2>
-                <p>
-                    Speaking of inlines, you probably already familiar with margin by now, But what if you only want to
-                    apply the margin on the sides?
-                    You don't have to specify them anymore, just use the margin-inline property
-
-                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    inset: 0 10px 20px 20px; 
+                                    /* top, right, bottom and left */
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </section>
             <section>
                 <h2>
@@ -120,28 +179,104 @@
                     You can also strip the scale, rotate and translate out of the transform property and use them
                     individually
                 </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .element {
+                                    scale: 2;
+                                    rotate: 90deg;
+                                    translate: 50px;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Nesting
+                </h2>
+                <p>
+                    One of the primary reasons I've used SASS was because of it's rule nesting, something CSS didn't
+                    have. Well not anymore, as of December 2023, this feature works across the latest devices and major
+                    browser versions. It allows you tu write CSS in a more concise way, eliminating tons of duplicate
+                    rule selectors from you code
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .grid {
+                                    background: red;
+                                    .card {
+                                        background: blue;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Mix Color
+                </h2>
+                <p>
+                    This is a function that take 2 colors as arguments and mixes them in the specified colorspace.
+                    Mostly useful for when you have a list of elements and want to create a gradient at different levels
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .button {
+                                    background-color: color-mix(in srgb, red, blue)
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <button style="background-color: color-mix(in srgb, red, blue);">Send</button>
+                </div>
             </section>
             <section>
                 <h2>
                     Inline variables
                 </h2>
                 <p>
-                    This section is kind a mix between HTML and CSS. But let's suppose you have 3 links and they're all
+                    This section is kind a mix between HTML and CSS and kind more of a. But let's suppose you have 3
+                    links and they're all
                     different colors. You'd probably do this:
                 </p>
-                <pre>
-                    <code class="code-block" data-language="css">
-                        .link1 {
-                            color: red
-                        }
-                        .link2 {
-                            color: green
-                        }
-                        .link3 {
-                            color: blue
-                        }
-                    </code>
-                </pre>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                .link1 {
+                                    color: red
+                                }
+                                .link2 {
+                                    color: green
+                                }
+                                .link3 {
+                                    color: blue
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
             </section>
         </article>
     </main>
