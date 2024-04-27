@@ -7,7 +7,7 @@ btnMobile.onclick = () => {
     nav.classList.toggle('open')
 }
 
-container.onscrollend = () => {
+container.onscroll = () => {
     const shouldShow = container.scrollHeight - container.scrollTop - container.clientHeight < 200
     returnButton.classList.toggle('visible', shouldShow)
 }
