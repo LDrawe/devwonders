@@ -8,7 +8,7 @@
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/rainbow/tomorrow-night.css">
+    <link rel="stylesheet" href="../css/rainbow.css">
     <script src="../js/nav.js" defer></script>
     <script src="../js/rainbow.js" defer></script>
     <script src="../js/formatter.js" defer></script>
@@ -19,6 +19,10 @@
 
 <body>
     <header>
+        <a href="../index.html">
+            <h1>DevWonders</h1>
+            <img src="../public/icons/favicon.svg" alt="Logo">
+        </a>
         <img src="../public/icons/html.svg" alt="HTML5">
         <nav>
             <ul>
@@ -27,7 +31,7 @@
                 <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
-        <button id="btn-mobile">
+        <button id="btn-mobile" title="Menu" type="button">
         </button>
     </header>
     <main>
@@ -36,19 +40,19 @@
             </ul>
         </nav>
         <article>
-            <button id="rtn-btn">
+            <button id="rtn-btn" title="Return to top" type="button">
                 <img src="../public/icons/up.svg" alt="Return to top" height="30">
             </button>
-            <button id="sidebar-Control" title="Toggle sidebar">
+            <button id="sidebar-Control" title="Toggle sidebar" type="button">
                 <span></span>
             </button>
             <section>
                 <h2>
-                    Insert/Delete Tag
+                    Insert/Delete
                 </h2>
                 <p>
-                    The &lt;ins&gt; tag represents a range of text that has been added to a document.
-                    You can use the &lt;del&gt; element to similarly represent a range of text that has
+                    The <span class="keyword">ins</span> tag represents a range of text that has been added to a document.
+                    Similarly you can use the <span class="keyword">del</span> element to  represent a range of text that has
                     been deleted from the document. No CSS required!
                 </p>
                 <div>
@@ -73,13 +77,13 @@
                     </span>
                 </div>
             </section>
-
             <section>
                 <h2>
-                    Meter Tag
+                    Meter
                 </h2>
                 <p>
-                    The meter tag allows you to display a scalar value within a given range, meaning you don't have to go styling a div and hack your way around with javascript
+                    The <span class="keyword">meter</span> tag allows you to display a scalar value within a given range, meaning you don't have to
+                    go styling a div and hack your way around with javascript
                 </p>
                 <div>
                     <div>
@@ -96,7 +100,7 @@
                     <div class="flex-column">
                         <label for="fuel">Fuel level: 0%</label>
                         <meter id="fuel" max="100" low="33" high="66" optimum="80"></meter>
-                        <input type="range" value="0">
+                        <input type="range" value="0" title="Fuel Level">
                     </div>
                 </div>
 
@@ -141,9 +145,9 @@
                     Suggestions
                 </h2>
                 <p>
-                    Use the &lt;datalist&gt; tag to suggest values for an input when the user is typing.
-                    To make the options appear, we give it a unique id,
-                    and then add the <i>list</i> attribute to the &lt;input&gt; element with the same id as value. It
+                    Use the <span class="keyword">datalist</span> tag to suggest values for an input when the user is typing.
+                    To make the options appear, we give it a unique <span class="keyword">ID</span>,
+                    and then add the <span class="keyword">list</span> attribute to the <span class="keyword">input</span> element with the same <span class="keyword">ID</span> as value. It
                     also works on mobile
                 </p>
                 <div>
@@ -168,8 +172,8 @@
                             </code>
                         </pre>
                     </div>
-                    <input placeholder="Type your country..." list="countries">
-                    <datalist id="countries">
+                    <input placeholder="Type your country..." list="paises">
+                    <datalist id="paises">
                         <option value="Uk">
                         <option value="Germany">
                         <option value="Italy">
@@ -185,7 +189,7 @@
                     Optgroup
                 </h2>
                 <p>
-                    The &lt;optgroup&gt; tag creates a grouping of options within a &lt;select&gt; element.
+                    The <span class="keyword">optgroup</span> tag creates a grouping of options within a <span class="keyword">select</span> element.
                 </p>
                 <div>
                     <div>
@@ -209,18 +213,21 @@
                             </code>
                         </pre>
                     </div>
-                    <select>
-                        <optgroup label="Europe">
-                            <option value="Uk">United Kingdom</option>
-                            <option value="Germany">Germany</option>
-                            <option value="Italy">Italy</option>
-                        </optgroup>
-                        <optgroup label="Americas">
-                            <option value="Brazil">Brazil</option>
-                            <option value="Mexico">Mexico</option>
-                            <option value="USA">United States</option>
-                        </optgroup>
-                    </select>
+                    <div class="flex-column">
+                        <label for="country-selector">Select your Country:</label>
+                        <select id="country-selector">
+                            <optgroup label="Europe">
+                                <option value="Uk">United Kingdom</option>
+                                <option value="Germany">Germany</option>
+                                <option value="Italy">Italy</option>
+                            </optgroup>
+                            <optgroup label="Americas">
+                                <option value="Brazil">Brazil</option>
+                                <option value="Mexico">Mexico</option>
+                                <option value="USA">United States</option>
+                            </optgroup>
+                        </select>
+                    </div>
                 </div>
             </section>
 
@@ -229,7 +236,7 @@
                     Tooltip
                 </h2>
                 <p>
-                    The title attribute provides additional information about an element. This information is typically
+                    The <span class="keyword">title</span> attribute provides additional information about an element. This information is typically
                     displayed as a tooltip text when the mouse hovers over the element.
                 </p>
                 <div>
@@ -271,7 +278,7 @@
 
             <section>
                 <h2>
-                    Modal
+                    Dialog
                 </h2>
                 <p>
                     To build a dialog from scratch it was pratically the norm to use some divs as backdrops/modals and
@@ -279,7 +286,9 @@
                 </p>
                 <p>
                     This is a newer HTML element specifically designed for creating modal dialogs. It offers a more
-                    modern and semantic approach and has built-in accessibility features and javascript methods to show or hide itself. It also eliminate the need for divs as backdrops as it has it's own css pseudo-element
+                    modern and semantic approach and has built-in accessibility features and javascript methods to show
+                    or hide itself. It also eliminate the need for divs as backdrops as it has it's own css
+                    pseudo-element
                 </p>
                 <div>
                     <div>
@@ -288,20 +297,49 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="html">
-                                <dialog id="modal">
+                                <dialog id="dialog">
                                     <p>Hey, a native dialog with just a few lines!</p>
-                                    <button onclick="modal.close()">Close</button>
+                                    <button onclick="dialog.close()">Close</button>
                                 </dialog>
-                                <button onclick="modal.showModal()">Open Dialog</button>
+                                <button onclick="dialog.showModal()">Open Dialog</button>
                             </code>
                         </pre>
                     </div>
-                    <dialog id="dialog">
+                    <dialog id="modal">
                         <p>Hey, a native dialog with just a few lines!</p>
-                        <button onclick="dialog.close()">Close</button>
+                        <button onclick="modal.close()" type="button">Close</button>
                     </dialog>
-                    <button onclick="dialog.showModal()">Open Dialog</button>
+                    <button onclick="modal.showModal()" type="button">Open Dialog</button>
                 </div>
+            </section>
+
+            <section>
+                <h2>
+                    Popover
+                </h2>
+                <p>
+                    Similarly to the dialog, a new element recently added is the popover, it's still in experiment support.
+                    Think of it as the <span class="keyword">dialog</span> element's little cousin, specializing in quick bursts of information rather than full-blown modal experiences. No more need to write javascript or tricky css using <span class="keyword"> :focus-within</span>
+                </p>
+                <!-- <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="html">
+                                <button popovertarget="mydiv">Click Me</button>
+                                <div id="mydiv">
+                                    <p>Cool ain't it?</p>
+                                </div>
+                            </code>
+                        </pre>
+                    </div>
+                    <button popovertarget="pop" type="button">Click Me</button>
+                    <div id="pop" popover>
+                        Cool ain't it?
+                    </div>
+                </div> -->
             </section>
         </article>
     </main>

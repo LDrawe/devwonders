@@ -2,11 +2,23 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px 0 clamp(20px, 5vw, 50px);
+    padding: 0 15px;
+    height: 70px;
+}
+
+header > a {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+
+header h1 {
+    color: #ffba5c;
+    font: 50px 'OpenSans';
 }
 
 header img {
-    height: 60px;
+    height: 50px;
 }
 
 header nav ul {
@@ -14,18 +26,18 @@ header nav ul {
     gap: 50px;
 }
 
-header a {
+header nav a {
     transition: 300ms;
     position: relative;
     color: var(--primary-color);
     font: bold 24px var(--heading);
 }
 
-header a:hover {
+header nav a:hover {
     color: var(--color);
 }
 
-header a::after {
+header nav a::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -38,42 +50,44 @@ header a::after {
     transition: transform 300ms;
 }
 
-header a:hover::after {
+header nav a:hover::after {
     transform: scaleX(1);
     transform-origin: bottom;
 }
 
 main {
     display: flex;
-    padding-top: 20px;
-    min-height: calc(100vh - 10px - 30px - 30px); /* We do this because of the gradient, since the height of the main would not equal the total viewport available, and we would get conflicting colors */
-} /* -10px because of header pad-top, and two 30px of main pad-top and article pad-bottom */
+    height: calc(100svh - 70px); /* -70px because of header size */
+}
 
 #btn-mobile {
     display: none;
 }
 
 main nav {
-    background-color: #1f1916;
+    background-color: var(--secondary-color);
     width: calc(230px * ((var(--sidebar-open) + 1) / 2));
     height: fit-content;
-    max-height: calc(100vh - 30px - 30px - 70px);
+    max-height: 600px;
     border-radius: 0 15px 15px 0;
     transition: 500ms;
     overflow: hidden;
-    white-space: nowrap; /* Without it, when we close the tab the text would appear */
+    white-space: nowrap;
+    /* Without it, when we close the tab the text would appear */
+    align-self: center;
 }
 
 main nav ul {
     display: grid;
     padding: 20px;
-    gap: 30px;
+    gap: 25px;
     max-height: calc(100vh - 30px - 30px - 70px);
+    scrollbar-color: var(--primary-color) transparent;
     overflow: hidden;
 }
 
 main nav:hover ul {
-    overflow-y: scroll;
+    overflow-y: auto;
 }
 
 main nav a {
@@ -91,14 +105,14 @@ main nav a:hover {
     background: none;
     transition: 500ms;
     padding-inline: 10px;
-    margin-left: -40px
+    margin-left: -40px;
 }
 
 #sidebar-Control span::before,
 #sidebar-Control span::after {
     content: '';
     display: block;
-    border: 2px solid gray;
+    border: 2px solid #646464;
     height: 15px;
     transition: 500ms;
 }
@@ -110,20 +124,21 @@ main nav a:hover {
 
 #sidebar-Control:hover span::before {
     rotate: calc(30deg * var(--sidebar-open));
+    border: 2px solid #cfcfcf;
 }
 
 #sidebar-Control:hover span::after {
     rotate: calc(30deg * var(--sidebar-open) * -1);
+    border: 2px solid #cfcfcf;
 }
 
 main article {
-    height: calc(100dvh - 30px - 60px - 20px);
-    /* The values are for the main padding-top, header img size and sidebar padding, respectively */
-    padding: 0 clamp(20px, 5vw, 50px) 0;
-    overflow: auto;
+    padding: 0 40px 10px;
+    overflow-y: auto;
     width: 100%;
     line-height: 1.5;
     scroll-behavior: smooth;
+    scrollbar-color: var(--primary-color) transparent;
 }
 
 article h2 {
@@ -142,6 +157,17 @@ section > p {
     text-wrap: balance;
 }
 
+p > span.keyword {
+    color: #8b8b8b;
+    background-color: var(--secondary-color);
+    border-radius: 6px;
+    padding: 0.1rem 0.25rem;
+}
+
+p > span.truthy {
+    color: #91cc82;
+}
+
 article section button {
     background-color: #a87869;
     padding: 10px;
@@ -156,7 +182,7 @@ article section button:hover {
 section :where(input:not([type="range"]), select) {
     background-color: #424242;
     border-radius: 5px;
-    padding: 10px 15px;
+    padding: 10px 5px;
     outline: none;
 }
 
@@ -171,13 +197,17 @@ section p + div {
 .flex-column {
     display: flex;
     flex-direction: column;
+    min-width: 12ch; /* Since the label has a dynamic text, when grow/shrinking, the width would change and lead to wrap/unwraping sometimes */
+}
+
+.attach-top {
+    align-self: flex-start;
 }
 
 .language-control {
-    background-color: #1f1916;
+    background-color: var(--secondary-color);
     border-radius: 10px 10px 0 0;
     padding: 10px;
-    margin-bottom: 1px;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -189,9 +219,11 @@ section p + div {
     height: 12px;
     background-color: #f95f52;
     position: relative;
+    left: 6px;
 }
 
-.language-control span::before, .language-control span::after {
+.language-control span::before,
+.language-control span::after {
     border-radius: 50px;
     width: 12px;
     height: 12px;
@@ -213,7 +245,8 @@ optgroup {
     font-style: normal;
 }
 
-meter, input[type="range"] {
+meter,
+input[type="range"] {
     width: 100px;
     padding: 0;
 }
@@ -243,21 +276,38 @@ meter, input[type="range"] {
 }
 
 dialog {
-    background-color: #1f1916;
+    background-color: var(--secondary-color);
     padding: 1em;
     border: 1px solid #3d2212;
     border-radius: 10px;
     text-align: center;
-    margin: auto;
+    transition: 300ms ease-out;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+dialog[open] {
+    visibility: visible;
+    opacity: 1;
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.5);
 }
 
+dialog button {
+    margin-top: 20px;
+}
+
 @media screen and (max-width: 768px) {
 
     main nav,
+    header a h1,
     #rtn-btn,
     #sidebar-Control {
         display: none;
@@ -318,7 +368,7 @@ dialog::backdrop {
         justify-content: center;
         height: 100%;
     }
-    
+
     section p + div {
         justify-content: center;
     }

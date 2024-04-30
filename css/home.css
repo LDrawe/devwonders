@@ -38,7 +38,7 @@ h2 {
 }
 
 .card {
-    background-color: #1f1916;
+    background-color: var(--secondary-color);
     display: grid;
     place-items: center;
     width: clamp(120px, 20vw, 140px);

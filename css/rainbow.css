@@ -1,50 +1,15 @@
-@keyframes fade-in {
-    0% {
-        opacity: 0
-    }
-
-    100% {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    10% {
-        transform: scale(1, 1)
-    }
-
-    35% {
-        transform: scale(1, 1.7)
-    }
-
-    40% {
-        transform: scale(1, 1.7)
-    }
-
-    50% {
-        opacity: 1
-    }
-
-    60% {
-        transform: scale(1, 1)
-    }
-
-    100% {
-        transform: scale(1, 1);
-        opacity: 0
-    }
-}
-
 pre {
-    background-color: #1f1916;
-    padding: 15px 40px;
-    width: fit-content;
-    border-radius: 10px;
-    margin-top: 15px;
+    background-color: var(--secondary-color);
+    padding: 10px 20px;
+    border-radius: 0 0 10px 10px;
+    max-width: 90vw;
+    overflow-x: auto;
 }
 
-code span {
-    transition: color 0.6s ease-in
+code {
+    color: #d6d6d6;
+    font-weight: 500;
+    font-family: 'JetBrainsMono';
 }
 
 code .red {
@@ -79,27 +44,22 @@ code .animate {
     color: #fff !important
 }
 
-pre {
-    background: #0e0e0e
-}
-
 pre .comment {
     color: #747474
 }
 
 pre .keyword,
-pre .selector,
-pre .operator {
+pre .selector {
     color: #bc5cff
 }
 
 pre .storage,
 pre .support {
-    color: #fb2639
+    color: #fd4a59
 }
 
 pre .string {
-    color: #fff55c
+    color: #caae0d
 }
 
 pre .constant {
@@ -112,7 +72,7 @@ pre .entity {
 
 pre .inherited-class,
 pre .storage {
-    font-style: italic
+    font-style: normal
 }
 
 [data-language="custom"] .comment,
@@ -134,7 +94,28 @@ pre .storage {
 }
 
 [data-language="html"] .attribute,
+pre .operator,
 .lang-html .attribute,
 .language-html .attribute {
     color: #fc4959
+}
+
+.function {
+    color: #539c41
+}
+
+.support.attribute {
+    color: #b5bd68
+}
+
+pre .entity.function,
+pre .support.css-property,
+pre .selector {
+    color: #a074c4
+}
+
+pre .variable.global,
+pre .variable.class,
+pre .variable.instance {
+    color: #c66
 }

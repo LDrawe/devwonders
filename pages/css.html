@@ -8,7 +8,7 @@
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/rainbow/tomorrow-night.css">
+    <link rel="stylesheet" href="../css/rainbow.css">
     <script src="../js/nav.js" defer></script>
     <script src="../js/rainbow.js" defer></script>
     <script src="../js/formatter.js" defer></script>
@@ -18,6 +18,10 @@
 
 <body>
     <header>
+        <a href="../index.html">
+            <h1>DevWonders</h1>
+            <img src="../public/icons/favicon.svg" alt="Logo">
+        </a>
         <img src="../public/icons/css.svg" alt="CSS3">
         <nav>
             <ul>
@@ -26,7 +30,7 @@
                 <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
             </ul>
         </nav>
-        <button id="btn-mobile" title="Menu">
+        <button id="btn-mobile" title="Menu" type="button">
         </button>
     </header>
     <main>
@@ -35,10 +39,10 @@
             </ul>
         </nav>
         <article>
-            <button id="rtn-btn">
+            <button id="rtn-btn" title="Return to top" type="button">
                 <img src="../public/icons/up.svg" alt="Return to top" height="30">
             </button>
-            <button id="sidebar-Control" title="Toggle Sidebar">
+            <button id="sidebar-Control" title="Toggle sidebar" type="button">
                 <span></span>
             </button>
             <section>
@@ -46,11 +50,11 @@
                     Clamp
                 </h2>
                 <p>
-                    You can use the clamp() function to define a range within which your element's size will adjust
+                    You can use the <span class="keyword">clamp()</span> function to define a range within which your element's size will adjust
                     fluidly, accommodating
                     various screen sizes and content lengths. It takes 3 values: minimum, preferred and maximum.
                     So instead of using both min-width and max-width properties separately, you
-                    can achieve the same effect with a single clamp() function
+                    can achieve the same effect with a single <span class="keyword">clamp()</span> function
                 </p>
                 <div>
                     <div>
@@ -60,7 +64,7 @@
                         <pre>
                             <code class="code-block" data-language="css">
                                 .element {
-                                    width:  clamp(200px, 50%, 800px);
+                                    width: clamp(200px, 50%, 800px);
                                 }
                             </code>
                         </pre>
@@ -74,7 +78,7 @@
                 </h2>
                 <p>
                     If you ever needed to reset an element style and had to do for every property, you can just use the
-                    "all" shorthand
+                    <span class="keyword">all</span> shorthand
                 </p>
                 <div>
                     <div>
@@ -103,10 +107,10 @@
                     Gap
                 </h2>
                 <p>
-                    Achieving clean and consistent spacing between elements often involved
+                    Getting consistent spacing between elements often involved
                     meticulously setting margins on the elements individually.
-                    For this you can use the gap property.
-                    It's a shorthand for row-gap and column-gap. It defines the size of the gap
+                    For this you can use the <span class="keyword">gap</span> property.
+                    It's a shorthand for <span class="keyword">row-gap</span> and <span class="keyword">column-gap</span>. It defines the size of the gap
                     between the rows and between the columns in flexbox or grid layout.
                     No need to manually set margin for each element anymore!
                 </p>
@@ -130,7 +134,8 @@
                     Place-items
                 </h2>
                 <p>
-                   Speaking of grid, place-items is also a shorthand, for align-items and justify-items, meaning you can now center your divs with less lines of code
+                    Speaking of grid, <span class="keyword">place-items</span> is also a shorthand, for align-items and justify-items, meaning you
+                    can now center your divs with less lines of code
                 </p>
                 <div>
                     <div>
@@ -152,8 +157,8 @@
                     Inset
                 </h2>
                 <p>
-                    Ever needed to manually set the top, right, bottom and left property of an element? This css
-                    property is a shorthand for that, respectively
+                    Ever needed to manually set the <span class="keyword">top</span>, <span class="keyword">right</span>, <span class="keyword">bottom</span> and <span class="keyword">left</span> property of an element? This css
+                    property is a shorthand for these, respectively
                 </p>
                 <div>
                     <div>
@@ -176,7 +181,7 @@
                     Transform
                 </h2>
                 <p>
-                    You can also strip the scale, rotate and translate out of the transform property and use them
+                    You can also strip the <span class="keyword">scale</span>, <span class="keyword">rotate</span> and <span class="keyword">translate</span> out of the transform property and use them
                     individually
                 </p>
                 <div>
@@ -253,8 +258,8 @@
                     Inline variables
                 </h2>
                 <p>
-                    This section is kind a mix between HTML and CSS and kind more of a. But let's suppose you have 3
-                    links and they're all
+                    This section is a mix between HTML and CSS and kind more of an . But let's suppose you have 3
+                    texts and they're all
                     different colors. You'd probably do this:
                 </p>
                 <div>
@@ -264,14 +269,43 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="css">
-                                .link1 {
-                                    color: red
+                                .text1 {
+                                    color: orange
                                 }
-                                .link2 {
-                                    color: green
-                                }
-                                .link3 {
+                                .text2 {
                                     color: blue
+                                }
+                                .text3 {
+                                    color: yellow
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    You can simplify this CSS by giving each span an inline variable with it's color
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="html">
+                                <span style="--color: orange">HTML</span>
+                                <span style="--color: bue">CSS</span>
+                                <span style="--color: yellow">JS</span>
+                            </code>
+                        </pre>
+                    </div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block" data-language="css">
+                                span {
+                                    color: var(--color)
                                 }
                             </code>
                         </pre>
