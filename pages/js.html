@@ -111,13 +111,12 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="javascript">
-                                let numberOfEmployees = 0
+                                let numberOfMessages = 0
                                 // This would execute, even though is a valid input 
-                                if(! {
+                                if(!numberOfMessages) {
                                     console.error('Error: Undefined value')
                                     return
                                 }
-                                console.log('You have a company!')
                             </code>
                         </pre>
                     </div>
@@ -127,12 +126,12 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="javascript">
-                                let numberOfEmployees = 0
-                                if(isNan(numberOfEmployees)) {
+                                let numberOfMessages = 0
+                                if(isNan(numberOfMessages)) {
                                     console.error('Error: Undefined value')
                                     return
                                 }
-                                console.log('You have a company!')
+                                console.log('You have unread messages!')
                             </code>
                         </pre>
                     </div>
@@ -156,7 +155,7 @@
                             <code class="code-block" data-language="javascript">
                                 let tax = 0
 
-                                const reward = tax || 10 // Intended to be default tax is none is given
+                                const reward = tax || 10 // Default tax is none is given
                                 console.log(tax) // Output: 10 
                             </code>
                         </pre>
@@ -408,8 +407,8 @@
 
                                 const sortedNumbers = numbers.toSorted((a, b) => a - b);
 
-                                console.log(numbers); // Output: [3, 1, 4, 5, 2] (remains unchanged)
-                                console.log(sortedNumbers); // Output: [1, 2, 3, 4, 5]
+                                console.log(numbers); // [3, 1, 4, 5, 2] (remains unchanged)
+                                console.log(sortedNumbers); // [1, 2, 3, 4, 5]
                             </code>
                         </pre>
                     </div>
