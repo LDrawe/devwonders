@@ -10,6 +10,10 @@ div {
     gap: 15px;
 }
 
+div:nth-child(1) {
+    animation: slideIn 800ms ease-out;
+}
+
 h1 {
     font: clamp(40px, 15vw, 70px) 'OpenSans';
     color: #ffba5c;
@@ -17,7 +21,6 @@ h1 {
 
 h1 + img {
     width: clamp(30px, 12vw, 60px);
-    /* width: 55px; */
 }
 
 .socials {
@@ -29,6 +32,7 @@ h2 {
     font: clamp(28px, 5vw, 32px) var(--heading);
     max-width: 35ch;
     margin: 20px auto;
+    animation: slideIn 1000ms ease-out;
 }
 
 #cards {
@@ -48,7 +52,6 @@ h2 {
     animation: appear 1s ease calc(500ms + 100ms * var(--index)) forwards;
     opacity: 0;
     position: relative;
-    box-shadow: rgba(43, 43, 43, 0.15) 0px 5px 15px 0px;
 }
 
 .card::before {
@@ -88,6 +91,17 @@ h2 {
     to {
         transform: translateY(0);
         opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-200px);
+        filter: blur(3px);
+    }
+    to {
+        transform: translateX(0);
+        filter: blur(0);
     }
 }
 

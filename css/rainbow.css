@@ -50,24 +50,24 @@ pre .comment {
 
 pre .keyword,
 pre .selector {
-    color: #bc5cff
+    color: #ff5c72
 }
 
 pre .storage,
 pre .support {
-    color: #fd4a59
+    color: #43a6ff
 }
 
 pre .string {
-    color: #caae0d
+    color: #ffd900
 }
 
 pre .constant {
-    color: #ffad5c
+    color: #a074c4
 }
 
 pre .entity {
-    color: #43a6ff
+    color: #c66
 }
 
 pre .inherited-class,
@@ -105,11 +105,10 @@ pre .operator,
 }
 
 .support.attribute {
-    color: #b5bd68
+    color: #488520
 }
 
 pre .entity.function,
-pre .support.css-property,
 pre .selector {
     color: #a074c4
 }
@@ -118,4 +117,16 @@ pre .variable.global,
 pre .variable.class,
 pre .variable.instance {
     color: #c66
+}
+
+pre .support.css-property {
+    color: #43a6ff;
+}
+
+.support.tag {
+    color: #619fd6;
+}
+
+.keyword.unit {
+    color: #dd473d;
 }
