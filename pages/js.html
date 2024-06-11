@@ -47,13 +47,14 @@
             </button>
             <section>
                 <h2>
-                    Big Numbers
+                    Numeric separator
                 </h2>
                 <p>
                     Small numbers are easy and quick to read. But what about large ones? Let's say
                     1000000.
                     You probably have seen a large number like this while coding. Thankfully, javascript has
-                    a way to make these more readable, you can use underlines to separate into groups for better readability
+                    a way to make these more readable, you can use underlines to separate into groups for better readability. 
+                    Don't worry, it doesn't change their behaviour, it's only for visual use
                 </p>
                 <div>
                     <div>
@@ -353,7 +354,7 @@
                                     { name: 'Mug', price: 27.50 },
                                     { name: 'Headphones', price: 199.99 },
                                     { name: 'Fork', price: 2 },
-                                ];
+                                ]
 
                                 function categorize({price}) {
                                     if (price > 100)
@@ -403,12 +404,12 @@
                         </div>
                         <pre>
                             <code class="code-block" data-language="javascript">
-                                const numbers = [3, 1, 4, 5, 2];
+                                const numbers = [3, 1, 4, 5, 2]
 
-                                const sortedNumbers = numbers.toSorted((a, b) => a - b);
+                                const sortedNumbers = numbers.toSorted((a, b) => a - b)
 
-                                console.log(numbers); // [3, 1, 4, 5, 2] (remains unchanged)
-                                console.log(sortedNumbers); // [1, 2, 3, 4, 5]
+                                console.log(numbers) // [3, 1, 4, 5, 2] (remains unchanged)
+                                console.log(sortedNumbers) // [1, 2, 3, 4, 5]
                             </code>
                         </pre>
                     </div>
