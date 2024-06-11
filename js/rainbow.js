@@ -333,7 +333,7 @@ Rainbow.extend("css", [
     },
     {
         matches: { 1: "constant.numeric", 2: "keyword.unit" },
-        pattern: /(\d+)(px|em|cm|s|%)?/g,
+        pattern: /(\d+)(px|em|rem|cm|s|ch|deg|%)?/g,
     },
     { name: "string", pattern: /('|")(.*?)\1/g },
     {
