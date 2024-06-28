@@ -29,7 +29,7 @@ header nav ul {
 header nav a {
     transition: 300ms;
     position: relative;
-    color: var(--primary-color);
+    color: #eed2c4;
     font: bold 24px var(--heading);
 }
 
@@ -168,19 +168,19 @@ p > span.truthy {
     color: #91cc82;
 }
 
-article section button {
-    background-color: #a87869;
+section button {
+    background-color: #29643d;
     padding: 10px;
     border-radius: 5px;
     transition: 300ms;
 }
 
-article section button:hover {
-    background-color: #7c5a4f;
+section button:hover {
+    filter: brightness(80%);
 }
 
 section :where(input:not([type="range"]), select) {
-    background-color: #424242;
+    background-color: #57433d;
     border-radius: 5px;
     padding: 10px 5px;
     outline: none;
@@ -200,7 +200,7 @@ section p + div {
     min-width: 12ch; /* Since the label has a dynamic text, when grow/shrinking, the width would change and lead to wrap/unwraping sometimes */
 }
 
-.attach-top {
+div:has(> div.language-control){
     align-self: flex-start;
 }
 
@@ -276,9 +276,9 @@ input[type="range"] {
 }
 
 dialog {
-    background-color: var(--secondary-color);
+    background-color: #443127;
     padding: 1em;
-    border: 1px solid #3d2212;
+    border: none;
     border-radius: 10px;
     text-align: center;
     transition: 300ms ease-out;
@@ -302,6 +302,7 @@ dialog::backdrop {
 
 dialog button {
     margin-top: 20px;
+    background-color: #8c3d39;
 }
 
 @media screen and (max-width: 768px) {
