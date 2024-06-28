@@ -8,10 +8,9 @@
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/rainbow.css">
+    <link rel="stylesheet" href="../css/prism.css">
     <script src="../js/nav.js" defer></script>
-    <script src="../js/rainbow.js" defer></script>
-    <script src="../js/formatter.js" defer></script>
+    <script src="../js/prism.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
     <title>DevWonders</title>
 </head>
@@ -62,7 +61,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 console.log(1_000_000)
                             </code>
                         </pre>
@@ -84,7 +83,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const foo = {
                                     positionX: 50,
                                     positionY: 20,
@@ -111,28 +110,26 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 let numberOfMessages = 0
-                                // This would execute, even though is a valid input 
+                                // This would run, even though it's a valid input
                                 if(!numberOfMessages) {
-                                    console.error('Error: Undefined value')
-                                    return
+                                    throw new Error('Invalid value')
                                 }
                             </code>
                         </pre>
                     </div>
-                    <div class="attach-top">
+                    <div>
                         <div class="language-control">
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 let numberOfMessages = 0
                                 if(isNan(numberOfMessages)) {
-                                    console.error('Error: Undefined value')
-                                    return
+                                    throw new Error('Invalid value')
                                 }
-                                console.log('You have unread messages!')
+                                console.log(`You have ${numberOfMessages} unread messages`)
                             </code>
                         </pre>
                     </div>
@@ -143,8 +140,8 @@
                     Nullish Coalescing
                 </h2>
                 <p>
-                    The logical <span class="keyword">OR</span> operator (<span class="keyword">||</span>) is used extensively to provide default values or check for truthy
-                    conditions. Developers often rely on it because of its simplicity. However, the <span class="keyword">OR</span> operator can
+                    The <span class="keyword">||</span> (OR) operator  is used to provide default values or check for truthy
+                    conditions. We often rely on it because of its simplicity. However, it can
                     sometimes lead to unexpected behavior, especially when dealing with the number 0
                 </p>
                 <div>
@@ -153,17 +150,17 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
-                                let tax = 0
+                            <code class="language-javascript code-block">
+                                let myTax = 0
 
-                                const reward = tax || 10 // Default tax is none is given
-                                console.log(tax) // Output: 10 
+                                const finalTax = myTax || 10 // Default tax if none is given
+                                console.log(finalTax) // Output: 10 
                             </code>
                         </pre>
                     </div>
                 </div>
                 <p>
-                    The intention here is to provide a base tax (10 dollars) if no values is passed. But the <span class="keyword">OR</span> operator sees the tax ammount as <span class="keyword">falsy</span> (because it's 0) and assigns the default value (10). This can be a bug if you actually want the code to recognize 0 as a valid score and not provide a reward. This is when the <span class="keyword">??</span> operator comes in hand. It checks if the value on the left side is either <span class="keyword">null</span> or <span class="keyword">undefined</span>. If it is, then it uses the value on the right side. This makes it perfect for setting defaults without getting tripped up by <span class="keyword">falsy</span> values like 0
+                    The intention here is to provide a base tax (10 dollars) if no value is passed. But the <span class="keyword">||</span> operator sees the tax amount as <span class="keyword">falsy</span> (because it's 0) and assigns the default value (10). This can be a bug if you actually want the code to recognize 0 as a valid value and not provide a tax. This is when the <span class="keyword">??</span> operator comes in hand. It checks if the value on the left side is either <span class="keyword">null</span> or <span class="keyword">undefined</span>. If it is, then it uses the value on the right side. This makes it perfect for setting defaults without getting tripped up by <span class="keyword">falsy</span> values like 0
                 </p>
                 <div>
                     <div>
@@ -171,11 +168,11 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
-                                let tax = 0
+                            <code class="language-javascript code-block">
+                                let myTax = 0
 
-                                const reward = tax ?? 10
-                                console.log(tax) // Output: 0 
+                                const finalTax = myTax ?? 10
+                                console.log(finalTax) // Output: 0 
                             </code>
                         </pre>
                     </div>
@@ -196,7 +193,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const user = {
                                     name: 'Alice',
                                     address: {
@@ -226,7 +223,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const data = fetch('google.com').catch(error => console.error(error))
                             </code>
                         </pre>
@@ -246,7 +243,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 let count = 5
                                 {
                                     let count = 0
@@ -271,7 +268,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const person = { name: 'Alice', age: 30 }
                                 console.log('name' in person) // true
                                 console.log('city' in person) // false
@@ -294,7 +291,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 if(userIsAdmin) {
                                     const lazyModule = await import('./admin.js')
                                 }
@@ -308,7 +305,7 @@
                     Promise.all
                 </h2>
                 <p>
-                    Waiting for multiple asynchronous operations can be sometimes inneficient.Let's say you have to fetch a list of users and posts from an api. The data retrived from one is not necessary to fetch the other.
+                    Waiting for multiple asynchronous operations can be sometimes inneficient.Let's say you have to fetch a list of users and posts from an API. The data retrived from one is not necessary to fetch the other.
                     <br>
                     <span class="keyword">Promise.all()</span> helps you get both results at once: It allows you to execute them
                     in parallel and provides a single promise that resolves when all the individual promises have
@@ -320,11 +317,22 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
-                                /* We're waiting users to finish before fetching the posts
-                                Even if we don't need the users data to fetch posts */
+                            <code class="language-javascript code-block">
+                                // We're waiting users to finish before fetching the posts
+                                // Even if we don't need the users data to fetch posts
                                 const users = await fetch('https://api.example.com/users/')
                                 const posts = await fetch('https://api.example.com/posts/')
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-javascript code-block">
+                                // Now we are fetching the users and posts at the sime time
                                 
                                 const [users, posts] = await Promise.all([
                                     fetch('https://api.example.com/users/'),
@@ -348,7 +356,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const products = [
                                     { name: 'Laptop', price: 500.00 },
                                     { name: 'Mug', price: 27.50 },
@@ -366,12 +374,12 @@
                             </code>
                         </pre>
                     </div>
-                    <div class="attach-top">
+                    <div>
                         <div class="language-control">
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 // Output:
                                 {
                                     'cheap': [
@@ -393,7 +401,7 @@
                     Array mutations
                 </h2>
                 <p>
-                    JavaScript offers several methods for manipulating arrays. However, traditional methods like sort, splice, and reverse modify the original array, and that's not a consistent behavior, since other methods like <span class="keyword">map</span>, <span class="keyword">filter</span> and <span class="keyword">reduce</span> don't do that.
+                    JavaScript offers several methods for manipulating arrays. However, traditional methods like <span class="keyword">sort</span>, <span class="keyword">splice</span>, and <span class="keyword">reverse</span> modify the original array, and that's not a consistent behavior, since other methods like <span class="keyword">map</span>, <span class="keyword">filter</span> and <span class="keyword">reduce</span> don't do that.
                     <br>
                     ECMAScript 2023 introduced a set of new methods that prioritize immutability: <span class="keyword">toSorted</span>, <span class="keyword">toSpliced</span>, and <span class="keyword">toReversed</span>. These methods create new arrays, leaving the original data untouched.
                 </p>
@@ -403,11 +411,10 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="javascript">
+                            <code class="language-javascript code-block">
                                 const numbers = [3, 1, 4, 5, 2]
-
                                 const sortedNumbers = numbers.toSorted((a, b) => a - b)
-
+                                <!--  -->
                                 console.log(numbers) // [3, 1, 4, 5, 2] (remains unchanged)
                                 console.log(sortedNumbers) // [1, 2, 3, 4, 5]
                             </code>

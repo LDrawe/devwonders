@@ -8,12 +8,11 @@
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
-    <link rel="stylesheet" href="../css/rainbow.css">
+    <link rel="stylesheet" href="../css/prism.css">
     <script src="../js/nav.js" defer></script>
-    <script src="../js/rainbow.js" defer></script>
-    <script src="../js/formatter.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
     <script src="../js/input.js" defer></script>
+    <script src="../js/prism.js" defer></script>
     <title>DevWonders</title>
 </head>
 
@@ -51,8 +50,10 @@
                     Insert/Delete
                 </h2>
                 <p>
-                    The <span class="keyword">ins</span> tag represents a range of text that has been added to a document.
-                    Similarly you can use the <span class="keyword">del</span> element to  represent a range of text that has
+                    The <span class="keyword">ins</span> tag represents a range of text that has been added to a
+                    document.
+                    Similarly you can use the <span class="keyword">del</span> element to represent a range of text that
+                    has
                     been deleted from the document. No CSS required!
                 </p>
                 <div>
@@ -61,13 +62,13 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="code-block language-html"><!-- 
                                 <span>
-                                    “I am
+                                    I am
                                     <del>inevitable</del>
-                                    <ins>Iron Man!"</ins>
+                                    <ins>Iron Man!</ins>
                                 </span>
-                            </code>
+                        --></code>
                         </pre>
                     </div>
                     <span>
@@ -82,7 +83,8 @@
                     Meter
                 </h2>
                 <p>
-                    The <span class="keyword">meter</span> tag allows you to display a scalar value within a given range, meaning you don't have to
+                    The <span class="keyword">meter</span> tag allows you to display a scalar value within a given
+                    range, meaning you don't have to
                     go styling a div and hack your way around with javascript
                 </p>
                 <div>
@@ -91,10 +93,10 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!-- 
                                 <label for="fuel">Fuel level: 0%</label>
-                                <meter id="fuel" max="100" low="33" high="66"></meter>
-                            </code>
+                                <meter id="fuel" max="100" low="33" high="66"></meter> 
+                            --></code>
                         </pre>
                     </div>
                     <div class="flex-column">
@@ -120,17 +122,17 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!--
                                 <form onsubmit="alert('It works!')">
                                     <input
-                                        placeholder="User"
-                                        required="true"
-                                    >
+                                            placeholder="User"
+                                            required="true"
+                                        >
                                     <button type="submit">
                                         Login
                                     </button>
-                                </form>
-                            </code>
+                                </form> 
+                        --></code>
                         </pre>
                     </div>
                     <form onsubmit="event.preventDefault(); alert('It works!')">
@@ -145,9 +147,11 @@
                     Suggestions
                 </h2>
                 <p>
-                    Use the <span class="keyword">datalist</span> tag to suggest values for an input when the user is typing.
+                    Use the <span class="keyword">datalist</span> tag to suggest values for an input when the user is
+                    typing.
                     To make the options appear, we give it a unique <span class="keyword">ID</span>,
-                    and then add the <span class="keyword">list</span> attribute to the <span class="keyword">input</span> element with the same <span class="keyword">ID</span> as value. It
+                    and then add the <span class="keyword">list</span> attribute to the <span
+                        class="keyword">input</span> element with the same <span class="keyword">ID</span> as value. It
                     also works on mobile
                 </p>
                 <div>
@@ -156,7 +160,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!--
                                 <input
                                     placeholder="Type your country..."
                                     list="countries"
@@ -169,7 +173,7 @@
                                     <option value="Mexico"></option>
                                     <option value="USA"></option>
                                 </datalist>
-                            </code>
+                        --></code>
                         </pre>
                     </div>
                     <input placeholder="Type your country..." list="paises">
@@ -189,7 +193,8 @@
                     Optgroup
                 </h2>
                 <p>
-                    The <span class="keyword">optgroup</span> tag creates a grouping of options within a <span class="keyword">select</span> element.
+                    The <span class="keyword">optgroup</span> tag creates a grouping of options within a <span
+                        class="keyword">select</span> element.
                 </p>
                 <div>
                     <div>
@@ -197,7 +202,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!--
                                 <select>
                                     <optgroup label="Europe">
                                         <option value="Uk">United Kingdom</option>
@@ -210,7 +215,7 @@
                                         <option value="USA">United States</option>
                                     </optgroup>
                                 </select>
-                            </code>
+                            --></code>
                         </pre>
                     </div>
                     <div class="flex-column">
@@ -236,7 +241,8 @@
                     Tooltip
                 </h2>
                 <p>
-                    The <span class="keyword">title</span> attribute provides additional information about an element. This information is typically
+                    The <span class="keyword">title</span> attribute provides additional information about an element.
+                    This information is typically
                     displayed as a tooltip text when the mouse hovers over the element.
                 </p>
                 <div>
@@ -245,9 +251,9 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
-                                <button title="Okey Dokey">Hover Me</button>
-                            </code>
+                            <code class="language-html code-block"><!--
+                                    <button title="Okey Dokey">Hover Me</button>
+                        --></code>
                         </pre>
                     </div>
                     <button title="Okey Dokey">Hover me</button>
@@ -268,9 +274,9 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!--
                                 <base href="" target="_blank">
-                            </code>
+                        --></code>
                         </pre>
                     </div>
                 </div>
@@ -296,13 +302,13 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block"><!--
                                 <dialog id="dialog">
                                     <p>Hey, a native dialog with just a few lines!</p>
                                     <button onclick="dialog.close()">Close</button>
                                 </dialog>
                                 <button onclick="dialog.showModal()">Open Dialog</button>
-                            </code>
+                        --></code>
                         </pre>
                     </div>
                     <dialog id="modal">
@@ -318,8 +324,11 @@
                     Popover
                 </h2>
                 <p>
-                    Similarly to the dialog, a new element recently added is the popover, it's still in experiment support.
-                    Think of it as the <span class="keyword">dialog</span> element's little cousin, specializing in quick bursts of information rather than full-blown modal experiences. No more need to write javascript or tricky css using <span class="keyword"> :focus-within</span>
+                    Similarly to the dialog, a new element recently added is the popover, it's still in experiment
+                    support.
+                    Think of it as the <span class="keyword">dialog</span> element's little cousin, specializing in
+                    quick bursts of information rather than full-blown modal experiences. No more need to write
+                    javascript or tricky css using <span class="keyword"> :focus-within</span>
                 </p>
                 <!-- <div>
                     <div>
@@ -327,7 +336,7 @@
                             <span></span>
                         </div>
                         <pre>
-                            <code class="code-block" data-language="html">
+                            <code class="language-html code-block">
                                 <button popovertarget="mydiv">Click Me</button>
                                 <div id="mydiv">
                                     <p>Cool ain't it?</p>
