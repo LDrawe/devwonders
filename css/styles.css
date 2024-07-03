@@ -66,13 +66,11 @@ main {
 
 main nav {
     background-color: var(--secondary-color);
-    width: calc(230px * ((var(--sidebar-open) + 1) / 2));
-    height: fit-content;
-    max-height: 600px;
+    width: calc(200px * ((var(--sidebar-open) + 1) / 2));
     border-radius: 0 15px 15px 0;
     transition: 500ms;
-    overflow: hidden;
     white-space: nowrap;
+    overflow: hidden;
     /* Without it, when we close the tab the text would appear */
     align-self: center;
 }
@@ -81,7 +79,7 @@ main nav ul {
     display: grid;
     padding: 20px;
     gap: 25px;
-    max-height: calc(100vh - 30px - 30px - 70px);
+    max-height: min(700px, 80vh);
     scrollbar-color: var(--primary-color) transparent;
     overflow: hidden;
 }
@@ -135,7 +133,7 @@ main nav a:hover {
 main article {
     padding: 0 40px 10px;
     overflow-y: auto;
-    width: 100%;
+    flex: 1;
     line-height: 1.5;
     scroll-behavior: smooth;
     scrollbar-color: var(--primary-color) transparent;
@@ -180,7 +178,7 @@ section button:hover {
 }
 
 section :where(input:not([type="range"]), select) {
-    background-color: #57433d;
+    background-color: #534642;
     border-radius: 5px;
     padding: 10px 5px;
     outline: none;
