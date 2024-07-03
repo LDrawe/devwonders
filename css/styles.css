@@ -177,13 +177,6 @@ section button:hover {
     filter: brightness(80%);
 }
 
-section :where(input:not([type="range"]), select) {
-    background-color: #534642;
-    border-radius: 5px;
-    padding: 10px 5px;
-    outline: none;
-}
-
 section p + div {
     display: flex;
     align-items: center;
@@ -239,16 +232,6 @@ div:has(> div.language-control){
     left: 40px;
 }
 
-optgroup {
-    font-style: normal;
-}
-
-meter,
-input[type="range"] {
-    width: 100px;
-    padding: 0;
-}
-
 #rtn-btn {
     background-color: #FFC26F;
     height: 50px;
@@ -271,36 +254,6 @@ input[type="range"] {
 
 #rtn-btn:hover {
     filter: brightness(35%);
-}
-
-dialog {
-    background-color: #443127;
-    padding: 1em;
-    border: none;
-    border-radius: 10px;
-    text-align: center;
-    transition: 300ms ease-out;
-    display: block;
-    visibility: hidden;
-    opacity: 0;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
-
-dialog[open] {
-    visibility: visible;
-    opacity: 1;
-}
-
-dialog::backdrop {
-    background-color: rgba(0, 0, 0, 0.5);
-}
-
-dialog button {
-    margin-top: 20px;
-    background-color: #8c3d39;
 }
 
 @media screen and (max-width: 768px) {
@@ -328,7 +281,6 @@ dialog button {
         transition: all 300ms;
         position: relative;
         width: 20px;
-
     }
 
     header nav {
