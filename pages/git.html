@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#54342f">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/prism.js" defer></script>
+    <script src="../js/sidebar.js" defer></script>
+    <title>DevWonders</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">
+            <h1>DevWonders</h1>
+            <img src="../public/icons/favicon.svg" alt="Logo">
+        </a>
+        <img src="../public/icons/git.svg" alt="Git">
+        <nav>
+            <ul>
+                <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
+                <li><a style="--color: var(--css)" href="css.html">CSS</a></li>
+                <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
+            </ul>
+        </nav>
+        <button id="btn-mobile" title="Menu" type="button">
+        </button>
+    </header>
+    <main>
+        <nav>
+            <ul>
+            </ul>
+        </nav>
+        <article>
+            <button id="rtn-btn" title="Return to top" type="button">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+            <button id="sidebar-Control" title="Toggle sidebar" type="button">
+                <span></span>
+            </button>
+            <section>
+                <h2>
+                    Ammend
+                </h2>
+                <p>
+                    Ever committed a change and instantly realized you forgot something? Maybe a typo in the commit message or an extra file you meant to include? Instead of making a new commit, you can fix the last one with the <span class="keyword">amend</span> flag. Let's say you just made a commit:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git commit -m "Fix navbar bug"
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    But oops! You forgot to add a file. Instead of creating a new commit, stage the missing file and run:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git commit --amend
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    This updates your last commit, adding any new changes. If you only want to fix the message, use:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git commit --amend -m "Fix navbar responsiveness issue"
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    If you've already pushed the commit, be careful! Amending rewrites history, so you’ll need to force-push (git push --force) to update the remote branch.
+                </p>
+            </section>
+            <section>
+                <h2>
+                    Rebase
+                </h2>
+                <p>
+                    Rebase is a powerful tool that helps keep your Git history clean and linear. Instead of merging branches (which creates extra merge commits), rebasing moves your commits on top of another branch.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git checkout feature
+                                git rebase main
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>Before rebasing:</p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                main:    A --- B --- C
+                                            \
+                                feature:       D --- E
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>After rebasing:</p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                main:    A --- B --- C --- D --- E
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Bisect
+                </h2>
+                <p>
+                    Got a bug and don't know which commit caused it? Let Git do the detective work with bisect. It uses binary search to find the commit that introduced a bug. Start by running:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-git code-block">
+                                git bisect start
+                                git bisect bad  # Mark the current commit as bad
+                                git bisect good <!--<commit-hash>--> # Mark an older known good commit
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p>
+                    Git will check out a commit in between. Keep marking until you find the culprit. Eventually there will be no more revisions left to inspect, and the command will print out a description of the first bad commit.When you’re done, run:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-git code-block">
+                                git bisect reset
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Archive
+                </h2>
+                <p>
+                    Want to send your project's source code but without the Git history? Instead of manually deleting .git, just run:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git archive --format=zip HEAD -o project.zip
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Shortlog
+                </h2>
+                <p>
+                    If you want a quick summary of the contributions in your repository, <span class="keyword">git shortlog</span> can help. It groups commits by author and summarizes the commit history.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                git shortlog
+                                git shortlog -s #Shows a summary with only the number of commits for each author.
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
