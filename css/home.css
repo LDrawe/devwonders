@@ -23,11 +23,6 @@ h1 + img {
     width: clamp(30px, 12vw, 60px);
 }
 
-.socials {
-    height: 35px;
-    margin: 0 10px 20px;
-}
-
 h2 {
     font: clamp(28px, 5vw, 32px) var(--heading);
     max-width: 35ch;
