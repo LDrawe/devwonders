@@ -6,7 +6,7 @@ header {
     height: 70px;
 }
 
-header > div a {
+header > a {
     display: flex;
     align-items: center;
     column-gap: 10px;
@@ -52,6 +52,12 @@ header img {
     visibility: visible;
     opacity: 1;
     translate: 0 60px;
+    min-width: 120px;
+    text-align: center;
+
+    li a {
+        margin: 0 auto;
+    }
 }
 
 #dropdown_container img {

@@ -4,14 +4,14 @@ const container = document.querySelector('article')
 const returnButton = document.querySelector('#rtn-btn')
 
 btnLang.onclick = (event) => {
-    event.stopPropagation(); // Prevents the click on the image from closing the menu immediately
-    nav.classList.toggle('dropdown_open');
+    event.stopPropagation() // Prevents the click on the image from closing the menu immediately
+    nav.classList.toggle('dropdown_open')
 };
 
 // Close the dropdown when clicking outside
 document.addEventListener('click', (event) => {
     if (!nav.contains(event.target)) {
-        nav.classList.remove('dropdown_open');
+        nav.classList.remove('dropdown_open')
     }
 });
 
@@ -21,5 +21,5 @@ container.onscroll = () => {
 }
 
 returnButton.onclick = () => {
-    container.scrollTop = 0 // Set the scroll position to the top
+    container.scrollTop = 0
 }
