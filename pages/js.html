@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#54342f">
+
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/prism.css">
+
     <script src="../js/nav.js" defer></script>
     <script src="../js/prism.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
+
     <title>DevWonders</title>
 </head>
 
@@ -57,7 +60,8 @@
                     Small numbers are easy and quick to read. But what about large ones? Let's say
                     1000000.
                     You probably have seen a large number like this while coding. Thankfully, javascript has
-                    a way to make these more readable, you can use underlines to separate into groups for better readability. 
+                    a way to make these more readable, you can use underlines to separate into groups for better
+                    readability.
                     Don't worry, it doesn't change their behaviour, it's only for visual use
                 </p>
                 <div>
@@ -78,7 +82,8 @@
                     Delete
                 </h2>
                 <p>
-                    If you have an object and need to delete a property from it, you may be tempted to use the <span class="keyword">delete</span>
+                    If you have an object and need to delete a property from it, you may be tempted to use the <span
+                        class="keyword">delete</span>
                     keyword. And that's fine, but you can solve this in a more elegant and safer way by using
                     destructuring.
                 </p>
@@ -106,8 +111,13 @@
                     isNan
                 </h2>
                 <p>
-                    The <span class="keyword">isNan</span> function in JavaScript is used to determine if a value is Not a Number (NaN). It's
-                    important to distinguish between NaN and other <span class="keyword">falsy</span> values like 0, empty strings, and false. For example, if we use the bang operator to check for a valid input, because javascript sees 0 as a <span class="keyword">falsy</span> value, it would flip a <span class="keyword">falsy</span> value to <span class="keyword truthy">true</span>, even if it's a valid one in our scenario. That's when you should use the isNan function
+                    The <span class="keyword">isNan</span> function in JavaScript is used to determine if a value is Not
+                    a Number (NaN). It's
+                    important to distinguish between NaN and other <span class="keyword">falsy</span> values like 0,
+                    empty strings, and false. For example, if we use the bang operator to check for a valid input,
+                    because javascript sees 0 as a <span class="keyword">falsy</span> value, it would flip a <span
+                        class="keyword">falsy</span> value to <span class="keyword truthy">true</span>, even if it's a
+                    valid one in our scenario. That's when you should use the isNan function
                 </p>
                 <div>
                     <div>
@@ -145,7 +155,8 @@
                     Nullish Coalescing
                 </h2>
                 <p>
-                    The <span class="keyword">||</span> (OR) operator  is used to provide default values or check for truthy
+                    The <span class="keyword">||</span> (OR) operator is used to provide default values or check for
+                    truthy
                     conditions. We often rely on it because of its simplicity. However, it can
                     sometimes lead to unexpected behavior, especially when dealing with the number 0
                 </p>
@@ -165,7 +176,14 @@
                     </div>
                 </div>
                 <p>
-                    The intention here is to provide a base tax (10 dollars) if no value is passed. But the <span class="keyword">||</span> operator sees the tax amount as <span class="keyword">falsy</span> (because it's 0) and assigns the default value (10). This can be a bug if you actually want the code to recognize 0 as a valid value and not provide a tax. This is when the <span class="keyword">??</span> operator comes in hand. It checks if the value on the left side is either <span class="keyword">null</span> or <span class="keyword">undefined</span>. If it is, then it uses the value on the right side. This makes it perfect for setting defaults without getting tripped up by <span class="keyword">falsy</span> values like 0
+                    The intention here is to provide a base tax (10 dollars) if no value is passed. But the <span
+                        class="keyword">||</span> operator sees the tax amount as <span class="keyword">falsy</span>
+                    (because it's 0) and assigns the default value (10). This can be a bug if you actually want the code
+                    to recognize 0 as a valid value and not provide a tax. This is when the <span
+                        class="keyword">??</span> operator comes in hand. It checks if the value on the left side is
+                    either <span class="keyword">null</span> or <span class="keyword">undefined</span>. If it is, then
+                    it uses the value on the right side. This makes it perfect for setting defaults without getting
+                    tripped up by <span class="keyword">falsy</span> values like 0
                 </p>
                 <div>
                     <div>
@@ -189,7 +207,8 @@
                 </h2>
                 <p>
                     Optional chaining is a powerful feature introduced in ES6+ that allows you to safely
-                    access nested properties within an object. It avoids long if statement to check for the properties individually and errors when dealing with potentially
+                    access nested properties within an object. It avoids long if statement to check for the properties
+                    individually and errors when dealing with potentially
                     undefined values in the chain.
                 </p>
                 <div>
@@ -220,7 +239,10 @@
                     Inline catch
                 </h2>
                 <p>
-                    When dealing with code that has promises, developers tend to encapsulate the entire block in a <span class="keyword">Try/Catch</span> block to prevent any errors. But when dealing with simple promises, this becomes unnecessary and adds a bit of nesting too. Instead, if it's a simple error treating, you can just catch it
+                    When dealing with code that has promises, developers tend to encapsulate the entire block in a <span
+                        class="keyword">Try/Catch</span> block to prevent any errors. But when dealing with simple
+                    promises, this becomes unnecessary and adds a bit of nesting too. Instead, if it's a simple error
+                    treating, you can just catch it
                 </p>
                 <div>
                     <div>
@@ -240,7 +262,9 @@
                     Block scope
                 </h2>
                 <p>
-                    Variables declared within a block are only accessible from within that specific block. This creates a well-defined scope for each variable, preventing unintended interactions with identically named variables in other parts of your code.
+                    Variables declared within a block are only accessible from within that specific block. This creates
+                    a well-defined scope for each variable, preventing unintended interactions with identically named
+                    variables in other parts of your code.
                 </p>
                 <div>
                     <div>
@@ -265,7 +289,8 @@
                     In Keyword
                 </h2>
                 <p>
-                    The <span class="keyword">in</span> keyword is a handy operator in JavaScript that checks if a property exists as a key within an object.
+                    The <span class="keyword">in</span> keyword is a handy operator in JavaScript that checks if a
+                    property exists as a key within an object.
                 </p>
                 <div>
                     <div>
@@ -310,9 +335,12 @@
                     Promise.all
                 </h2>
                 <p>
-                    Waiting for multiple asynchronous operations can be sometimes inneficient.Let's say you have to fetch a list of users and posts from an API. The data retrived from one is not necessary to fetch the other.
+                    Waiting for multiple asynchronous operations can be sometimes inneficient.Let's say you have to
+                    fetch a list of users and posts from an API. The data retrived from one is not necessary to fetch
+                    the other.
                     <br>
-                    <span class="keyword">Promise.all()</span> helps you get both results at once: It allows you to execute them
+                    <span class="keyword">Promise.all()</span> helps you get both results at once: It allows you to
+                    execute them
                     in parallel and provides a single promise that resolves when all the individual promises have
                     resolved.
                 </p>
@@ -353,7 +381,9 @@
                     Object.groupBy
                 </h2>
                 <p>
-                    <span class="keyword">Object.groupBy()</span> allows you to categorize these objects based on a specific property. The end result is an object organized in groups. Let's take an example, you have a array of products and want to separate them between cheap and expensive:
+                    <span class="keyword">Object.groupBy()</span> allows you to categorize these objects based on a
+                    specific property. The end result is an object organized in groups. Let's take an example, you have
+                    a array of products and want to separate them between cheap and expensive:
                 </p>
                 <div>
                     <div>
@@ -406,9 +436,16 @@
                     Array mutations
                 </h2>
                 <p>
-                    JavaScript offers several methods for manipulating arrays. However, traditional methods like <span class="keyword">sort</span>, <span class="keyword">splice</span>, and <span class="keyword">reverse</span> modify the original array, and that's not a consistent behavior, since other methods like <span class="keyword">map</span>, <span class="keyword">filter</span> and <span class="keyword">reduce</span> don't do that.
+                    JavaScript offers several methods for manipulating arrays. However, traditional methods like <span
+                        class="keyword">sort</span>, <span class="keyword">splice</span>, and <span
+                        class="keyword">reverse</span> modify the original array, and that's not a consistent behavior,
+                    since other methods like <span class="keyword">map</span>, <span class="keyword">filter</span> and
+                    <span class="keyword">reduce</span> don't do that.
                     <br>
-                    ECMAScript 2023 introduced a set of new methods that prioritize immutability: <span class="keyword">toSorted</span>, <span class="keyword">toSpliced</span>, and <span class="keyword">toReversed</span>. These methods create new arrays, leaving the original data untouched.
+                    ECMAScript 2023 introduced a set of new methods that prioritize immutability: <span
+                        class="keyword">toSorted</span>, <span class="keyword">toSpliced</span>, and <span
+                        class="keyword">toReversed</span>. These methods create new arrays, leaving the original data
+                    untouched.
                 </p>
                 <div>
                     <div>
@@ -422,6 +459,38 @@
                                 <!--  -->
                                 console.log(numbers) // [3, 1, 4, 5, 2] (remains unchanged)
                                 console.log(sortedNumbers) // [1, 2, 3, 4, 5]
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    AbortController
+                </h2>
+                <p>
+                    Most developers only use <span class="keyword">AbortController</span> to cancel API fetches.
+                    However, it's also the cleanest way to remove multiple event listeners at once. Instead of keeping
+                    references to every single callback function to use <span
+                        class="keyword">removeEventListener</span>, you can link them all to an <span
+                        class="keyword">AbortSignal</span>. When you abort the controller, all associated listeners are
+                    destroyed instantly.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-javascript code-block">
+                                const controller = new AbortController()
+                                const { signal } = controller
+                                
+                                document.addEventListener('mousemove', handleMove, { signal })
+                                document.addEventListener('click', handleClick, { signal })
+                                
+                                // Later, you can remove ALL listeners at once:
+                                controller.abort()
                             </code>
                         </pre>
                     </div>
