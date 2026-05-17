@@ -105,6 +105,6 @@ h2 {
         position: absolute;
         top: 20px;
         margin: 0;
-        right: var(--right);
+        right: 50px;
     }
 }

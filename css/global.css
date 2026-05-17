@@ -41,7 +41,9 @@ body {
     background-attachment: fixed;
 }
 
-input, button, select {
+input,
+button,
+select {
     border: 0;
 }
 
@@ -58,5 +60,7 @@ a {
 }
 
 .socials {
-    height: 35px;
+    img {
+        height: 35px;
+    }
 }

@@ -14,8 +14,6 @@ header > a {
 }
 
 header .socials {
-    display: flex;
-    gap: 30px;
     justify-self: end;
 }
 
