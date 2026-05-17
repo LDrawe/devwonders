@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#54342f">
+
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/prism.css">
+
     <script src="../js/nav.js" defer></script>
     <script src="../js/prism.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
+
     <title>DevWonders</title>
 </head>
 
@@ -33,10 +36,10 @@
         </div>
         <div class="socials">
             <div class="socials">
-            <a target="_blank" href="https://github.com/LDrawe/devwonders">
-                <img class="socials" src="../public/icons/github.svg" alt="Github Logo">
-            </a>
-        </div>
+                <a target="_blank" href="https://github.com/LDrawe/devwonders">
+                    <img class="socials" src="../public/icons/github.svg" alt="Github Logo">
+                </a>
+            </div>
         </div>
     </header>
     <main>
@@ -236,6 +239,56 @@
                             <code class="language-bash code-block">
                                 git shortlog
                                 git shortlog -s #Shows a summary with only the number of commits for each author.
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Worktree
+                </h2>
+                <p>
+                    Imagine you are deep into coding a new feature on your branch, and suddenly you are asked to fix an
+                    urgent bug on the <span class="keyword">main</span> branch. Instead of stashing your messy changes
+                    or creating temporary commits just to switch branches, <span class="keyword">git worktree</span>
+                    allows you to check out another branch in a completely separate physical folder on your computer.
+                    You can have both branches open in your editor at the same time!
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                # Creates a new folder called '../hotfix' and checks out 'main' there
+                                git worktree add ../hotfix main
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Rerere (Reuse Recorded Resolution)
+                </h2>
+                <p>
+                    If you do long-running branches or frequent rebases, you probably hate resolving the exact same
+                    merge conflict multiple times. <span class="keyword">rerere</span> stands for "Reuse Recorded
+                    Resolution". When enabled, Git watches how you solve a conflict. If it ever sees that exact same
+                    conflict again in the future, it will automatically apply your previous solution without asking you.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-bash code-block">
+                                # Enable it globally once and let Git do the work
+                                git config --global rerere.enabled true
                             </code>
                         </pre>
                     </div>

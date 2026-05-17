@@ -5,13 +5,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#54342f">
+
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/prism.css">
+
     <script src="../js/nav.js" defer></script>
     <script src="../js/prism.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
+
     <title>DevWonders</title>
 </head>
 
@@ -54,7 +57,8 @@
                     Clamp
                 </h2>
                 <p>
-                    You can use the <span class="keyword">clamp()</span> function to define a range within which your element's size will adjust
+                    You can use the <span class="keyword">clamp()</span> function to define a range within which your
+                    element's size will adjust
                     fluidly, accommodating
                     various screen sizes and content lengths. It takes 3 values: minimum, preferred and maximum.
                     So instead of using both min-width and max-width properties separately, you
@@ -114,7 +118,8 @@
                     Getting consistent spacing between elements often involved
                     meticulously setting margins on the elements individually.
                     For this you can use the <span class="keyword">gap</span> property.
-                    It's a shorthand for <span class="keyword">row-gap</span> and <span class="keyword">column-gap</span>. It defines the size of the gap
+                    It's a shorthand for <span class="keyword">row-gap</span> and <span
+                        class="keyword">column-gap</span>. It defines the size of the gap
                     between the rows and between the columns in flexbox or grid layout.
                     No need to manually set margin for each element anymore!
                 </p>
@@ -138,7 +143,8 @@
                     Place-items
                 </h2>
                 <p>
-                    Speaking of grid, <span class="keyword">place-items</span> is also a shorthand, for align-items and justify-items, meaning you
+                    Speaking of grid, <span class="keyword">place-items</span> is also a shorthand, for align-items and
+                    justify-items, meaning you
                     can now center your divs with less lines of code
                 </p>
                 <div>
@@ -161,7 +167,9 @@
                     Inset
                 </h2>
                 <p>
-                    Ever needed to manually set the <span class="keyword">top</span>, <span class="keyword">right</span>, <span class="keyword">bottom</span> and <span class="keyword">left</span> property of an element? This css
+                    Ever needed to manually set the <span class="keyword">top</span>, <span
+                        class="keyword">right</span>, <span class="keyword">bottom</span> and <span
+                        class="keyword">left</span> property of an element? This css
                     property is a shorthand for these, respectively
                 </p>
                 <div>
@@ -185,7 +193,8 @@
                     Transform
                 </h2>
                 <p>
-                    You can also strip the <span class="keyword">scale</span>, <span class="keyword">rotate</span> and <span class="keyword">translate</span> out of the transform property and use them
+                    You can also strip the <span class="keyword">scale</span>, <span class="keyword">rotate</span> and
+                    <span class="keyword">translate</span> out of the transform property and use them
                     individually
                 </p>
                 <div>
@@ -309,6 +318,107 @@
                             <code class="language-css code-block">
                                 span {
                                     color: var(--color);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Light-Dark Function
+                </h2>
+                <p>
+                    Building dark mode usually requires writing a large <span class="keyword">@media
+                        (prefers-color-scheme: dark)</span> block and duplicating your CSS variables. The new <span
+                        class="keyword">light-dark()</span> function simplifies this massively. It accepts two color
+                    values and automatically applies the first one in light mode and the second one in dark mode, saving
+                    you tons of lines of code.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-css code-block">
+                                :root {
+                                    color-scheme: light dark;
+                                }
+
+                                .element {
+                                    /* First value is for light mode, second for dark mode */
+                                    background-color: light-dark(#ffffff, #000000);
+                                    color: light-dark(#000000, #ffffff);
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Starting Style
+                </h2>
+                <p>
+                    Animating an element from <span class="keyword">display: none</span> to <span
+                        class="keyword">display: block</span> (like a fading modal or dropdown) used to be impossible
+                    with pure CSS. You had to use JavaScript to wait for the next frame. The <span
+                        class="keyword">@starting-style</span> rule fixes this by defining the initial state of an
+                    element before it receives its first styling, allowing seamless entry animations natively.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-css code-block">
+                                .modal {
+                                    /* O 'allow-discrete' é o que permite animar o 'display' */
+                                    transition: opacity 0.5s ease, display 0.5s ease allow-discrete;
+                                    opacity: 1;
+                                    display: block;
+                                }
+                                
+                                /* Estado inicial EXATO antes de aparecer na tela */
+                                @starting-style {
+                                    .modal {
+                                        opacity: 0;
+                                        display: none;
+                                    }
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Text Wrap
+                </h2>
+                <p>
+                    Have you ever had a beautiful headline ruined because one single word wrapped to the next line (a
+                    "widow")? Designers hate that. Instead of hardcoding line breaks or using hidden characters, you can
+                    use <span class="keyword">text-wrap: balance</span> to evenly distribute lines of text in headings,
+                    or <span class="keyword">text-wrap: pretty</span> to prevent single words on the last line of long
+                    paragraphs.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="language-css code-block">
+                                h1, h2, h3 {
+                                    text-wrap: balance;
+                                }
+
+                                p {
+                                    text-wrap: pretty;
                                 }
                             </code>
                         </pre>

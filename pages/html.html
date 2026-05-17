@@ -5,15 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#54342f">
+
     <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="../css/global.css">
     <link rel="stylesheet" href="../css/styles.css">
     <link rel="stylesheet" href="../css/html.css">
     <link rel="stylesheet" href="../css/prism.css">
+
     <script src="../js/nav.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
     <script src="../js/input.js" defer></script>
     <script src="../js/prism.js" defer></script>
+
     <title>DevWonders</title>
 </head>
 
@@ -336,25 +339,65 @@
                     quick bursts of information rather than full-blown modal experiences. No more need to write
                     javascript or tricky css using <span class="keyword"> :focus-within</span>
                 </p>
-                <!-- <div>
+                <div>
                     <div>
                         <div class="language-control">
                             <span></span>
                         </div>
                         <pre>
-                            <code class="language-html code-block">
-                                <button popovertarget="mydiv">Click Me</button>
-                                <div id="mydiv">
+                            <code class="language-html code-block"><!--
+                                <button popovertarget="pop">Click Me</button>
+                                <div id="pop">
                                     <p>Cool ain't it?</p>
                                 </div>
-                            </code>
+                            --></code>
                         </pre>
                     </div>
-                    <button popovertarget="pop" type="button">Click Me</button>
+                    <button popovertarget="pop" id="btn-pop" type="button">Click Me</button>
                     <div id="pop" popover>
                         Cool ain't it?
                     </div>
-                </div> -->
+                </div>
+            </section>
+            <section>
+                <h2>
+                    Inert Attribute
+                </h2>
+                <p>
+                    Managing keyboard focus and screen readers when a modal or sidebar is open can be a headache. You
+                    usually have to write complex JavaScript to trap focus inside the modal and prevent users from
+                    accidentally interacting with the background. The <span class="keyword">inert</span> attribute
+                    solves this natively. By adding it to a container, you make the browser completely ignore it—no
+                    clicks, no tab navigation, and no screen readers.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control">
+                            <span></span>
+                        </div>
+                        <pre>
+                            <code class="code-block language-html"><!-- 
+                                <div id="preview-box" inert>
+                                    <p>Try clicking the button below:</p>
+                                    <button onclick="alert('You clicked the button!')">Click Me!</button>
+                                </div>
+
+                                <button type="button" onclick="document.querySelector('#preview-box').toggleAttribute('inert');">
+                                    Toggle inert attribute
+                                </button>
+                            --></code>
+                        </pre>
+                    </div>
+                    <br>
+                    <div id="preview-box" inert
+                        style="padding: 15px; border: 1px dashed #504945; margin: 15px 0; border-radius: 8px;">
+                        <p style="margin: 0 0 10px 0;">Try clicking the button below:</p>
+                        <button type="button" onclick="alert('You clicked the button!')">Click Me!</button>
+                    </div>
+                    <button type="button"
+                        onclick="document.querySelector('#preview-box').toggleAttribute('inert');">Toggle inert
+                        attribute</button>
+                </div>
             </section>
         </article>
     </main>
