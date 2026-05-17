@@ -1,8 +1,8 @@
 header {
-    display: grid;
-    grid-template-columns: 1fr auto 1fr;
+    display: flex;
+    justify-content: space-between; /* Joga os itens para as pontas */
     align-items: center;
-    padding: 0 15px;
+    padding: 0 25px;
     height: 70px;
 }
 
@@ -11,10 +11,6 @@ header > a {
     align-items: center;
     column-gap: 10px;
     width: fit-content;
-}
-
-header .socials {
-    justify-self: end;
 }
 
 header h1 {
@@ -28,8 +24,9 @@ header img {
 }
 
 #dropdown_container {
-    position: relative;
-    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 #dropdown_container nav {
@@ -241,32 +238,16 @@ div:has(> div.language-control){
     justify-content: space-between;
 }
 
-.language-control span {
-    border-radius: 50px;
-    width: 12px;
+.language-control::before {
+    content: '';
+    display: inline-block;
+    width: 12px; 
     height: 12px;
-    background-color: #f95f52;
-    position: relative;
-    left: 6px;
-}
-
-.language-control span::before,
-.language-control span::after {
-    border-radius: 50px;
-    width: 12px;
-    height: 12px;
-    content: "";
-    position: absolute;
-}
-
-.language-control span::before {
-    background-color: #e9c115;
-    left: 20px;
-}
-
-.language-control span::after {
-    background-color: #4fc331;
-    left: 40px;
+    border-radius: 50%;
+    background-color: #f95f52; /* Bolinha Vermelha */
+    /* A mágica: projeta uma sombra amarela 20px pro lado e uma verde 40px pro lado */
+    box-shadow: 20px 0 0 #e9c115, 40px 0 0 #4fc331; 
+    margin-left: 6px;
 }
 
 #rtn-btn {
