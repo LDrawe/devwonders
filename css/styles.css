@@ -140,8 +140,8 @@ main nav a:hover {
     margin-left: -40px;
 }
 
-#sidebar-Control span::before,
-#sidebar-Control span::after {
+#sidebar-Control::before,
+#sidebar-Control::after {
     content: '';
     display: block;
     border: 2px solid #646464;
@@ -149,19 +149,19 @@ main nav a:hover {
     transition: 500ms;
 }
 
-#sidebar-Control span::after {
+#sidebar-Control::after {
     position: relative;
     top: -5px;
 }
 
-#sidebar-Control:hover span::before {
+#sidebar-Control:hover::before {
     rotate: calc(30deg * var(--sidebar-open));
-    border: 2px solid #cfcfcf;
+    border-color: #cfcfcf;
 }
 
-#sidebar-Control:hover span::after {
+#sidebar-Control:hover::after {
     rotate: calc(30deg * var(--sidebar-open) * -1);
-    border: 2px solid #cfcfcf;
+    border-color: #cfcfcf;
 }
 
 main article {
