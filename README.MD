@@ -114,5 +114,5 @@ See the LICENSE file for more details.
  <a href="https://github.com/LDrawe/devwonders/pulls">Request Feature</a> • 
  <a href="https://ldrawe.github.io/devwonders/">Live Wiki</a>
 </p>
-<p>Copyright © 2026 DevWonders. Released under the MIT License.</p>
+<p>Copyright © 2026 DevWonders.</p>
 </div>
