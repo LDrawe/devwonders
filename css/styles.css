@@ -117,12 +117,11 @@ header img {
     top: 100%;
     left: 50%;
     transform: translateX(-50%) translateY(0);
-    padding: 10px;
-    border-radius: 10px;
+    padding: 12px 14px;
+    border-radius: 12px;
     transition: 300ms;
     overflow: hidden;
-    text-align: center;
-    min-width: 120px;
+    min-width: 175px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 8px 18px;
 }
 
@@ -130,39 +129,59 @@ header img {
     visibility: visible;
     opacity: 1;
     transform: translateX(-50%) translateY(12px);
+}
 
-    li a {
-        margin: 0 auto;
-    }
+#dropdown_container nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 header nav a {
-    transition: 300ms;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 200ms ease;
     position: relative;
     color: #eed2c4;
-    font: bold 24px var(--heading);
+    font: bold 20px var(--heading);
+    white-space: nowrap;
 }
 
 header nav a:hover {
     color: var(--color);
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-header nav a::after {
+header nav a img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+header nav a span {
+    position: relative;
+    display: inline-block;
+}
+
+header nav a span::after {
     content: '';
     position: absolute;
-    bottom: 0;
+    bottom: -2px;
     left: 0;
     background-color: var(--color);
     width: 100%;
-    height: 1px;
+    height: 2px;
     transform: scaleX(0);
-    transform-origin: bottom;
-    transition: transform 300ms;
+    transform-origin: left;
+    transition: transform 250ms ease;
 }
 
-header nav a:hover::after {
+header nav a:hover span::after {
     transform: scaleX(1);
-    transform-origin: bottom;
 }
 
 main {
