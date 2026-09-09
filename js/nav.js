@@ -3,7 +3,8 @@ const TOPICS = [
     { id: 'css', name: 'CSS', file: 'css.html', icon: '../public/icons/css.svg', color: 'var(--css)', alt: 'CSS logo' },
     { id: 'js', name: 'JavaScript', file: 'js.html', icon: '../public/icons/js.svg', color: 'var(--js)', alt: 'JavaScript logo' },
     { id: 'git', name: 'Git', file: 'git.html', icon: '../public/icons/git.svg', color: 'var(--git)', alt: 'Git logo' },
-    { id: 'vscode', name: 'VS Code', file: 'vscode.html', icon: '../public/icons/vscode.svg', color: 'var(--vscode)', alt: 'Visual Studio Code logo' }
+    { id: 'vscode', name: 'VS Code', file: 'vscode.html', icon: '../public/icons/vscode.svg', color: 'var(--vscode)', alt: 'Visual Studio Code logo' },
+    { id: 'ts', name: 'TypeScript', file: 'typescript.html', icon: '../public/icons/ts.svg', color: 'var(--ts)', alt: 'TypeScript logo' }
 ]
 
 class AppHeader extends HTMLElement {

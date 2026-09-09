@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#54342f">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <script src="../js/prism.js" defer></script>
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/sidebar.js" defer></script>
+    <title>DevWonders</title>
+</head>
+
+<body>
+    <app-header current="ts"></app-header>
+    <main>
+        <app-sidebar></app-sidebar>
+        <article>
+            <button id="rtn-btn" title="Return to top" type="button">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+
+            <section>
+                <h2>
+                    Partial and Required
+                </h2>
+                <p>
+                    Instead of redefining an interface just to mark everything optional for an edit form or patch API,
+                    wrap it in <span class="keyword">Partial&lt;T&gt;</span>. Every field becomes optional in one go.
+                    Conversely, when you need to strictly validate that every optional configuration has been resolved,
+                    <span class="keyword">Required&lt;T&gt;</span> strips away all question marks:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+interface User {
+    id: string
+    name: string
+    email?: string
+}
+
+function updateUser(id: string, fields: Partial&lt;User&gt;) {
+    // fields can have any subset of User properties
+}
+
+type StrictUser = Required&lt;User&gt;
+// StrictUser requires id, name AND email
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Pick and Omit
+                </h2>
+                <p>
+                    When a component or handler only cares about a fraction of a large data model, don't copy-paste
+                    properties. Use <span class="keyword">Pick&lt;T, Keys&gt;</span> to extract only the exact keys you
+                    need, or <span class="keyword">Omit&lt;T, Keys&gt;</span> to drop sensitive or irrelevant fields
+                    like passwords and internal timestamps:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+interface Product {
+    id: number
+    title: string
+    price: number
+    stock: number
+    secretSupplierId: string
+}
+
+type ProductPreview = Pick&lt;Product, 'id' | 'title' | 'price'&gt;
+type PublicProduct = Omit&lt;Product, 'secretSupplierId'&gt;
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Record
+                </h2>
+                <p>
+                    Stop typing generic objects as <span class="keyword">{ [key: string]: any }</span>. The
+                    <span class="keyword">Record&lt;Keys, Type&gt;</span> utility creates clean, strictly-typed
+                    dictionary maps. Pair it with a union of string literals to guarantee that every single case is
+                    handled:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+type Role = 'admin' | 'editor' | 'viewer'
+
+interface Permission {
+    canEdit: boolean
+    canDelete: boolean
+}
+
+const rolePermissions: Record&lt;Role, Permission&gt; = {
+    admin: { canEdit: true, canDelete: true },
+    editor: { canEdit: true, canDelete: false },
+    viewer: { canEdit: false, canDelete: false }
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    ReturnType and Parameters
+                </h2>
+                <p>
+                    Writing repetitive types for complex API clients, factories, or third-party library functions is
+                    fragile. TypeScript can extract the return signature directly using <span
+                        class="keyword">ReturnType&lt;typeof fn&gt;</span>, and function argument tuples with <span
+                        class="keyword">Parameters&lt;typeof fn&gt;</span>:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+function createSession(userId: string, rememberMe: boolean) {
+    return {
+        token: 'xyz-secret',
+        createdAt: new Date(),
+        userId
+    }
+}
+
+type Session = ReturnType&lt;typeof createSession&gt;
+type SessionArgs = Parameters&lt;typeof createSession&gt; // [string, boolean]
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Awaited
+                </h2>
+                <p>
+                    Working with asynchronous functions often results in types wrapped inside <span
+                        class="keyword">Promise&lt;T&gt;</span>. The <span class="keyword">Awaited&lt;T&gt;</span>
+                    utility recursively unwraps promises to grab the underlying resolved data type, matching the exact
+                    runtime behavior of <span class="keyword">await</span>:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+async function fetchAccount() {
+    return { id: 101, username: 'octocat', active: true }
+}
+
+type Account = Awaited&lt;ReturnType&lt;typeof fetchAccount&gt;&gt;
+// Account is { id: number, username: string, active: boolean }
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Satisfies Operator
+                </h2>
+                <p>
+                    When you annotate a variable with a type (like <span class="keyword">const config: Config =
+                        ...</span>), TypeScript widens the properties and throws away specific literal information.
+                    The <span class="keyword">satisfies</span> operator validates that your object matches the type
+                    contract while preserving the exact literal types, autocomplete, and method chaining:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+type Palette = Record&lt;string, string | [number, number, number]&gt;
+
+const theme = {
+    primary: '#3178C6',
+    secondary: [31, 120, 198]
+} satisfies Palette
+
+// Works! TypeScript remembers 'primary' is a string:
+theme.primary.toLowerCase()
+
+// And remembers 'secondary' is a tuple:
+theme.secondary.map(val => val * 2)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Const Assertions
+                </h2>
+                <p>
+                    Adding <span class="keyword">as const</span> to any array or object literal turns every property into
+                    a <span class="keyword">readonly</span> literal type. Arrays become immutable fixed-length tuples,
+                    preventing accidental mutations and turning object values into strict union types instantly without
+                    writing an enum:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+const HTTP_METHODS = ['GET', 'POST', 'PUT', 'DELETE'] as const
+
+type HttpMethod = typeof HTTP_METHODS[number]
+// HttpMethod is 'GET' | 'POST' | 'PUT' | 'DELETE'
+
+const routes = {
+    home: '/',
+    docs: '/docs'
+} as const
+// routes.home is strictly '/' rather than string
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Discriminated Unions
+                </h2>
+                <p>
+                    Representing UI or network states with multiple independent booleans (like <span
+                        class="keyword">isLoading</span> and <span class="keyword">isError</span>) often creates
+                    impossible states. Discriminated unions use a shared literal property (like <span
+                        class="keyword">status</span>) that lets TypeScript narrow the type automatically inside a <span
+                        class="keyword">switch</span> or <span class="keyword">if</span> block:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+type NetworkState =
+    | { status: 'loading' }
+    | { status: 'success'; data: string[] }
+    | { status: 'error'; error: Error }
+
+function render(state: NetworkState) {
+    switch (state.status) {
+        case 'loading':
+            return 'Loading spinner...'
+        case 'success':
+            return `Loaded: ${state.data.join(', ')}`
+        case 'error':
+            return `Failed: ${state.error.message}`
+    }
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Template Literal Types
+                </h2>
+                <p>
+                    Similar to JavaScript template literals, TypeScript allows you to interpolate types within string
+                    literals. This makes it effortless to generate complex string unions, such as type-safe event
+                    handlers, BEM CSS classes, or route patterns:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+type Entity = 'user' | 'order' | 'product'
+type Action = 'create' | 'update' | 'delete'
+
+type EventName = `${Entity}:${Action}`
+// 'user:create' | 'user:update' | 'user:delete' | ...
+
+type Direction = 'top' | 'right' | 'bottom' | 'left'
+type MarginProperty = `margin-${Direction}`
+// 'margin-top' | 'margin-right' | 'margin-bottom' | 'margin-left'
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
