@@ -6,7 +6,11 @@ class AppSidebar extends HTMLElement {
         </nav>
         <button id="sidebar-Control" title="Toggle sidebar" type="button" aria-label="Toggle sidebar"></button>`
 
-        this.initSidebar()
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.initSidebar())
+        } else {
+            this.initSidebar()
+        }
     }
 
     initSidebar() {
@@ -26,10 +30,15 @@ class AppSidebar extends HTMLElement {
             list.appendChild(item)
         }
 
-        let value = localStorage.getItem('sidebar-open') || 1
+        let rawValue = localStorage.getItem('sidebar-open')
+        let value = rawValue !== null ? Number(rawValue) : 1
 
         if (main) {
             main.style.setProperty('--sidebar-open', value)
+        }
+
+        if (value === -1) {
+            list.style.display = 'none'
         }
 
         sidebar.addEventListener('transitionend', () => { // Being the perfectionist I am, I did this to deallocate the space of the list in the DOM

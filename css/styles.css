@@ -1,5 +1,6 @@
 app-header {
     display: block;
+    position: relative;
 }
 
 header {
@@ -189,14 +190,14 @@ header nav a:hover span::after {
 }
 
 main {
+    --sidebar-open: 1;
     display: flex;
-    position: relative;
     height: calc(100svh - 70px); /* -70px because of header size */
 }
 
 main nav {
     background-color: var(--secondary-color);
-    width: calc(220px * ((var(--sidebar-open) + 1) / 2));
+    width: calc(220px * ((var(--sidebar-open, 1) + 1) / 2));
     border-radius: 0 15px 15px 0;
     transition: 500ms;
     white-space: nowrap;
@@ -239,11 +240,10 @@ app-sidebar {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    left: calc(220px * ((var(--sidebar-open) + 1) / 2));
+    left: calc(220px * ((var(--sidebar-open, 1) + 1) / 2));
     background: none;
     transition: 500ms;
     padding-inline: 10px;
-    z-index: 10;
 }
 
 #sidebar-Control::before,
