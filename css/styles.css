@@ -101,7 +101,7 @@ main {
 
 main nav {
     background-color: var(--secondary-color);
-    width: calc(200px * ((var(--sidebar-open) + 1) / 2));
+    width: calc(220px * ((var(--sidebar-open) + 1) / 2));
     border-radius: 0 15px 15px 0;
     transition: 500ms;
     white-space: nowrap;
@@ -111,20 +111,25 @@ main nav {
 
 main nav ul {
     display: grid;
-    padding: 20px;
-    gap: 25px;
+    padding: 20px 15px;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
     max-height: min(700px, 80vh);
     scrollbar-color: var(--primary-color) transparent;
-    overflow: hidden;
-}
-
-main nav:hover ul {
     overflow-y: auto;
 }
 
+main nav li {
+    min-width: 0;
+}
 main nav a {
     transition: 300ms;
-    font: 500 22px var(--heading);
+    font: 500 20px var(--heading);
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 main nav a:hover {
