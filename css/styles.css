@@ -200,6 +200,20 @@ p > span.truthy {
     color: #91cc82;
 }
 
+kbd {
+    background-color: var(--secondary-color);
+    color: #ffba5c;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    padding: 2px 7px;
+    font-size: 0.85em;
+    font-family: 'JetBrainsMono', monospace;
+    display: inline-block;
+    vertical-align: baseline;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
 section button {
     background-color: #29643d;
     padding: 10px;

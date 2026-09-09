@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#54342f">
+
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/prism.css">
+
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/prism.js" defer></script>
+    <script src="../js/sidebar.js" defer></script>
+
+    <title>DevWonders</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html">
+            <h1>DevWonders</h1>
+            <img src="../public/icons/favicon.svg" alt="Logo">
+        </a>
+        <div id="dropdown_container">
+            <img src="../public/icons/vscode.svg" alt="Visual Studio Code logo">
+            <nav>
+                <ul>
+                    <li><a style="--color: var(--html)" href="html.html">HTML</a></li>
+                    <li><a style="--color: var(--css)" href="css.html">CSS</a></li>
+                    <li><a style="--color: var(--js)" href="js.html">JavaScript</a></li>
+                    <li><a style="--color: var(--git)" href="git.html">Git</a></li>
+                </ul>
+            </nav>
+        </div>
+        <a id="github" target="_blank" href="https://github.com/LDrawe/devwonders">
+            <img src="../public/icons/github.svg" alt="Github Logo">
+        </a>
+    </header>
+    <main>
+        <nav>
+            <ul>
+            </ul>
+        </nav>
+        <article>
+            <button id="rtn-btn" title="Return to top" type="button">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+            <button id="sidebar-Control" title="Toggle sidebar" type="button" aria-label="Toggle sidebar"></button>
+            <section>
+                <h2>
+                    Toggle Word Wrap
+                </h2>
+                <p>
+                    Tired of scrolling horizontally to read a long line of code, an extensive URL, or a big JSON string?
+                    Instead of manually breaking the line or scrolling back and forth, you can use a quick shortcut.
+                    Pressing <kbd>Alt</kbd> + <kbd>Z</kbd> toggles word wrap. It visually breaks long lines to fit your
+                    screen width without actually adding real line breaks to your file.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Cursor History
+                </h2>
+                <p>
+                    Have you ever clicked on a function definition, went to another file to check how it works, and then
+                    completely lost where you were originally typing? You can use <kbd>Alt</kbd> + <kbd>←</kbd> (Left
+                    Arrow) to go back to your previous cursor positions, and <kbd>Alt</kbd> + <kbd>→</kbd> (Right Arrow)
+                    to go forward. It works exactly like the back and forward buttons on a web browser, but for your
+                    code navigation!
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Select Next Occurrence
+                </h2>
+                <p>
+                    If you want to rename or edit a specific word in multiple places, standard "Find and Replace" can be
+                    overkill and might change things you didn't want to. Instead, select a word and press
+                    <kbd>Ctrl</kbd> + <kbd>D</kbd>. This will find and select the very next occurrence of that exact
+                    word, creating a new cursor for each one. You can press it multiple times to select several
+                    instances and edit them all simultaneously!
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Rename Symbol
+                </h2>
+                <p>
+                    Manually changing a variable or function name across a large file is asking for syntax errors. If
+                    you just select the word and type over it, you might miss some instances. Instead, click on the
+                    variable or function you want to rename and press <kbd>F2</kbd>. VS Code will smartly rename that
+                    symbol across your entire scope, ensuring that nothing breaks.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Move Line
+                </h2>
+                <p>
+                    Need to swap lines of code? Don't waste time cutting and pasting. You can hold <kbd>Alt</kbd> +
+                    <kbd>↑</kbd> (Up Arrow) or <kbd>Alt</kbd> + <kbd>↓</kbd> (Down Arrow) to seamlessly move the current
+                    line (or a selected block of code) up or down through your file. It auto-formats the indentation as
+                    it goes.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Duplicate Line
+                </h2>
+                <p>
+                    Similar to moving lines, you can duplicate the line you are currently on without having to select,
+                    copy, and paste it. Just press <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>↓</kbd> (Down Arrow) or
+                    <kbd>↑</kbd> (Up Arrow) to instantly clone the line above or below. This is extremely useful when
+                    writing repetitive HTML tags or object properties.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Delete Line
+                </h2>
+                <p>
+                    Triple-clicking a line or holding down Backspace to get rid of code is slow and annoying. Just put
+                    your cursor anywhere on the line and press <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd>. The
+                    entire line vanishes on the spot without messing up your clipboard or leaving empty whitespace
+                    behind.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Jump to Symbol
+                </h2>
+                <p>
+                    Hunting through a 500-line file just to find a function definition gets old fast. Press
+                    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd> and start typing the function or variable name to
+                    jump straight to it. If you type a colon (<kbd>:</kbd>), it even groups everything neatly by
+                    methods, variables, and classes. Need to find a symbol anywhere across your whole project? Hit
+                    <kbd>Ctrl</kbd> + <kbd>T</kbd>.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Fold with Braces
+                </h2>
+                <p>
+                    When dealing with a long function or a nested object, scrolling all the way down just to find where it
+                    closes is a pain. Instead of hunting for the tiny fold arrow in the gutter, you can simply
+                    <strong>double-click right on an opening or closing curly brace</strong> (<span class="keyword">{</span>
+                    or <span class="keyword">}</span>). VS Code will instantly select the entire matching block! And if the
+                    code is already folded, double-clicking the collapsed <span class="keyword">{...}</span> badge pops it
+                    right open.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Column Selection
+                </h2>
+                <p>
+                    Ever had a list of 20 items where you needed to add quotes, commas, or fix the indentation on every
+                    single line? Instead of tapping arrow keys line by line, hold <kbd>Shift</kbd> + <kbd>Alt</kbd> and
+                    drag your mouse vertically. You get a tall column of cursors so you can type, delete, or paste across
+                    all those lines at the exact same time.
+                </p>
+            </section>
+
+            <section>
+                <h2>
+                    Custom Snippets
+                </h2>
+                <p>
+                    Stop installing bloated snippet extensions for basic boilerplate you could write in 10 seconds. You
+                    can drop a <span class="keyword">.vscode/snippets.code-snippets</span> file right in your workspace.
+                    With handy built-in variables like <span class="keyword">$TM_FILENAME_BASE</span> and tab stops like
+                    <span class="keyword">$1</span>, everyone on your team gets identical, fast snippets without
+                    downloading a single extension:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+{
+  "Component Boilerplate": {
+    "scope": "javascript,typescript",
+    "prefix": "rfc",
+    "body": [
+      "export function $TM_FILENAME_BASE() {",
+      "  return (",
+      "    <div>",
+      "      <h1>$1</h1>",
+      "    </div>",
+      "  );",
+      "}"
+    ],
+    "description": "Create component boilerplate natively"
+  }
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Native Timeline
+                </h2>
+                <p>
+                    Ever accidentally wiped out a good chunk of code, closed VS Code, and realized your undo history was
+                    gone? Don't panic, and definitely don't rush to install heavy extensions like GitLens or Local
+                    History. Open the <span class="keyword">Timeline</span> panel at the bottom of the Explorer sidebar.
+                    VS Code quietly saves local snapshots every single time you hit save, letting you compare diffs and
+                    resurrect lost code with one click.
+                </p>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
