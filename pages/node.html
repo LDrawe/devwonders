@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#54342f">
+    <link rel="icon" href="../public/icons/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/prism.css">
+    <script src="../js/prism.js" defer></script>
+    <script src="../js/nav.js" defer></script>
+    <script src="../js/sidebar.js" defer></script>
+    <title>DevWonders</title>
+</head>
+
+<body>
+    <app-header current="node"></app-header>
+    <main>
+        <app-sidebar></app-sidebar>
+        <article>
+            <button id="rtn-btn" title="Return to top" type="button">
+                <img src="../public/icons/up.svg" alt="Return to top" height="30">
+            </button>
+
+            <section>
+                <h2>
+                    Native Fetch API
+                </h2>
+                <p>
+                    Modern Node.js includes the standard Fetch API out of the box. You no longer need third-party
+                    packages like <span class="keyword">axios</span> or <span class="keyword">node-fetch</span> to perform HTTP requests.
+                    Globals like <span class="keyword">fetch</span>, <span class="keyword">Request</span>, <span class="keyword">Response</span>,
+                    <span class="keyword">Headers</span>, and <span class="keyword">FormData</span> work seamlessly across browser and server:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+const response = await fetch('https://api.github.com/users/octocat', {
+    headers: { 'User-Agent': 'Node.js App' }
+})
+
+if (!response.ok) {
+    throw new Error(`HTTP error: ${response.status}`)
+}
+
+const data = await response.json()
+console.log(data.login, data.public_repos)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Built-in Test Runner
+                </h2>
+                <p>
+                    Node.js provides a built-in test runner through the <span class="keyword">node:test</span> module and assertion utilities via
+                    <span class="keyword">node:assert/strict</span>. You can write subtests, describe suites, mock functions, and run tests
+                    directly from the CLI with zero npm dependencies:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+import { test, describe, it } from 'node:test'
+import assert from 'node:assert/strict'
+
+describe('Math utilities', () => {
+    it('calculates sum correctly', () => {
+        const sum = (a, b) => a + b
+        assert.equal(sum(2, 3), 5)
+        assert.notEqual(sum(2, 3), 6)
+    })
+
+    it('handles async operations', async () => {
+        const value = await Promise.resolve('ok')
+        assert.deepEqual({ status: value }, { status: 'ok' })
+    })
+})
+
+// Run via terminal:
+// node --test
+// node --test --watch
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Native Watch Mode
+                </h2>
+                <p>
+                    Forget installing and configuring <span class="keyword">nodemon</span> or development watchers for simple projects.
+                    Node.js has native file watching via the <span class="keyword">--watch</span> flag, automatically restarting your process whenever
+                    imported files change:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+# Watch the entry point and all imported files
+node --watch server.js
+
+# Watch specific directories or pattern paths
+node --watch --watch-path=./src --watch-path=./config server.js
+
+# Clear terminal screen between restarts
+node --watch --watch-preserve-output=false server.js
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Native .env File Loading
+                </h2>
+                <p>
+                    You can load environment variables directly from files without depending on the <span class="keyword">dotenv</span> package.
+                    Use the <span class="keyword">--env-file</span> command line flag to automatically populate <span class="keyword">process.env</span>:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+# Pass a single environment file
+node --env-file=.env app.js
+
+# Chain multiple env files (latter values override earlier ones)
+node --env-file=.env --env-file=.env.local app.js
+
+# Access variables as usual in your code
+const port = process.env.PORT ?? 3000
+const dbUrl = process.env.DATABASE_URL
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Built-in SQLite Module
+                </h2>
+                <p>
+                    Node.js 22+ introduces <span class="keyword">node:sqlite</span>, providing a built-in embedded SQLite database engine.
+                    There is no compilation step, no native bindings to maintain with <span class="keyword">node-gyp</span>, and no third-party package needed
+                    for lightweight persistence:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+import { DatabaseSync } from 'node:sqlite'
+
+const db = new DatabaseSync(':memory:')
+
+db.exec(`
+    CREATE TABLE users (
+        id INTEGER PRIMARY KEY AUTOINCREMENT,
+        name TEXT,
+        role TEXT
+    ) STRICT
+`)
+
+const insert = db.prepare('INSERT INTO users (name, role) VALUES (?, ?)')
+insert.run('Alice', 'Admin')
+insert.run('Bob', 'Developer')
+
+const query = db.prepare('SELECT * FROM users WHERE role = ?')
+const results = query.all('Admin')
+console.log(results)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Native File Globbing
+                </h2>
+                <p>
+                    Matching filesystem patterns no longer requires external libraries such as <span class="keyword">glob</span> or
+                    <span class="keyword">fast-glob</span>. Node.js provides native glob support right inside the <span class="keyword">node:fs</span>
+                    and <span class="keyword">node:fs/promises</span> modules:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+import { glob } from 'node:fs/promises'
+
+// Find all TypeScript or JavaScript test files recursively
+for await (const entry of glob('src/**/*.test.{js,ts}')) {
+    console.log('Found test:', entry)
+}
+
+// Synchronous version is also available
+import { globSync } from 'node:fs'
+const configs = globSync('**/*.config.json', { exclude: ['node_modules/**'] })
+console.log(configs)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    AbortSignal and Timeouts
+                </h2>
+                <p>
+                    Managing asynchronous timeouts and cancellations is standardized with <span class="keyword">AbortSignal</span>.
+                    You can cancel fetch calls, event listeners, and filesystem streams automatically after a timeout or when multiple
+                    triggers race:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+// Automatically cancel request if it takes longer than 5 seconds
+try {
+    const res = await fetch('https://api.example.com/slow', {
+        signal: AbortSignal.timeout(5000)
+    })
+    const data = await res.json()
+} catch (err) {
+    if (err.name === 'TimeoutError') {
+        console.error('Request timed out after 5000ms')
+    }
+}
+
+// Combine multiple cancellation signals with AbortSignal.any()
+const userCancelled = new AbortController()
+const combinedSignal = AbortSignal.any([
+    userCancelled.signal,
+    AbortSignal.timeout(10000)
+])
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Native WebSockets
+                </h2>
+                <p>
+                    Node.js provides a native, browser-compatible <span class="keyword">WebSocket</span> client in the global scope.
+                    You can establish real-time connections without needing external dependencies like <span class="keyword">ws</span>
+                    for client-side streaming:
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-javascript code-block">
+const ws = new WebSocket('wss://echo.websocket.org')
+
+ws.addEventListener('open', () => {
+    console.log('Connected to server')
+    ws.send(JSON.stringify({ type: 'ping', timestamp: Date.now() }))
+})
+
+ws.addEventListener('message', (event) => {
+    console.log('Received:', event.data)
+})
+
+ws.addEventListener('close', () => {
+    console.log('Connection closed')
+})
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
+        </article>
+    </main>
+</body>
+
+</html>
