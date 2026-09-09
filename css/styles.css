@@ -1,3 +1,7 @@
+app-header {
+    display: block;
+}
+
 header {
     display: flex;
     justify-content: space-between;
@@ -186,6 +190,7 @@ header nav a:hover span::after {
 
 main {
     display: flex;
+    position: relative;
     height: calc(100svh - 70px); /* -70px because of header size */
 }
 
@@ -226,13 +231,19 @@ main nav a:hover {
     color: var(--primary-color);
 }
 
+app-sidebar {
+    display: contents;
+}
+
 #sidebar-Control {
     position: absolute;
     top: 50%;
+    transform: translateY(-50%);
+    left: calc(220px * ((var(--sidebar-open) + 1) / 2));
     background: none;
     transition: 500ms;
     padding-inline: 10px;
-    margin-left: -40px;
+    z-index: 10;
 }
 
 #sidebar-Control::before,

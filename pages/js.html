@@ -19,63 +19,13 @@
 </head>
 
 <body>
-    <header>
-        <a href="../index.html">
-            <h1>DevWonders</h1>
-            <img src="../public/icons/favicon.svg" alt="Logo">
-        </a>
-        <div id="dropdown_container">
-            <button id="dropdown_btn" type="button" aria-label="Toggle navigation">
-                <div class="icon-box">
-                    <img src="../public/icons/js.svg" alt="JS logo">
-                </div>
-                <div class="arrow-box">
-                    <span class="arrow"></span>
-                </div>
-            </button>
-            <nav>
-                <ul>
-                    <li>
-                        <a style="--color: var(--html)" href="html.html">
-                            <img src="../public/icons/html.svg" alt="HTML logo">
-                            <span>HTML</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a style="--color: var(--css)" href="css.html">
-                            <img src="../public/icons/css.svg" alt="CSS logo">
-                            <span>CSS</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a style="--color: var(--git)" href="git.html">
-                            <img src="../public/icons/git.svg" alt="Git logo">
-                            <span>Git</span>
-                        </a>
-                    </li>
-                    <li>
-                        <a style="--color: var(--vscode)" href="vscode.html">
-                            <img src="../public/icons/vscode.svg" alt="Visual Studio Code logo">
-                            <span>VS Code</span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
-        <a id="github" target="_blank" href="https://github.com/LDrawe/devwonders">
-            <img  src="../public/icons/github.svg" alt="Github Logo">
-        </a>
-    </header>
+    <app-header current="js"></app-header>
     <main>
-        <nav>
-            <ul>
-            </ul>
-        </nav>
+        <app-sidebar></app-sidebar>
         <article>
             <button id="rtn-btn" title="Return to top" type="button">
                 <img src="../public/icons/up.svg" alt="Return to top" height="30">
             </button>
-            <button id="sidebar-Control" title="Toggle sidebar" type="button" aria-label="Toggle sidebar"></button>
             <section>
                 <h2>
                     Numeric separator
