@@ -27,6 +27,7 @@
 
     <script src="../js/nav.js" defer></script>
     <script src="../js/prism.js" defer></script>
+    <script src="../js/runner.js" defer></script>
     <script src="../js/sidebar.js" defer></script>
 
     <title>JavaScript Tips & Best Practices - DevWonders</title>
@@ -40,6 +41,14 @@
             <button id="rtn-btn" title="Return to top" type="button">
                 <img src="../public/icons/up.svg" alt="Return to top" width="30" height="30">
             </button>
+            <div class="js-global-notice">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"/>
+                    <line x1="12" y1="16" x2="12" y2="12"/>
+                    <line x1="12" y1="8" x2="12.01" y2="8"/>
+                </svg>
+                <span>Interactive JavaScript snippets can be run in-place (<strong>▶</strong>). All logs are also printed directly to your browser's <strong>DevTools Console (F12)</strong>.</span>
+            </div>
             <section>
                 <h2>
                     Numeric separator
@@ -53,7 +62,7 @@
                     Don't worry, it doesn't change their behaviour, it's only for visual use
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -74,7 +83,7 @@
                     destructuring.
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -116,12 +125,12 @@
                             </code>
                         </pre>
                     </div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
                                 let numberOfMessages = 0
-                                if(isNan(numberOfMessages)) {
+                                if(isNaN(numberOfMessages)) {
                                     throw new Error('Invalid value')
                                 }
                                 console.log(`You have ${numberOfMessages} unread messages`)
@@ -141,7 +150,7 @@
                     sometimes lead to unexpected behavior, especially when dealing with the number 0
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -164,7 +173,7 @@
                     tripped up by <span class="keyword">falsy</span> values like 0
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -188,7 +197,7 @@
                     undefined values in the chain.
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -239,7 +248,7 @@
                     variables in other parts of your code.
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -263,7 +272,7 @@
                     property exists as a key within an object.
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -348,7 +357,7 @@
                     a array of products and want to separate them between cheap and expensive:
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
@@ -406,13 +415,13 @@
                     untouched.
                 </p>
                 <div>
-                    <div>
+                    <div data-runnable="true">
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-javascript code-block">
                                 const numbers = [3, 1, 4, 5, 2]
                                 const sortedNumbers = numbers.toSorted((a, b) => a - b)
-                                <!--  -->
+                                
                                 console.log(numbers) // [3, 1, 4, 5, 2] (remains unchanged)
                                 console.log(sortedNumbers) // [1, 2, 3, 4, 5]
                             </code>

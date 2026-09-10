@@ -367,6 +367,26 @@
                         attribute</button>
                 </div>
             </section>
+
+            <section>
+                <h2>
+                    Adaptive Favicon
+                </h2>
+                <p>
+                    Did you know you can automatically switch your site's favicon based on whether the user's operating system is in dark mode or light mode? You can do this purely in HTML using the <span class="keyword">media</span> attribute on your <span class="keyword">&lt;link rel="icon"&gt;</span> tags!
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-html code-block"><!--
+                                <link rel="icon" href="/favicon-light.svg" media="(prefers-color-scheme: light)">
+                                <link rel="icon" href="/favicon-dark.svg" media="(prefers-color-scheme: dark)">
+                        --></code>
+                        </pre>
+                    </div>
+                </div>
+            </section>
         </article>
     </main>
 </body>

@@ -140,6 +140,9 @@
                             </code>
                         </pre>
                     </div>
+                    <div class="place-items-demo-box" title="Centered with place-items: center">
+                        <span class="place-items-target">Centered</span>
+                    </div>
                 </div>
             </section>
             <section>
@@ -337,20 +340,45 @@
                         <div class="language-control"></div>
                         <pre>
                             <code class="language-css code-block">
-                                .modal {
-                                    transition: opacity 0.5s ease, display 0.5s ease allow-discrete;
-                                    opacity: 1;
+                                .card {
                                     display: block;
+                                    opacity: 1;
+                                    translate: 0 0;
+                                    transition: display 0.4s, opacity 0.4s ease-out, translate 0.4s cubic-bezier(0.2, 0, 0, 1);
+                                    transition-behavior: allow-discrete;
                                 }
-                                
+
+                                /* Entry animation: transition FROM these values when first shown */
                                 @starting-style {
-                                    .modal {
+                                    .card {
                                         opacity: 0;
-                                        display: none;
+                                        translate: 0 -14px;
                                     }
+                                }
+
+                                /* Exit animation: transition TO these values when hidden */
+                                .card:where(.hidden, [hidden]) {
+                                    display: none;
+                                    opacity: 0;
+                                    translate: 0 -14px;
                                 }
                             </code>
                         </pre>
+                    </div>
+                    <div class="css-demo-card starting-style-demo-box">
+                        <div class="demo-card-header">
+                            <span>Interactive Demo</span>
+                            <button type="button" class="demo-action-btn" onclick="this.closest('.starting-style-demo-box').querySelector('.starting-demo-card').toggleAttribute('hidden')">
+                                <span>Toggle Card</span>
+                                <span>✨</span>
+                            </button>
+                        </div>
+                        <div class="starting-style-preview-area">
+                            <div class="starting-demo-card">
+                                <h4>🎉 Smooth Entry</h4>
+                                <p>This card enters from <code>display: none</code> using pure <code>@starting-style</code> without JS delays!</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -380,6 +408,61 @@
                                 }
                             </code>
                         </pre>
+                    </div>
+                    <div class="css-demo-card text-wrap-demo-box">
+                        <div class="demo-card-header">
+                            <span>Live Comparison</span>
+                        </div>
+                        <div class="text-wrap-resizer">
+                            <div class="resizer-top">
+                                <span>Container Width:</span>
+                                <span class="resizer-val" id="text-wrap-val">280px</span>
+                            </div>
+                            <input type="range" class="text-wrap-slider" min="210" max="380" value="280" 
+                                oninput="const w = this.value + 'px'; document.getElementById('text-wrap-val').textContent = w; this.closest('.text-wrap-demo-box').querySelectorAll('.text-wrap-card').forEach(el => el.style.maxWidth = w);"
+                                aria-label="Adjust width for text-wrap demo">
+                        </div>
+                        <div class="text-wrap-comparisons">
+                            <div class="text-wrap-card" style="max-width: 280px;">
+                                <span class="text-wrap-badge badge-default">text-wrap: wrap (standard)</span>
+                                <p class="text-wrap-headline headline-default">Mastering the Art of Modern Web Styling</p>
+                            </div>
+                            <div class="text-wrap-card" style="max-width: 280px;">
+                                <span class="text-wrap-badge badge-balance">text-wrap: balance</span>
+                                <p class="text-wrap-headline headline-balance">Mastering the Art of Modern Web Styling</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section>
+                <h2>
+                    Cap Unit
+                </h2>
+                <p>
+                    Sizing icons next to text can be tedious when juggling <span class="keyword">px</span>, <span class="keyword">em</span>, or <span class="keyword">rem</span>. The <span class="keyword">cap</span> unit represents the "cap height" — the exact height of capital letters in the current font. Using <span class="keyword">1cap</span> ensures your icons always match uppercase text proportionally, and combining it with <span class="keyword">vertical-align: baseline</span> aligns the icon with the text baseline.
+                </p>
+                <div>
+                    <div>
+                        <div class="language-control"></div>
+                        <pre>
+                            <code class="language-css code-block">
+                                .icon {
+                                    width: 1cap;
+                                    aspect-ratio: 1;
+                                    vertical-align: baseline;
+                                }
+                            </code>
+                        </pre>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 14px; background: rgba(31, 25, 22, 0.7); border: 1px solid rgba(238, 202, 172, 0.14); padding: 18px 24px; border-radius: 10px;">
+                        <span style="font-size: 32px; line-height: 1; color: #ffba5c;">
+                            <img src="../public/icons/favicon.svg" alt="Icon" style="width: 1cap; aspect-ratio: 1; vertical-align: baseline; margin-right: 8px;">Heading
+                        </span>
+                        <span style="font-size: 16px; line-height: 1; color: #d1beaf;">
+                            <img src="../public/icons/favicon.svg" alt="Icon" style="width: 1cap; aspect-ratio: 1; vertical-align: baseline; margin-right: 8px;">Regular text
+                        </span>
                     </div>
                 </div>
             </section>
