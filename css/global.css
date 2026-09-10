@@ -41,7 +41,17 @@
 }
 
 body {
-    background-image: linear-gradient(45deg, #322626, #6f4836);
+    background-color: #120c09;
+    background-image:
+        radial-gradient(circle at center, rgba(238, 202, 172, 0.06) 1px, transparent 1px),
+        radial-gradient(ellipse 80% 50% at 50% 0%, rgba(255, 186, 92, 0.14) 0%, rgba(212, 136, 59, 0.05) 45%, transparent 75%),
+        radial-gradient(ellipse 60% 40% at 85% 100%, rgba(130, 68, 38, 0.10) 0%, transparent 70%),
+        radial-gradient(ellipse 60% 40% at 15% 100%, rgba(84, 40, 22, 0.10) 0%, transparent 70%);
+    background-size:
+        28px 28px,
+        100% 100%,
+        100% 100%,
+        100% 100%;
     background-attachment: fixed;
 }
 
@@ -64,7 +74,20 @@ a {
 }
 
 #github {
-    img {
-        height: 35px;
-    }
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#github img {
+    height: 35px;
+    width: 35px;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 250ms ease, filter 250ms ease;
+}
+
+#github:hover img {
+    opacity: 1;
+    filter: drop-shadow(0 0 8px rgba(255, 186, 92, 0.5));
 }

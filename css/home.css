@@ -12,38 +12,53 @@ div {
 
 div:nth-child(1) {
     animation: slideIn 800ms ease-out;
+    align-items: center;
 }
 
 h1 {
-    font: clamp(40px, 15vw, 70px) 'OpenSans';
+    font: 700 clamp(38px, 10vw, 64px) 'OpenSans', sans-serif;
     color: #ffba5c;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
 }
 
 h1 + img {
-    width: clamp(30px, 12vw, 60px);
+    width: clamp(32px, 8vw, 52px);
+    height: auto;
+    transition: transform 350ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+div:nth-child(1):hover h1 + img {
+    transform: rotate(-8deg) scale(1.08);
 }
 
 h2 {
-    font: clamp(28px, 5vw, 32px) var(--heading);
-    max-width: 35ch;
+    font: clamp(20px, 4vw, 24px) var(--heading);
+    color: #d1beaf;
+    max-width: 40ch;
     margin: 20px auto;
     animation: slideIn 1000ms ease-out;
+    letter-spacing: 0.3px;
 }
 
 #cards {
     flex-wrap: wrap;
     gap: 30px;
-    margin-top: 50px;
+    margin: 50px auto 0;
+    max-width: 680px;
 }
 
 .card {
-    background-color: var(--secondary-color);
+    background: linear-gradient(155deg, rgba(38, 27, 21, 0.85) 0%, rgba(22, 16, 12, 0.95) 100%);
+    border: 1px solid rgba(238, 202, 172, 0.12);
+    box-shadow: 0 10px 24px -6px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(8px);
     display: grid;
     place-items: center;
     width: clamp(120px, 20vw, 140px);
     aspect-ratio: 1;
-    border-radius: 10px;
-    transition: scale 600ms;
+    border-radius: 14px;
+    transition: transform 350ms cubic-bezier(0.2, 0, 0, 1), border-color 300ms ease, box-shadow 350ms ease;
     animation: appear 1s ease calc(500ms + 100ms * var(--index)) forwards;
     opacity: 0;
     position: relative;
@@ -66,8 +81,9 @@ h2 {
 }
 
 .card:hover {
-    border: 2px solid var(--border-color);
-    scale: 1.1;
+    border-color: var(--border-color);
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 18px 36px -8px rgba(0, 0, 0, 0.75), 0 0 24px -4px var(--border-color);
 }
 
 .card:hover::before {
@@ -76,6 +92,11 @@ h2 {
 
 .card > img {
     height: 70px;
+    transition: transform 350ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.card:hover > img {
+    transform: scale(1.08);
 }
 
 @keyframes appear {
