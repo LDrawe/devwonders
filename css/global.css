@@ -91,3 +91,20 @@ a {
     opacity: 1;
     filter: drop-shadow(0 0 8px rgba(255, 186, 92, 0.5));
 }
+
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 16px;
+    background: #ffba5c;
+    color: #120c09;
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-weight: 700;
+    z-index: 1000;
+    transition: top 200ms ease;
+}
+
+.skip-link:focus {
+    top: 16px;
+}

@@ -4,8 +4,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="An Open-Source Wiki of coding tips, new features and best practices for HTML, CSS, JavaScript, Git, TypeScript, Node.js, and VS Code.">
     <meta name="theme-color" content="#54342f">
-    <link rel="icon" href="./public/icons/favicon.svg" type="image/x-icon">
+    <link rel="canonical" href="https://ldrawe.github.io/devwonders/">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ldrawe.github.io/devwonders/">
+    <meta property="og:title" content="DevWonders">
+    <meta property="og:description" content="An Open-Source Wiki of coding tips, new features and best practices.">
+    <meta property="og:image" content="https://ldrawe.github.io/devwonders/public/icons/favicon.svg">
+
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="DevWonders">
+    <meta name="twitter:description" content="An Open-Source Wiki of coding tips, new features and best practices.">
+    <meta name="twitter:image" content="https://ldrawe.github.io/devwonders/public/icons/favicon.svg">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "DevWonders",
+      "url": "https://ldrawe.github.io/devwonders/",
+      "description": "An Open-Source Wiki of coding tips, new features and best practices"
+    }
+    </script>
+
+    <link rel="icon" href="./public/icons/favicon.svg" type="image/svg+xml">
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/home.css">
     <script src="./js/glow.js" defer></script>
@@ -13,37 +38,43 @@
 </head>
 
 <body>
-    <div>
-        <h1 translate="no">DevWonders</h1>
-        <img src="./public/icons/favicon.svg" alt="Logo">
-    </div>
-    <a id="github" target="_blank" href="https://github.com/LDrawe/devwonders">
-        <img src="./public/icons/github.svg" alt="Github Logo">
-    </a>
-    <h2>An Open-Source Wiki of coding tips, new features and best practices</h2>
-    <div id="cards">
-        <a class="card" style="--border-color: var(--html); --index: 0" href="./pages/html.html">
-            <img src="./public/icons/html.svg" alt="HTML Logo">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <header>
+        <div class="brand">
+            <h1 translate="no">DevWonders</h1>
+            <img src="./public/icons/favicon.svg" alt="DevWonders Logo" width="52" height="52">
+        </div>
+        <a id="github" target="_blank" rel="noopener noreferrer" href="https://github.com/LDrawe/devwonders" aria-label="DevWonders repository on GitHub">
+            <img src="./public/icons/github.svg" alt="Github Logo" width="35" height="35">
         </a>
-        <a class="card" style="--border-color: var(--css); --index: 1" href="./pages/css.html">
-            <img src="./public/icons/css.svg" alt="CSS Logo">
-        </a>
-        <a class="card" style="--border-color: var(--js); --index: 2" href="./pages/js.html">
-            <img src="./public/icons/js.svg" alt="Javascript Logo">
-        </a>
-        <a class="card" style="--border-color: var(--git); --index: 3" href="./pages/git.html">
-            <img src="./public/icons/git.svg" alt="Git Logo">
-        </a>
-        <a class="card" style="--border-color: var(--vscode); --index: 4" href="./pages/vscode.html">
-            <img src="./public/icons/vscode.svg" alt="Visual Studio Code Logo">
-        </a>
-        <a class="card" style="--border-color: var(--ts); --index: 5" href="./pages/typescript.html">
-            <img src="./public/icons/ts.svg" alt="TypeScript Logo">
-        </a>
-        <a class="card" style="--border-color: var(--node); --index: 6" href="./pages/node.html">
-            <img src="./public/icons/node.svg" alt="Node.js Logo">
-        </a>
-    </div>
+    </header>
+
+    <main id="main-content">
+        <h2>An Open-Source Wiki of coding tips, new features and best practices</h2>
+        <nav id="cards" aria-label="Coding Topics">
+            <a class="card" style="--border-color: var(--html); --index: 0" href="./pages/html.html" aria-label="HTML tips and best practices">
+                <img src="./public/icons/html.svg" alt="HTML Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--css); --index: 1" href="./pages/css.html" aria-label="CSS tips and best practices">
+                <img src="./public/icons/css.svg" alt="CSS Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--js); --index: 2" href="./pages/js.html" aria-label="JavaScript tips and best practices">
+                <img src="./public/icons/js.svg" alt="Javascript Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--git); --index: 3" href="./pages/git.html" aria-label="Git tips and best practices">
+                <img src="./public/icons/git.svg" alt="Git Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--vscode); --index: 4" href="./pages/vscode.html" aria-label="Visual Studio Code tips and best practices">
+                <img src="./public/icons/vscode.svg" alt="Visual Studio Code Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--ts); --index: 5" href="./pages/typescript.html" aria-label="TypeScript tips and best practices">
+                <img src="./public/icons/ts.svg" alt="TypeScript Logo" width="70" height="70">
+            </a>
+            <a class="card" style="--border-color: var(--node); --index: 6" href="./pages/node.html" aria-label="Node.js tips and best practices">
+                <img src="./public/icons/node.svg" alt="Node.js Logo" width="70" height="70">
+            </a>
+        </nav>
+    </main>
 </body>
 
 </html>

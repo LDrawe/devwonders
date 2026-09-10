@@ -10,7 +10,11 @@ div {
     gap: 15px;
 }
 
+.brand,
 div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
     animation: slideIn 800ms ease-out;
     align-items: center;
 }
@@ -28,6 +32,7 @@ h1 + img {
     transition: transform 350ms cubic-bezier(0.2, 0, 0, 1);
 }
 
+.brand:hover h1 + img,
 div:nth-child(1):hover h1 + img {
     transform: rotate(-8deg) scale(1.08);
 }
@@ -42,6 +47,8 @@ h2 {
 }
 
 #cards {
+    display: flex;
+    justify-content: center;
     flex-wrap: wrap;
     gap: 30px;
     margin: 50px auto 0;
