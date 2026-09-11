@@ -1,0 +1,14 @@
+:root {
+    --primary-color: #eecaac;
+    --secondary-color: #1f1916;
+    --heading: 'Oswald';
+    
+    /* Technology Accent Colors */
+    --html: #E44D26;
+    --css: #6A399C;
+    --js: #F7DF1E;
+    --git: #F05133;
+    --vscode: #0d3ACC;
+    --ts: #3178C6;
+    --node: #539E43;
+}

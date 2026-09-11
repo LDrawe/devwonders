@@ -1,6 +1,6 @@
 /**
- * DevWonders JavaScript Code Runner
- * Minimalist, professional icon-based runner for verified runnable snippets.
+ * JavaScript Code Runner
+ * Minimalist, icon-based runner for runnable snippets.
  */
 (() => {
     function escapeHtml(str) {

@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../../public/fonts/OpenSans.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Oswald';
+    src: url('../../public/fonts/Oswald.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../../public/fonts/Inter.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'JetBrainsMono';
+    src: url('../../public/fonts/JetBrainsMono.ttf') format('truetype');
+}

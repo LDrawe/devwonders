@@ -1,0 +1,74 @@
+@import '../base/variables.css';
+@import '../base/typography.css';
+@import '../base/reset.css';
+@import '../components/card.css';
+
+body {
+    padding: 20px 10px;
+    min-height: 100svh;
+    text-align: center;
+}
+
+
+.brand {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    animation: slideIn 800ms ease-out;
+    align-items: center;
+}
+
+h1 {
+    font: 700 clamp(38px, 10vw, 64px) 'OpenSans', sans-serif;
+    color: #ffba5c;
+    letter-spacing: -1.2px;
+    line-height: 1.1;
+}
+
+.brand img {
+    width: clamp(32px, 8vw, 52px);
+    height: auto;
+    transition: transform 350ms cubic-bezier(0.2, 0, 0, 1);
+}
+
+.brand:hover img {
+    transform: rotate(-8deg) scale(1.08);
+}
+
+h2 {
+    font: clamp(20px, 4vw, 24px) var(--heading);
+    color: #d1beaf;
+    max-width: 40ch;
+    margin: 20px auto;
+    animation: slideIn 1000ms ease-out;
+    letter-spacing: 0.3px;
+}
+
+#cards {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 50px auto 0;
+    max-width: 680px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(-200px);
+        filter: blur(3px);
+    }
+    to {
+        transform: translateX(0);
+        filter: blur(0);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    #github {
+        position: absolute;
+        top: 17.5px;
+        margin: 0;
+        right: 25px;
+    }
+}

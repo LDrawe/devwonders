@@ -1,0 +1,77 @@
+main nav {
+    background-color: var(--secondary-color);
+    width: calc(220px * ((var(--sidebar-open, 1) + 1) / 2));
+    border-radius: 0 15px 15px 0;
+    border: 1px solid rgba(238, 202, 172, 0.08);
+    border-left: 0;
+    transition: 500ms;
+    white-space: nowrap;
+    overflow: hidden;
+    align-self: center;
+}
+
+main nav ul {
+    display: grid;
+    padding: 20px 15px;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr);
+    max-height: min(700px, 80vh);
+    scrollbar-color: var(--primary-color) transparent;
+    overflow-y: auto;
+}
+
+main nav li {
+    min-width: 0;
+}
+
+main nav a {
+    transition: 300ms;
+    font: 500 20px var(--heading);
+    display: inline-block;
+    max-width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+main nav a:hover {
+    color: var(--primary-color);
+}
+
+app-sidebar {
+    display: contents;
+}
+
+#sidebar-Control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: calc(220px * ((var(--sidebar-open, 1) + 1) / 2));
+    background: none;
+    transition: 500ms;
+    padding-inline: 10px;
+}
+
+#sidebar-Control::before,
+#sidebar-Control::after {
+    content: '';
+    display: block;
+    border: 2px solid #646464;
+    height: 15px;
+    transition: 500ms;
+}
+
+#sidebar-Control::after {
+    position: relative;
+    top: -5px;
+}
+
+#sidebar-Control:hover::before {
+    rotate: calc(30deg * var(--sidebar-open));
+    border-color: #cfcfcf;
+}
+
+#sidebar-Control:hover::after {
+    rotate: calc(30deg * var(--sidebar-open) * -1);
+    border-color: #cfcfcf;
+}

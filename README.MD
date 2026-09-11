@@ -1,118 +1,199 @@
 <div align="center">
-  <img src="./public/icons/favicon.svg" alt="DevWonders Logo" height="120" />
-  <h1 style="font-size: 3rem; color: #ffba5c;">DevWonders</h1>
-  <p><strong>An Open-Source Wiki of coding tips, native features, and best practices</strong></p>
 
-  <p>
-    <a href="https://github.com/LDrawe/devwonders/search?l=html"><img src="https://img.shields.io/github/languages/top/LDrawe/devwonders?color=ffba5c&style=flat-square" alt="Github top language" /></a>
-    <a href="https://github.com/LDrawe/devwonders"><img src="https://img.shields.io/github/languages/count/LDrawe/devwonders?color=ffba5c&style=flat-square" alt="Github language count" /></a>
-    <a href="https://github.com/LDrawe/devwonders/stargazers"><img src="https://img.shields.io/github/stars/LDrawe/devwonders?color=ffba5c&style=flat-square" alt="Repository stars" /></a>
-    <a href="https://github.com/LDrawe/devwonders/blob/main/LICENSE"><img src="https://img.shields.io/github/license/LDrawe/devwonders?color=ffba5c&style=flat-square" alt="License" /></a>
+  <img src="./public/icons/favicon.svg" alt="DevWonders Logo" width="96" height="96" />
+
+# DevWonders
+
+  <p align="center">
+    <strong>The Pragmatic, Zero-Dependency Web Development Knowledge Base</strong><br>
+    <em>Master modern native browser APIs, cutting-edge CSS, and clean architectural patterns without bloated third-party libraries.</em>
   </p>
 
-  <h3>
-    <a href="https://ldrawe.github.io/devwonders/">Explore the Live Wiki</a>
-    <span> · </span>
-    <a href="https://github.com/LDrawe/devwonders/issues">Report a Bug</a>
-    <span> · </span>
-    <a href="https://github.com/LDrawe/devwonders/pulls">Contribute</a>
-  </h3>
+  <p align="center">
+    <a href="https://ldrawe.github.io/devwonders/"><img src="https://img.shields.io/badge/Live_Wiki-DevWonders-ffba5c?style=for-the-badge&logo=google-chrome&logoColor=120c09" alt="Live Wiki" /></a>
+    <a href="https://github.com/LDrawe/devwonders"><img src="https://img.shields.io/badge/Zero-Dependencies-eecaac?style=for-the-badge&logo=speedtest&logoColor=120c09" alt="Zero Dependencies" /></a>
+    <a href="https://github.com/LDrawe/devwonders/blob/main/LICENSE"><img src="https://img.shields.io/badge/License-MIT_%2F_CC_BY--SA_4.0-72b7f7?style=for-the-badge" alt="License" /></a>
+    <a href="https://github.com/LDrawe/devwonders/stargazers"><img src="https://img.shields.io/github/stars/LDrawe/devwonders?color=ffba5c&style=for-the-badge" alt="GitHub Stars" /></a>
+  </p>
+
+  <p align="center">
+    <a href="https://ldrawe.github.io/devwonders/"><strong>🌐 Explore Live Wiki</strong></a> •
+    <a href="#-topics-covered"><strong>📚 Topics</strong></a> •
+    <a href="#-interactive-features"><strong>⚡ Interactive Features</strong></a> •
+    <a href="#-local-development"><strong>💻 Quick Start</strong></a> •
+    <a href="#-contributing"><strong>🤝 Contributing</strong></a>
+  </p>
+
 </div>
 
 ---
 
-## 📖 Table of Contents
-
-* [About the Project](#-about-the-project)
-* [Features & Content](#-features--content)
-* [Built With](#-built-with)
-* [How to Contribute](#-how-to-contribute)
-* [License](#-license)
-* [Author](#-author)
+> ### 💡 The Philosophy
+>
+> **Stop installing 500 KB npm packages for problems the modern web platform already solves natively.**  
+> DevWonders is a curated reference manual designed to empower developers with pure HTML5, CSS3, modern ECMAScript, and robust terminal workflows — zero bundlers, zero framework lock-in, and 100% platform-first engineering.
 
 ---
 
-## 🚀 About the Project
+## 🌟 Highlights & Features
 
-**DevWonders** is a pragmatic, open-source knowledge base designed to streamline development. Instead of relying on heavy third-party libraries (NPM packages) or complex workarounds, this wiki focuses on modern native APIs, lesser-known browser features, and advanced concepts built directly into the web platform.
-
-DevWonders serves as a practical reference guide for developers looking to position UI elements natively, handle complex application states without external dependencies, and utilize advanced terminal workflows efficiently.
-
-> **Goal:** To provide a straightforward repository of clean code principles, native solutions, and practical techniques for modern developers.
-
----
-
-## ✨ Features & Content
-
-The wiki is organized into focused categories, each packed with interactive examples and copy-pasteable code blocks:
-
-* **⚡ HTML:** Native `<dialog>` modals, the `inert` attribute for focus trapping, Popover API, and `<template>` rendering.
-* **🎨 CSS:** Anchor Positioning, `@starting-style` for discrete animations, `light-dark()` functions, and modern logical properties.
-* **🧠 JavaScript:** `Object.groupBy()`, `AbortController` for massive event cleanup, native UUID generation, and optional chaining.
-* **🔧 Git:** Advanced terminal workflows including `git worktree`, `bisect` for tracking regressions, and `rerere` for conflict resolution.
-* **⚙️ VS Code & Environments:** Productivity shortcuts, multi-cursor editing, and efficiency settings.
-* **📐 Best Practices:** Clean Code principles, Guard Clauses (Early Return), semantic naming conventions, and pure functions.
-
----
-
-## 🛠️ Built With
-
-This project is a static site built with an absolute focus on performance and simplicity. It requires no installation or build tools to run locally.
-
-* **HTML5** (Semantic structure and native interactive elements)
-* **CSS3** (Custom properties, Flexbox, Grid, and modern CSS features)
-* **Vanilla JavaScript** (ES6+ features, native DOM manipulation)
-* **Prism.js** (For sleek, robust syntax highlighting)
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🚀 Zero Build Step & Instant Load</h3>
+      <p>Built entirely with native ES Modules and HTML/CSS. Clone the repository and serve it immediately — no <code>node_modules</code>, no Webpack/Vite overhead, no waiting for compiles.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>⚡ In-Place Interactive JS Runner</h3>
+      <p>Execute verified JavaScript code snippets right inside the documentation. Features a custom lightweight console terminal drawer with syntax-highlighted output (<code>log</code>, <code>warn</code>, <code>error</code>).</p>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <h3>🎨 Live Interactive CSS Demos</h3>
+      <p>Explore cutting-edge CSS features like <code>@starting-style</code>, <code>text-wrap: balance</code>, dynamic units (<code>cap</code>, <code>svh</code>), and Anchor Positioning with real-time interactive controls.</p>
+    </td>
+    <td width="50%" valign="top">
+      <h3>🧩 Native Web Components Architecture</h3>
+      <p>Clean UI orchestration powered by reusable Custom Elements (<code>&lt;app-header&gt;</code>, <code>&lt;app-sidebar&gt;</code>) and centralized data routing via <code>topics.json</code>.</p>
+    </td>
+  </tr>
+</table>
 
 ---
 
-## 🤝 How to Contribute
+## 📚 Topics Covered
 
-Contributions are highly encouraged. If you know a solid architectural pattern, a native API trick, or a clean code practice, we want it in the wiki.
+Each category features real-world recipes, code snippets, and live interactive examples:
 
-Here is the step-by-step manual to add a new tip:
+| Topic                                                                                      | Focus & Highlights                                                                                |                                  Quick Link                                   |
+| :----------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------ | :---------------------------------------------------------------------------: |
+| <img src="./public/icons/html.svg" width="20" height="20" valign="middle" /> **HTML5**     | Native `<dialog>` Modals, Popover API, `inert` Focus Trapping, Adaptive Favicons, Template Slots  |    [**View Guide →**](https://ldrawe.github.io/devwonders/pages/html.html)    |
+| <img src="./public/icons/css.svg" width="20" height="20" valign="middle" /> **CSS3**       | Anchor Positioning, `@starting-style` transitions, `text-wrap: balance`, `light-dark()`, Cap Unit |    [**View Guide →**](https://ldrawe.github.io/devwonders/pages/css.html)     |
+| <img src="./public/icons/js.svg" width="20" height="20" valign="middle" /> **JavaScript**  | `Object.groupBy()`, `AbortController` cleanup, Native UUID, Numeric Separators, Code Runner       |     [**View Guide →**](https://ldrawe.github.io/devwonders/pages/js.html)     |
+| <img src="./public/icons/ts.svg" width="20" height="20" valign="middle" /> **TypeScript**  | Utility Types (`Partial`, `Required`, `Extract`), Type Narrowing, Discriminated Unions            | [**View Guide →**](https://ldrawe.github.io/devwonders/pages/typescript.html) |
+| <img src="./public/icons/node.svg" width="20" height="20" valign="middle" /> **Node.js**   | Native Fetch API, Built-in Test Runner, Watch Mode (`--watch`), Native SQLite Client              |    [**View Guide →**](https://ldrawe.github.io/devwonders/pages/node.html)    |
+| <img src="./public/icons/git.svg" width="20" height="20" valign="middle" /> **Git**        | `git worktree` multi-branch workflows, `bisect` bug tracking, `rerere`, stash tricks              |    [**View Guide →**](https://ldrawe.github.io/devwonders/pages/git.html)     |
+| <img src="./public/icons/vscode.svg" width="20" height="20" valign="middle" /> **VS Code** | Multi-cursor workflows, Regex find & replace, Case transformation, Essential Shortcuts            |   [**View Guide →**](https://ldrawe.github.io/devwonders/pages/vscode.html)   |
 
-1. **Fork the Repository:** Create your own fork of the project.
-2. **Locate the Category:** Find the relevant HTML file (e.g., `html.html`, `css.html`, `js.html`). If your topic requires a new category, create a new file following the existing layout.
-3. **Add Your Section:** Copy the structure of an existing `<section>` tag. Every tip must include:
-   * An `<h2>` title.
-   * A `<p>` tag with a clear, direct explanation of the problem and the solution.
-   * A code block properly formatted.
-4. **Format the Code Block:** We use Prism.js. Ensure your code is wrapped like this:
-   ```html
-   <pre>
-     <code class="language-javascript code-block">
-       // Your code here
-     </code>
-   </pre>
-   ```
-5. **Add a Live Example (Optional but Recommended):** If your tip is visual (HTML/CSS), include an interactive, rendered example directly below the code block using inline styles or utility classes.
-6. **Commit and Push:** 
-```bash
-git commit -m "Add [Topic] to [Category]"
-git push origin main
+---
+
+## ⚡ Interactive Features
+
+### 🖥️ In-Page Code Runner
+
+Certain JavaScript snippets include a runnable badge with built-in execution controls:
+
+- **Run (▶)**: Evaluates the snippet safely in real-time.
+- **Clear (🗑)**: Resets the mini terminal drawer.
+- **Console Interception**: Captures formatted objects, arrays, primitives, and errors directly in the styled UI drawer without needing DevTools.
+
+```javascript
+// Example of a runnable recipe:
+const users = [
+  { name: "Alice", role: "admin" },
+  { name: "Bob", role: "user" },
+  { name: "Charlie", role: "admin" },
+];
+
+const byRole = Object.groupBy(users, (user) => user.role);
+console.log(byRole);
 ```
-7. **Open a Pull Request:** Submit your PR with a brief description of the native feature or practice you added.
 
 ---
-## 📝 License
 
-This project uses a Dual-License approach to ensure the freedom of the code snippets while protecting the original content and structure of the wiki:
+## 💻 Local Development
 
-Code Snippets: All code blocks (```<pre><code>```) and technical examples are released under the MIT License. You are free to copy, modify, and use them in your personal or commercial projects without any restrictions.
+Because DevWonders relies solely on native web standards, you can spin up the development environment in seconds with any local HTTP server:
 
-Content & Design: The written explanations, documentation, website design, and overall architecture of DevWonders are released under the Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) license. If you remix, transform, or build upon the material, you must distribute your contributions under the same license and give appropriate credit.
+### 1. Clone the repository
 
-See the LICENSE file for more details.
+```bash
+git clone https://github.com/LDrawe/devwonders.git
+cd devwonders
+```
+
+### 2. Start a local server (Pick any):
+
+```bash
+# Using VS Code
+# Simply right-click index.html -> "Open with Live Server"
+
+# OR Using Python 3 (Built-in)
+python -m http.server 8000
+
+# OR using Node.js
+npx serve .
+```
+
+### 3. Open in your browser
+
+Navigate to `http://localhost:8000` and start exploring!
+
+---
+
+## 🤝 Contributing
+
+Contributions make open-source thrive! Whether it's adding a new native trick, improving an interactive demo, or fixing documentation, your help is welcome.
+
+### How to add a new tip:
+
+1. **Fork & Branch**: Create a descriptive feature branch:
+
+   ```bash
+   git checkout -b feature/native-file-system-api
+   ```
+
+2. **Pick the Right File**: Open the corresponding page in `pages/` (e.g., `pages/js.html`).
+
+3. **Follow the Standard Component Structure**:
+
+   ```html
+   <section>
+     <h2>Feature Title</h2>
+     <p>
+       Concise explanation of the problem, why third-party libraries aren't
+       needed, and how the native platform accomplishes it.
+     </p>
+     <div>
+       <div>
+         <div class="language-control"></div>
+         <pre><code class="language-javascript code-block">
+   // Clean, copy-pasteable example
+               </code></pre>
+       </div>
+     </div>
+   </section>
+   ```
+
+4. **Commit & Push**:
+
+   ```bash
+   git commit -m "feat(html): add Popover API interactive recipe"
+   git push origin feature/native-file-system-api
+   ```
+
+5. **Open a Pull Request**: Submit your PR with a clear summary of your addition.
+
+---
+
+## ⚖️ Dual License
+
+To ensure both snippet reusability and project preservation, DevWonders uses a dual-licensing model:
+
+- **Code Snippets & Examples**: Released under the [MIT License](https://opensource.org/licenses/MIT). Feel free to copy, modify, and integrate code directly into personal or commercial projects.
+- **Documentation, Design & Branding**: Released under the [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/) license.
+
+---
+
 <div align="center">
-<br>
-<p>
- Built by <a href="https://github.com/LDrawe"><strong>Eduardo (LDrawe)</strong></a>
-</p>
-<p>
- <a href="https://github.com/LDrawe/devwonders/issues">Report Issue</a> • 
- <a href="https://github.com/LDrawe/devwonders/pulls">Request Feature</a> • 
- <a href="https://ldrawe.github.io/devwonders/">Live Wiki</a>
-</p>
-<p>Copyright © 2026 DevWonders.</p>
+
+Crafted with care by [**Eduardo (LDrawe)**](https://github.com/LDrawe)
+
+[**Live Wiki**](https://ldrawe.github.io/devwonders/) •
+[**Report Issue**](https://github.com/LDrawe/devwonders/issues) •
+[**Request Feature**](https://github.com/LDrawe/devwonders/pulls)
+
+<sub>Copyright © 2026 DevWonders. Powered by the open web platform.</sub>
+
 </div>

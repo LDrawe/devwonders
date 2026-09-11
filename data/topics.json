@@ -1,0 +1,65 @@
+[
+  {
+    "id": "html",
+    "name": "HTML",
+    "file": "html.html",
+    "icon": "html.svg",
+    "color": "var(--html)",
+    "alt": "HTML logo",
+    "ariaLabel": "HTML tips and best practices"
+  },
+  {
+    "id": "css",
+    "name": "CSS",
+    "file": "css.html",
+    "icon": "css.svg",
+    "color": "var(--css)",
+    "alt": "CSS logo",
+    "ariaLabel": "CSS tips and best practices"
+  },
+  {
+    "id": "js",
+    "name": "JavaScript",
+    "file": "js.html",
+    "icon": "js.svg",
+    "color": "var(--js)",
+    "alt": "JavaScript logo",
+    "ariaLabel": "JavaScript tips and best practices"
+  },
+  {
+    "id": "git",
+    "name": "Git",
+    "file": "git.html",
+    "icon": "git.svg",
+    "color": "var(--git)",
+    "alt": "Git logo",
+    "ariaLabel": "Git tips and best practices"
+  },
+  {
+    "id": "vscode",
+    "name": "VS Code",
+    "file": "vscode.html",
+    "icon": "vscode.svg",
+    "color": "var(--vscode)",
+    "alt": "Visual Studio Code logo",
+    "ariaLabel": "Visual Studio Code tips and best practices"
+  },
+  {
+    "id": "ts",
+    "name": "TypeScript",
+    "file": "typescript.html",
+    "icon": "ts.svg",
+    "color": "var(--ts)",
+    "alt": "TypeScript logo",
+    "ariaLabel": "TypeScript tips and best practices"
+  },
+  {
+    "id": "node",
+    "name": "Node.js",
+    "file": "node.html",
+    "icon": "node.svg",
+    "color": "var(--node)",
+    "alt": "Node.js logo",
+    "ariaLabel": "Node.js tips and best practices"
+  }
+]

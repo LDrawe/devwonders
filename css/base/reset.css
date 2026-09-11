@@ -1,46 +1,13 @@
-:root {
-    --primary-color: #eecaac;
-    --secondary-color: #1f1916;
-    --heading: 'Oswald';
-    --html: #E44D26;
-    --css: #6A399C;
-    --js: #F7DF1E;
-    --git: #F05133;
-    --vscode: #0d3ACC;
-    --ts: #3178C6;
-    --node: #539E43;
-}
-
-@font-face {
-    font-family: 'OpenSans';
-    src: url('../public/fonts/OpenSans.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Oswald';
-    src: url('../public/fonts/Oswald.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'Inter';
-    src: url('../public/fonts/Inter.ttf') format('truetype');
-}
-
-@font-face {
-    font-family: 'JetBrainsMono';
-    src: url('../public/fonts/JetBrainsMono.ttf') format('truetype');
-}
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    color: #F5F5FA;
-    font-family: 'Inter', 'Verdana', Arial, sans-serif;
-    font-weight: 500;
 }
 
 body {
+    color: #F5F5FA;
+    font-family: 'Inter', 'Verdana', Arial, sans-serif;
+    font-weight: 500;
     background-color: #120c09;
     background-image:
         radial-gradient(circle at center, rgba(238, 202, 172, 0.06) 1px, transparent 1px),
@@ -71,6 +38,7 @@ ul {
 
 a {
     text-decoration: none;
+    color: #F5F5FA;
 }
 
 #github {
